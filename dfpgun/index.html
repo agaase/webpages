@@ -1,0 +1,51 @@
+<!doctype html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/dfpgun.js"></script>
+</head>
+<body>
+	<input type="button" id="b1" value="trigger again"/>
+<script>
+	$("#b1").click(function(ev){
+		triggerAd();
+	});
+	function triggerAd(){
+	$(".adunit1").remove();
+	$(".adunit2").remove();
+	$(".adunit3").remove();
+	$("body").append("<div class='adunit1'></div>");
+	$("body").append("<div class='adunit2'></div>");
+	$("body").append("<div class='adunit3'></div>");
+	//1005159/MobileFloatingAdTest, [[1,1]]
+	////1005159/MobileLeaderTest, [[320,50]]
+	///15572793/Leader, [[728,90]]
+	setTimeout(function(){
+	 triggerDfpAd({
+                    "element":$(".adunit1"),
+                    "adunit":"1005159/MobileFloatingAdTest",
+                    "sizes":[[1,1]]
+       });
+	},500);
+	setTimeout(function(){
+	 triggerDfpAd({
+                    "element":$(".adunit2"),
+                    "adunit":"1005159/MobileLeaderTest",
+                    "sizes":[[320,50]]
+       });
+	},1000);
+	 setTimeout(function(){
+	 triggerDfpAd({
+                    "element":$(".adunit3"),
+                    "adunit":"15572793/Leader",
+                    "sizes":[[728,90]]
+       });
+	},1500);
+	 };
+	 triggerAd();
+</script>
+
+</body>
+
+</html>
+
