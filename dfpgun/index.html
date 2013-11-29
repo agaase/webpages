@@ -14,9 +14,11 @@
 	$(".adunit1").remove();
 	$(".adunit2").remove();
 	$(".adunit3").remove();
+	$(".adunit4").remove();
 	$("body").append("<div class='adunit1'></div>");
 	$("body").append("<div class='adunit2'></div>");
 	$("body").append("<div class='adunit3'></div>");
+	$("body").append("<div class='adunit4'></div>");
 	//1005159/MobileFloatingAdTest, [[1,1]]
 	////1005159/MobileLeaderTest, [[320,50]]
 	///15572793/Leader, [[728,90]]
@@ -39,6 +41,12 @@
                     "element":$(".adunit3"),
                     "adunit":"15572793/Leader",
                     "sizes":[[728,90]]
+       });
+	},1500);
+	  triggerDfpAd({
+                    "element":$(".adunit4"),
+                    "adunit":"1005159/MobileInBannerVideoTest",
+                    "sizes":[[300,250]]
        });
 	},1500);
 	 };
