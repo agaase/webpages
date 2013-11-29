@@ -33,7 +33,9 @@ var triggerDfpAd = function(args){
             adunit=args.adunit,
             sizes=args.sizes,
             dontRefresh=args.dontRefresh;
-            googletag=args.googletag || googletag;
+            googletag=args.googletag || googletag,
+            delayRefresh = args.delayRefresh || 4000; 
+
             
             console.log("dfploader:Triggering ad-"+adunit);
             var slot;
@@ -63,7 +65,7 @@ var triggerDfpAd = function(args){
                         }else if(count>5){
                             clearInterval(timerId);
                         }
-                    },2000);
+                    },delayRefresh);
                 }
     		});
             
