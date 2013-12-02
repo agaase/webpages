@@ -7,7 +7,7 @@
 <script>
 function ads () {
 //$('#ads').append('<div class="adunit" data-adunit="Leader" data-dimensions="728x90"></div>');
-$('#ads').append('<div class="adunit" data-adunit="MobileFloatingAdTest" data-dimensions="1x1"></div>');
+$('#ads').empty().append('<div class="adunit" data-adunit="MobileFloatingAdTest" data-dimensions="1x1"></div>');
 $('.adunit:not(".display-block")').dfp({
 dfpID: '1005159',
 enableSingleRequest: false
@@ -22,11 +22,8 @@ enableSingleRequest: false
 <script>
 $("#create").click(function(){
 ads();
-$('#refresh').show();
 });
-$("#refresh").click(function(){
-$.dfp();
-});
+
 </script>
 </body>
 </html>
