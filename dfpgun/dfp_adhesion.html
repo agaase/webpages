@@ -6,24 +6,30 @@
 <script src="http://coop182.github.io/jquery.dfp.js/jquery.dfp.js"></script>
 <script>
 function ads () {
-//$('#ads').append('<div class="adunit" data-adunit="Leader" data-dimensions="728x90"></div>');
+
 $('#ads').empty().append('<div class="adunit" data-adunit="MobileFloatingAdTest" data-dimensions="1x1"></div>');
+setTimeout(function(){
 $('.adunit:not(".display-block")').dfp({
-dfpID: '1005159',
-enableSingleRequest: false
+	dfpID: '1005159',
+	enableSingleRequest: false
 });
-}
+},5000);
+};
 </script>
 </head>
+
 <body>
 <div id ="ads"></div>
 <input type="button" value="Create Ad" id="create" />
 <input type="button" value="Refresh" id="refresh" style="display:none;" />
 <script>
-$("#create").click(function(){
+setInterval(function(){
+	ads();
+},5000);
+/*$("#create").click(function(){
 ads();
 });
-
+*/
 </script>
 </body>
 </html>
