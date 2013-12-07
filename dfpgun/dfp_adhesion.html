@@ -7,10 +7,10 @@
 <script>
 function ads () {
 
-$('#ads').empty().append('<div class="adunit" data-adunit="MobileFloatingAdTest" data-dimensions="1x1"></div>');
+$('#ads').empty().append('<div class="adunit" data-adunit="genwi_adhesion" data-dimensions="1x1"></div>');
 setTimeout(function(){
 $('.adunit:not(".display-block")').dfp({
-	dfpID: '1005159',
+	dfpID: '85897531',
 	enableSingleRequest: false
 });
 },5000);
@@ -24,12 +24,13 @@ $('.adunit:not(".display-block")').dfp({
 <input type="button" value="Refresh" id="refresh" style="display:none;" />
 <script>
 setInterval(function(){
-	ads();
+	//ads();
 },5000);
 /*$("#create").click(function(){
 ads();
 });
 */
+ads();
 </script>
 </body>
 </html>

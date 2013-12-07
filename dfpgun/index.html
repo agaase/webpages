@@ -17,28 +17,29 @@
 	$(".adunit4").remove();
 	$(".adunit5").remove();
 	$("body").append("<div class='adunit1'></div>");
-	$("body").append("<div class='adunit2'></div>");
+	$("body").append("<div class='adunit2 floaterAd' ></div>");
 	$("body").append("<div class='adunit3'></div>");
 	$("body").append("<div class='adunit4'></div>");
 	$("body").append("<div class='adunit5'></div>");
 	//1005159/MobileFloatingAdTest, [[1,1]]
 	////1005159/MobileLeaderTest, [[320,50]]
 	///15572793/Leader, [[728,90]]
-	setTimeout(function(){
+	/*setTimeout(function(){
 	 triggerDfpAd({
                     "element":$(".adunit1"),
                  	"adunit":"1005159/MobileLeaderTest",
-                    "sizes":[[320,50]]
+                    "sizes":[[320,50]],
+                    "dontRefresh" : true
        });
-	},500);
+	},500);*/
 	setTimeout(function(){
 	 triggerDfpAd({
                     "element":$(".adunit2"),
-                    "adunit":"1005159/MobileFloatingAdTest",
+                    "adunit":"/85897531/genwi_adhesion",
                     "sizes":[[1,1]]
        });
 	},1000);
-	 setTimeout(function(){
+	/*setTimeout(function(){
 	 triggerDfpAd({
                     "element":$(".adunit3"),
                     "adunit":"15572793/Leader",
@@ -53,14 +54,17 @@
                     "delayRefresh" : 10000
        });
 	},2000);
-	  setTimeout(function(){
+	/* setTimeout(function(){
 	  triggerDfpAd({
                     "element":$(".adunit5"),
                     "adunit":"1005159/HipHopWiredMobileNativeAdCategoryPage",
                     "sizes":[[1,1]]
        });
 	},2500);
+*/
+		 
 	 };
+
 	 triggerAd();
 </script>
 

@@ -1,6 +1,6 @@
 var loadDFP = function (){
         var DFPLoaded;
-        DFPLoaded = DFPLoaded || $('script[src*="googletagservices.com/tag/js/gpt.js"]').length;
+        DFPLoaded = DFPLoaded || $('script[src*="gpt.js"]').length;
     	if(DFPLoaded){
 			return;
 		}
@@ -17,8 +17,9 @@ var loadDFP = function (){
         };
         
         var useSSL = 'https:' === document.location.protocol;
-        gads.src = (useSSL ? 'https:' : 'http:') +
-        '//www.googletagservices.com/tag/js/gpt.js';
+       // gads.src = (useSSL ? 'https:' : 'http:') +
+        ///'//www.googletagservices.com/tag/js/gpt.js';
+        gads.src="js/gpt.js";
         var node = document.getElementsByTagName('script')[0];
         node.parentNode.insertBefore(gads, node);
         
@@ -41,6 +42,8 @@ var triggerDfpAd = function(args){
             var slot;
             var domid = "Ad_"+(parseInt(Math.random()*100000));
             element.empty().attr("id",domid);
+            googletag.debug_log.log = function(level,message,service,slot,reference){
+            };
             googletag.cmd.push(function () {
         		googletag.pubads().collapseEmptyDivs(true);
     			googletag.enableServices();
@@ -57,7 +60,12 @@ var triggerDfpAd = function(args){
                         if($("#"+domid).find("iframe").length){
                             if(!checkIfAdLoaded(domid)){
                                 console.log("dfploader:calling refresh since no ad served; adunit - "+adunit);
-                	            googletag.pubads().refresh([slot]);
+                                googletag.cmd.push(function () {
+                                    googletag.pubads().enableAsyncRendering();
+                                    var slott = googletag.defineSlot(adunit, sizes, domid).addService(googletag.pubads());
+                	               googletag.pubads().refresh([slott]);
+                                   googletag.enableServices();
+                                });
                             }else{
                                 console.log("dfploader:adunit served successfully for adunit - "+adunit);
                             }
