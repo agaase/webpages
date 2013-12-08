@@ -1,19 +1,19 @@
 $.fn.isonscreen = function(cont){
-debugger;
-var context = cont || $(window);
-var tominus =0;
-var toadd = 0;
-if(cont){
-	if(!cont.isonscreen()){
-		return false;
-	};
-	tominus = cont.offset().top;
-}else{
-	toadd = $(window).scrollTop();
-}
+	debugger;
+	var context,tominus=0,toadd=0;
+	if(cont){
+		context = cont;
+		if(!context.isonscreen()){
+			return false;
+		};
+		tominus = context.offset().top;
+	}else{
+		context = $(window);
+		toadd = context.scrollTop();
+	}
 
-if($(this).offset().top - tominus <= (toadd + context.height())){
-	return true;
-};
-return false;
+	if($(this).offset().top - tominus <= (toadd + context.height())){
+		return true;
+	};
+	return false;
 }
