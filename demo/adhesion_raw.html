@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+    function refresh(){
+        var ad = $(".ad");
+        ad.empty().attr("id","ad"+(new Date().getTime()));
+        debugger;
+        ad.append("<div class=\"celtra-ad-v3\">"
+        +"<img src=\"data:image/png,celtra\" style=\"display: none\" onerror=\""
+        +"(function(img) {"
+        +"var params = {'channelId':'aaf9406d','clickUrl':'%%CLICK_URL_UNESC%%','sticky'"+":'bottom','showStickyCloseButton':'1','clickEvent':'firstClickThrough','ex"+"ternalAdServer':'DFPPremium'};"
+            +"var req = document.createElement('script');"
+            +"req.id = params.scriptId = 'celtra-script-' + (window.celtraScriptIndex = "+"(window.celtraScriptIndex||0)+1);"
+            +"params.clientTimestamp = new Date/1000;"
+            +"req.src ="
+            +"'http://ads.celtra.com/8df8ef36/web.js?';"
+            +"for (var k in params) {"
+            +"req.src += '&' + encodeURIComponent(k) + '=' + encodeURIComponent"
+            +"(params[k]"
+            +");}img.parentNode.insertBefore(req, img.nextSibling);})(this);"
+            +"\"/></div>");
+    }
+    </script>
+</head>
+
+<body>
+<div class="ad">
+</div>
+
+</body>
+</html>
