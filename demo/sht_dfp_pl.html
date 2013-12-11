@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <head>
     <title>My Page</title>
+ <script src="//native.sharethrough.com/assets/tag.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://coop182.github.io/jquery.dfp.js/jquery.dfp.js"></script>
 
     <script>
         function ads () {
-            $('#ads').append('<div class="adunit" data-adunit="HipHopWiredMobileNativeAdCategoryPage" data-dimensions="1x1"></div>');
+debugger;
+            $('#ads').empty().append('<div class="adunit" data-adunit="GENWIMNNativeAdArticlePageTest" data-dimensions="1x1"></div>');
             $('.adunit:not(".display-block")').dfp({
                 dfpID: '1005159',
                 enableSingleRequest: false
