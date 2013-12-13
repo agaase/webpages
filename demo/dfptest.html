@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/dfploader.js"></script>
+    <script>
+
+    function refresh(){
+        $("#container").empty();
+        $("#container").append("<div id='ad'></div>")
+        var size = $("#size").val().split(",");
+        nsize = [parseInt(size[0]),parseInt(size[1])];
+
+      triggerDfpAd({
+                        "element":$("#ad"),
+                        "adunit":$("#adunit").val(),
+                        "sizes":nsize
+                    });
+      };
+    </script>
+</head>
+
+<body>
+<div>
+    <br>
+    Id
+    <br>
+    <input type="text" id="adunit"/>
+    <br>
+    Size
+    <br>
+    <input type="text" id="size"/>
+    <br>
+    <br>
+    <input type="button" value="trigger" id="trigger"/>
+    <br>
+    <div id="container"></div>
+    
+    <script type="text/javascript">
+    $("#trigger").on("click",function(e){
+        refresh();
+    });
+    </script>
+</div>
+
+</body>
+</html>
