@@ -71,14 +71,13 @@
             adar.push({"key":k,"value":v});
         });
         var i=0;
-        var cid =  setIntervalfunction(){
+        var cid =  setInterval(function(){
                 refresh(adar[i].key,adar[i].value);
                 i++;
                 if(i>=adar.length){
                     clearInterval(cid);
                 }
             },500);
-
     });
     </script>
 </div>
