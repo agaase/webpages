@@ -64,13 +64,21 @@
             refresh(k,v);
         },500);
     });
+    var adar = [];
     $("#trigger").on("click",function(e){
         $("#container").empty();
         $.each(adunits,function(k,v){
-            setTimeout(function(){
-                refresh(k,v);
-            },500);
+            adar.push({"key":k,"value":v});
         });
+        var i=0;
+        var cid =  setIntervalfunction(){
+                refresh(adar[i].key,adar[i].value);
+                i++;
+                if(i>=adar.length){
+                    clearInterval(cid);
+                }
+            },500);
+
     });
     </script>
 </div>
