@@ -40,7 +40,7 @@
     function refresh(k,v){
        var stamp = new Date().getTime();
        var id = ""+k+stamp;
-       $("#container").append(v.id+","+v.size+"<br><div id='"+id+"'></div><br>");
+       $("#container").append(v.id+","+v.size+"<br><div class='ad'></div><br>");
        triggerDfpAd({
                         "element":$("#"+k+stamp),
                         "adunit":v.id,
