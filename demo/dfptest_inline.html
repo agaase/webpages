@@ -1,0 +1,79 @@
+<!doctype html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/dfploader.js"></script>
+    <script>
+    var adunits = {
+            leader : {
+                id : '1005159/MobileLeaderTest', 
+                size : [[320, 50]]
+            },
+            bottom : {
+                id : '1005159/MobileBottom300x250Test',
+                size : [[300, 250],[320,50]]
+            },
+            middle : {
+                id : '1005159/MobileMiddleBoxTest',
+                size : [[300, 250],[320,50]]
+            },
+            shthome : {
+                id : '1005159/GENWIMNNativeAdsTest',
+                size : [[1, 1]]
+            },
+            shtarticles : {
+                id : '1005159/GENWIMNNativeAdsCategoryPageTest',
+                size : [[1, 1]]
+            },
+            shtarticle : {
+                id : '1005159/GENWIMNNativeAdArticlePageTest',
+                size : [[1, 1]]
+            },
+            inBanner : {
+                id : '1005159/MobileInBannerVideoTest',
+                size : [[300,250]],
+                dontRefresh : true
+            }
+    };
+
+
+
+    function refresh(k,v){
+       var stamp = new Date().getTime();
+       var id = ""+k+stamp;
+       $("#container").append(v.id+"<br><div id='"+id+"'></div><br>");
+       triggerDfpAd({
+                        "element":$("#"+k+stamp),
+                        "adunit":v.id,
+                        "sizes":v.size
+                    });
+      };
+    </script>
+</head>
+
+<body>
+<div>
+    <input type="button" id="trigger" value="TriggerAgain"/>
+
+    <div id="container"></div>
+    
+    <script type="text/javascript">
+
+    $("#container").empty();
+    $.each(adunits,function(k,v){
+        setTimeout(function(){
+            refresh(k,v);
+        },500);
+    });
+    $("#trigger").on("click",function(e){
+        $("#container").empty();
+        $.each(adunits,function(k,v){
+            setTimeout(function(){
+                refresh(k,v);
+            },500);
+        });
+    });
+    </script>
+</div>
+
+</body>
+</html>
