@@ -4,34 +4,9 @@
     <script src="js/dfploader.js"></script>
     <script>
     var adunits = {
-            leader : {
-                id : '1005159/MobileLeaderTest', 
-                size : [[320, 50]]
-            },
-            bottom : {
-                id : '1005159/MobileBottom300x250Test',
-                size : [[300, 250],[320,50]]
-            },
-            middle : {
-                id : '1005159/MobileMiddleBoxTest',
-                size : [[300, 250],[320,50]]
-            },
-            shthome : {
-                id : '1005159/GENWIMNNativeAdsTest',
+            interstitial : {
+                id : '1005159/GENWIMNFloatingAdsTest',
                 size : [[1, 1]]
-            },
-            shtarticles : {
-                id : '1005159/GENWIMNNativeAdsCategoryPageTest',
-                size : [[1, 1]]
-            },
-            shtarticle : {
-                id : '1005159/GENWIMNNativeAdArticlePageTest',
-                size : [[1, 1]]
-            },
-            inBanner : {
-                id : '1005159/MobileInBannerVideoTest',
-                size : [[300,250]],
-                dontRefresh : true
             }
     };
 
@@ -40,7 +15,7 @@
     function refresh(k,v){
        var stamp = new Date().getTime();
        var id = ""+k+stamp;
-       $("#container").append(v.id+","+v.size"<br><div id='"+id+"'></div><br>");
+       $("#container").append(v.id+"<br><div id='"+id+"'></div><br>");
        triggerDfpAd({
                         "element":$("#"+k+stamp),
                         "adunit":v.id,
