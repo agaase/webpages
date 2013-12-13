@@ -57,15 +57,24 @@
     <div id="container"></div>
     
     <script type="text/javascript">
+        var adar = [];
+        $("#container").empty();
+        $.each(adunits,function(k,v){
+            adar.push({"key":k,"value":v});
+        });
 
-    $("#container").empty();
-    $.each(adunits,function(k,v){
-        setTimeout(function(){
-            refresh(k,v);
-        },500);
+        var i=0;
+        var cid =  setInterval(function(){
+                refresh(adar[i].key,adar[i].value);
+                i++;
+                if(i>=adar.length){
+                    clearInterval(cid);
+                }
+            },500);
     });
-    var adar = [];
+    
     $("#trigger").on("click",function(e){
+        var adar = [];
         $("#container").empty();
         $.each(adunits,function(k,v){
             adar.push({"key":k,"value":v});
