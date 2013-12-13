@@ -40,7 +40,7 @@
     function refresh(k,v){
        var stamp = new Date().getTime();
        var id = ""+k+stamp;
-       $("#container").append(v.id+","+v.size+"<br><div class='ad'></div><br>");
+       $("#container").append(v.id+","+v.size+"<br><div id='"+k+stamp+"'></div><br>");
        triggerDfpAd({
                         "element":$("#"+k+stamp),
                         "adunit":v.id,
@@ -70,7 +70,7 @@
         $.each(adunits,function(k,v){
             adar.push({"key":k,"value":v});
         });
-        
+
         var i=0;
         var cid =  setInterval(function(){
                 refresh(adar[i].key,adar[i].value);
