@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/dfploader.js"></script>
+    <script>
+    var adunits = {
+            floaterROS : {
+                id : '1005159/GENWIMNFloatingAdsROSTest',
+                size : [[1, 1]]
+            }
+    };
+
+
+
+    function refresh(k,v){
+       var stamp = new Date().getTime();
+       var id = ""+k+stamp;
+       $("#container").append(v.id+"<br><div id='"+id+"'></div><br>");
+       triggerDfpAd({
+                        "element":$("#"+k+stamp),
+                        "adunit":v.id,
+                        "sizes":v.size
+                    });
+      };
+    </script>
+</head>
+
+<body>
+<div>
+    <input type="button" id="trigger" value="TriggerAgain"/>
+
+    <div id="container"></div>
+    
+    <script type="text/javascript">
+
+    $("#container").empty();
+    $.each(adunits,function(k,v){
+        setTimeout(function(){
+            refresh(k,v);
+        },500);
+    });
+    $("#trigger").on("click",function(e){
+        $("#container").empty();
+        $.each(adunits,function(k,v){
+            setTimeout(function(){
+                refresh(k,v);
+            },500);
+        });
+    });
+    </script>
+</div>
+
+</body>
+</html>
