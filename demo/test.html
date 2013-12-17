@@ -9,13 +9,14 @@
         $("#container").append("<div id='ad'></div>")
         var size = $("#size").val().split(",");
         nsize = [parseInt(size[0]),parseInt(size[1])];
-
-      triggerDfpAd({
-                        "element":$("#ad"),
-                        "adunit":$("#adunit").val(),
-                        "sizes":nsize
-                    });
-      };
+        setTimeout(function(){
+              triggerDfpAd({
+                                "element":$("#ad"),
+                                "adunit":$("#adunit").val(),
+                                "sizes":nsize
+                            });
+        },500);
+    }
     </script>
 </head>
 
