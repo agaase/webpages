@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+</head>
+<body>
+   
+   <div class="OUTBRAIN" id="outbrain" data-src="http://hiphopwired.com/2013/12/18/tony-romo-chokes-dez-walks-top-10-nfl-fails-week-15-photos" data-widget-id="AR_4" data-ob-template="bossip" ></div>
+
+   <script>
+   var refresh  = function(){
+	   $(".OUTBRAIN").empty().attr("data-src","http://hiphopwired.com/2013/12/18/tony-romo-chokes-dez-walks-top-10-nfl-fails-week-15-photos");
+
+	   setTimeout(function(){
+	   	$.getScript("http://widgets.outbrain.com/outbrain.js")
+          .done(function( script, textStatus ) {
+    	       // loadOutbrain();
+        });
+	  	
+	  },1000);
+	};
+    </script>
+   
+  <!-- <script type="text/javascript">
+    var params;
+	var match,
+		pattern = /\+/g,
+		search = /([^&=]+)=?([^&]*)/g,
+		decode = function (s) { return decodeURIComponent(s.replace(pattern, " ")); },
+		query = window.location.search.substring(1);
+
+	params = {};
+	while (match = search.exec(query))
+	   params[decode(match[1])] = decode(match[2]);
+	   
+    
+	if (params["url"] == undefined) {
+		alert("Arguments missing");
+	} else {
+		loadComments(params["url"]);
+	}
+	
+	function loadComments(url) {
+	    document.getElementsByClassName("OUTBRAIN")[0].setAttribute("data-src", url);
+	}
+    window.onload = function() {
+        var links = document.getElementsByTagName("a");
+        for(var i=0;i<links.length;i++){
+            links[i].setAttribute("target","_blank");
+        }
+    };
+</script>-->
+
+
+</body>
+</html>
