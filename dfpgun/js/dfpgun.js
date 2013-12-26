@@ -1,6 +1,12 @@
 (function(){
 
 var adslotmap = {};
+var settings;
+
+
+var log = function(msg){
+    console.log("dfpgun:"+(new Date().getTime())+":"+msg);
+};
 
 var loadDFP = function (){
         var DFPLoaded;
@@ -34,20 +40,42 @@ var loadDFP = function (){
 
 var loadedCallback = function(level,message,service,slot,reference){
     if(message.getMessageId()=="6"){
-        debugger;
-        console.log(message.getMessageArgs());
-        var callback = adslotmap[message.getMessageArgs()]["callback"];
+        var adid = message.getMessageArgs();
+        log("ad loaded-"+adid);
+        var admap = adslotmap[adid];
+        var callback = admap["callback"];
         if(callback){
-            callback(adslotmap[message.getMessageArgs()]["slot"]);
+            log("callback called"+adid);
+            callback(admap["element"]);
+        }
+        else{
+            if(!admap["refreshed"] && !admap["element"].is(":visible")){
+                log("refreshed-"+adid);
+                googletag.pubads().refresh([admap["slot"]]);
+                admap["refreshed"]=true;
+            }
         }
     }
 };
+var loadSettings = function(){
+    if(settings){
+        return;
+    }
+    var networkId = networkId || 44363;
+    $.ajax({
+      url: "http://app.genwi.com/4.0/settings/getSettings/"+(networkId || 44363),
+      async: false,
+      dataType: 'json',
+      success: function (response) {
+        console.log(response);
+        settings = response;
+      }
+    });
+};
 
 
-$.fn.dfpgun = function(args){
-            loadDFP();
-            var element = $(this),
-            adunit=args.adunit,
+var triggerAd = function(element,args){
+            var adunit=args.adunit,
             sizes=args.sizes;
             googletag=args.googletag || googletag;
 
@@ -55,7 +83,7 @@ $.fn.dfpgun = function(args){
             adslotmap[adunit]["callback"] = args.callback || undefined;
             adslotmap[adunit]["element"] = element;
 
-            console.log("dfploader:Triggering ad-"+adunit);
+            log("dfploader:Triggering ad-"+adunit);
             var slot;
             var domid = "Ad_"+(parseInt(Math.random()*100000));
             element.empty().attr("id",domid);
@@ -73,6 +101,14 @@ $.fn.dfpgun = function(args){
                 googletag.display(domid);
             });
             
+};
+
+$.fn.dfpgun = function(args){
+            loadDFP();
+            loadSettings();
+            $.each(this,function(i,v){
+                triggerAd($(v),args);
+            });
         };
 })($);
     
