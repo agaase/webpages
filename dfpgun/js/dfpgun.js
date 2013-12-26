@@ -88,7 +88,7 @@ var triggerAd = function(element,args){
             adslotmap[adunit] = {};
             adslotmap[adunit]["callback"] = args.callback || undefined;
             adslotmap[adunit]["element"] = element;
-            adslotmap[adunit]["forceRefresh"] = typeof(args.forceRefresh) ? args.forceRefresh : true;
+            adslotmap[adunit]["forceRefresh"] = typeof(args.forceRefresh) !="undefined" ? args.forceRefresh : true;
 
             log("dfploader:Triggering ad-"+adunit);
             var slot;
