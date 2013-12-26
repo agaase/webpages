@@ -43,20 +43,27 @@ var loadedCallback = function(level,message,service,slot,reference){
         var adid = message.getMessageArgs();
         log("ad loaded-"+adid);
         var admap = adslotmap[adid];
+        var element = admap["element"];
         var callback = admap["callback"];
         if(callback){
             log("callback called"+adid);
             callback(admap["element"]);
         }
-        else{
-            if(!admap["refreshed"] && !admap["element"].is(":visible")){
-                log("refreshed-"+adid);
-                googletag.pubads().refresh([admap["slot"]]);
+        if(!admap["refreshed"] && !element.is(":visible") && admap["forceRefresh"]){
+                refresh(adid);
                 admap["refreshed"]=true;
-            }
         }
     }
 };
+
+var refresh = function(adunit){
+    var admap = adslotmap[adunit];
+    googletag.cmd.push(function () {
+        log("refreshed-"+adunit);
+        googletag.pubads().refresh([admap["slot"]]);
+    });
+};
+
 var loadSettings = function(){
     if(settings){
         return;
@@ -73,7 +80,6 @@ var loadSettings = function(){
     });
 };
 
-
 var triggerAd = function(element,args){
             var adunit=args.adunit,
             sizes=args.sizes;
@@ -82,6 +88,7 @@ var triggerAd = function(element,args){
             adslotmap[adunit] = {};
             adslotmap[adunit]["callback"] = args.callback || undefined;
             adslotmap[adunit]["element"] = element;
+            adslotmap[adunit]["forceRefresh"] = typeof(args.forceRefresh) ? args.forceRefresh : true;
 
             log("dfploader:Triggering ad-"+adunit);
             var slot;
@@ -106,9 +113,7 @@ var triggerAd = function(element,args){
 $.fn.dfpgun = function(args){
             loadDFP();
             loadSettings();
-            $.each(this,function(i,v){
-                triggerAd($(v),args);
-            });
+            triggerAd($(this),args);
         };
 })($);
     

@@ -13,12 +13,16 @@
 	function triggerAd(){
 		$(".adunit2").remove();
 		$("body").append("<div class='adunit2 floaterAd' ></div>");
-		setTimeout(function(){
 		 $(".adunit2").dfpgun({
-	                    "adunit":"/1005159/MobileInterstitialTest2",
-	                    "sizes":[[1,1]]
+	                    "adunit":"/1005159/GENWIMNBottomBoxHairTest",
+	                    "sizes":[[300,250]],
+	                    "forceRefresh" : true,
+	                    "callback" : function(el){
+	                    	if(el.is(":visible")){
+
+	                    	}
+	                    }
 	       });
-		},1000);
 	 };
 
 	 triggerAd();
