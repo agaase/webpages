@@ -1,7 +1,6 @@
 <!doctype html>
 <head>
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="http://native.sharethrough.com/assets/tag.js"></script>
     <script src="js/dfploader.js"></script>
     <script>
     var adunits =  [
@@ -53,9 +52,21 @@
     <div id="container"></div>
     
     <script type="text/javascript">
-    var counter = 0;
+    var counter = 0,shtscriptloaded=false;
     $("#container").empty();
-    refresh(adunits[counter]);
+    if (!shtscriptloaded) {
+        // loading that weird script required by sharethrough.
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.onload = function() {
+             refresh(adunits[counter]);
+        };
+        script.src = document.location.protocol + "//native.sharethrough.com/assets/tag.js";
+        head.appendChild(script);
+        shtscriptloaded = true;
+    }
+    
     $("#trigger").on("click",function(e){
         counter = (++counter) >= adunits.length ? 0 : counter;
         $("#container").empty();
