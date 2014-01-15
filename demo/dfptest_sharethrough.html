@@ -1,0 +1,68 @@
+<!doctype html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://native.sharethrough.com/assets/tag.js"></script>
+    <script src="js/dfploader.js"></script>
+    <script>
+    var adunits =  [
+                {
+                    "id": "1005159/HipHopWiredMobileNativeROS-1",
+                    "size": [[1, 1]]
+                },
+                {
+                    "id": "1005159/HipHopWiredMobileNativeROS-2",
+                    "size": [[1, 1]]
+                },
+                {
+                    "id": "1005159/HipHopWiredMobileNativeROS-3",
+                    "size": [[1, 1]]
+                },
+                {
+                    "id": "1005159/HipHopWiredMobileNativeROS-4",
+                    "size": [[1, 1]]
+                },
+                {
+                    "id": "1005159/HipHopWiredMobileNativeROS-5",
+                    "size": [[1, 1]]
+                },
+                {
+                    "id": "1005159/HipHopWiredMobileNativeROS-6",
+                    "size": [[1, 1]]
+                }
+            ];
+
+
+
+    function refresh(v){
+       var stamp = new Date().getTime();
+       var id = "ad_"+stamp;
+       $("#container").append(v.id+","+v.size+"<br><div id='"+id+"'></div><br>");
+       triggerDfpAd({
+                        "element":$("#"+id),
+                        "adunit":v.id,
+                        "sizes":v.size
+                    });
+      };
+    </script>
+</head>
+
+<body>
+<div>
+    <input type="button" id="trigger" value="TriggerAgain"/>
+
+    <div id="container"></div>
+    
+    <script type="text/javascript">
+    var counter = 0;
+    $("#container").empty();
+    refresh(adunits[counter]);
+    $("#trigger").on("click",function(e){
+        counter = (++counter) > adunits.length ? 0 : counter;
+        $("#container").empty();
+        refresh(adunits[counter]);
+    });
+    </script>
+</div>
+
+</body>
+</html>
