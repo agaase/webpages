@@ -60,16 +60,22 @@
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.onload = function() {
-            var dur = 0;
-             $.each(adunits,function(k,v){
-                dur+=500;
-                setTimeout(function(){
-                    refresh(k,v);
-                },dur);
+            var adar=[];
+            $.each(adunits,function(k,v){
+                adar.push({"key":k,"value":v});
             });
+
+        var i=0;
+        var cid =  setInterval(function(){
+                refresh(adar[i].key,adar[i].value);
+                i++;
+                if(i>=adar.length){
+                    clearInterval(cid);
+                }
+            },1000);
              shtscriptloaded = true;
         };
-        script.src = document.location.protocol + "//native.sharethrough.com/assets/tag.js?" + (new Date).getTime();
+        script.src = "http://native.sharethrough.com/assets/tag.js?" + (new Date).getTime();
         head.appendChild(script);
     }
     
