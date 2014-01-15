@@ -38,6 +38,17 @@
     <div id="container"></div>
     
     <script type="text/javascript">
+    try{
+        var params = window.location.href.split("?")[1].split("&");
+        var id = params[0].split("=")[1].replace(",","/");
+        var size = params[1].split("=")[1];
+        $("#adunit").val(id);
+        $("#size").val(size);
+        refresh();
+    }
+    catch(err){
+    }
+
     $("#trigger").on("click",function(e){
         refresh();
     });
