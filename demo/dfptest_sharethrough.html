@@ -57,7 +57,7 @@
     $("#container").empty();
     refresh(adunits[counter]);
     $("#trigger").on("click",function(e){
-        counter = (++counter) > adunits.length ? 0 : counter;
+        counter = (++counter) >= adunits.length ? 0 : counter;
         $("#container").empty();
         refresh(adunits[counter]);
     });
