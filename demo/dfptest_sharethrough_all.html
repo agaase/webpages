@@ -60,10 +60,12 @@
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.onload = function() {
+            var dur = 0;
              $.each(adunits,function(k,v){
+                dur+=500;
                 setTimeout(function(){
                     refresh(k,v);
-                },500);
+                },dur);
             });
              shtscriptloaded = true;
         };
