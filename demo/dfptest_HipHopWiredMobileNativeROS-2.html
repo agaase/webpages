@@ -1,0 +1,54 @@
+
+<!doctype html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/dfploader2.js"></script>
+    <script>
+    var adunits = {
+            interstitial : {
+                id : '1005159/HipHopWiredMobileNativeROS-2',
+                size : [[1, 1]]
+            }
+    };
+   window.onmessage= function(e) {
+     console.log("toolbar_hiphop.onmessage:"+e.data);
+    };
+    function refresh(k,v){
+       var stamp = new Date().getTime();
+       var id = ""+k+stamp;
+       $("#container").append(v.id+"<br><div id='"+id+"'></div><br>");
+        $("#"+k+stamp).dfpgun({
+                        "adunit":v.id,
+                        "sizes":v.size
+           });
+      };
+    </script>
+</head>
+
+<body>
+<div>
+    <input type="button" id="trigger" value="TriggerAgain"/>
+
+    <div id="container"></div>
+    
+    <script type="text/javascript">
+
+    $("#container").empty();
+    $.each(adunits,function(k,v){
+        setTimeout(function(){
+            refresh(k,v);
+        },500);
+    });
+    $("#trigger").on("click",function(e){
+        $("#container").empty();
+        $.each(adunits,function(k,v){
+            setTimeout(function(){
+                refresh(k,v);
+            },500);
+        });
+    });
+    </script>
+</div>
+
+</body>
+</html>
