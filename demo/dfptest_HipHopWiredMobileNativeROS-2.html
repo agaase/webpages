@@ -5,10 +5,30 @@
     <script src="js/dfploader2.js"></script>
     <script>
     var adunits = {
-            interstitial : {
-                id : '1005159/HipHopWiredMobileNativeROS-2',
-                size : [[1, 1]]
-            }
+                "HipHopWiredMobileNativeROS-1" : {
+                    "id": "1005159/HipHopWiredMobileNativeROS-1",
+                    "size": [[1, 1]]
+                },
+                "HipHopWiredMobileNativeROS-2" : {
+                    "id": "1005159/HipHopWiredMobileNativeROS-2",
+                    "size": [[1, 1]]
+                },
+                "HipHopWiredMobileNativeROS-3" : {
+                    "id": "1005159/HipHopWiredMobileNativeROS-3",
+                    "size": [[1, 1]]
+                },
+                "HipHopWiredMobileNativeROS-4" : {
+                    "id": "1005159/HipHopWiredMobileNativeROS-4",
+                    "size": [[1, 1]]
+                },
+                "HipHopWiredMobileNativeROS-5" : {
+                    "id": "1005159/HipHopWiredMobileNativeROS-5",
+                    "size": [[1, 1]]
+                },
+                "HipHopWiredMobileNativeROS-6" : {
+                    "id": "1005159/HipHopWiredMobileNativeROS-6",
+                    "size": [[1, 1]]
+                }
     };
    window.onmessage= function(e) {
      console.log("toolbar_hiphop.onmessage:"+e.data);
@@ -40,10 +60,12 @@
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.onload = function() {
+            var dur = 0;
              $.each(adunits,function(k,v){
+                dur+=500;
                 setTimeout(function(){
                     refresh(k,v);
-                },500);
+                },dur);
             });
              shtscriptloaded = true;
         };
@@ -51,15 +73,6 @@
         head.appendChild(script);
     }
     
-    
-    $("#trigger").on("click",function(e){
-        $("#container").empty();
-        $.each(adunits,function(k,v){
-            setTimeout(function(){
-                refresh(k,v);
-            },500);
-        });
-    });
     </script>
 </div>
 
