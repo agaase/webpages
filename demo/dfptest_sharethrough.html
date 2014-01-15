@@ -52,7 +52,7 @@
     <div id="container"></div>
     
     <script type="text/javascript">
-    var counter = 0,shtscriptloaded=false;
+    var counter = parseInt(Math.random()*6),shtscriptloaded=false;
     $("#container").empty();
     if (!shtscriptloaded) {
         // loading that weird script required by sharethrough.
@@ -61,10 +61,11 @@
         script.type = 'text/javascript';
         script.onload = function() {
              refresh(adunits[counter]);
+             shtscriptloaded = true;
         };
         script.src = document.location.protocol + "//native.sharethrough.com/assets/tag.js";
         head.appendChild(script);
-        shtscriptloaded = true;
+        
     }
     
     $("#trigger").on("click",function(e){
