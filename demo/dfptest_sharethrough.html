@@ -63,7 +63,7 @@
              refresh(adunits[counter]);
              shtscriptloaded = true;
         };
-        script.src = document.location.protocol + "//native.sharethrough.com/assets/tag.js";
+        script.src = document.location.protocol + "//native.sharethrough.com/assets/tag.js?" + (new Date).getTime();
         head.appendChild(script);
         
     }
