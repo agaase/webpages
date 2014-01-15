@@ -2,7 +2,7 @@
 <!doctype html>
 <head>
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="js/dfploader2.js"></script>
+    <script src="js/dfploader.js"></script>
     <script>
     var adunits = {
             interstitial : {
@@ -34,11 +34,25 @@
     <script type="text/javascript">
 
     $("#container").empty();
-    $.each(adunits,function(k,v){
-        setTimeout(function(){
-            refresh(k,v);
-        },500);
-    });
+    if (!shtscriptloaded) {
+        // loading that weird script required by sharethrough.
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.onload = function() {
+             $.each(adunits,function(k,v){
+                setTimeout(function(){
+                    refresh(k,v);
+                },500);
+            });
+             shtscriptloaded = true;
+        };
+        script.src = document.location.protocol + "//native.sharethrough.com/assets/tag.js?" + (new Date).getTime();
+        head.appendChild(script);
+        
+    }
+    
+    
     $("#trigger").on("click",function(e){
         $("#container").empty();
         $.each(adunits,function(k,v){
