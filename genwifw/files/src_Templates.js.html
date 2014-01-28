@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src&#x2F;Templates.js - genwi-template-framework</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.8.0pr2&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.8.0pr2&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title="genwi-template-framework"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Genwi.Helpers.html">Genwi.Helpers</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Imgr.html">Genwi.Plugins.Imgr</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Scroller.html">Genwi.Plugins.Scroller</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Socialshare.html">Genwi.Plugins.Socialshare</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Superscroll.html">Genwi.Plugins.Superscroll</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.html">Genwi.Template</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.AbstractView.html">Genwi.Template.AbstractView</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Article.html">Genwi.Template.Article</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Articles.html">Genwi.Template.Articles</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Categories.html">Genwi.Template.Categories</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Favorites.html">Genwi.Template.Favorites</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Search.html">Genwi.Template.Search</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Sections.html">Genwi.Template.Sections</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Toolbar.html">Genwi.Template.Toolbar</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Utils.html">Genwi.Utils</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/Genwi.html">Genwi</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src&#x2F;Templates.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+Welcome to the root.
+
+@module Genwi
+ *&#x2F;
+var oTmpl = oTmpl || {};
+var Genwi = Genwi || {};
+
+Genwi.Plugins = Genwi.Plugins || {};
+&#x2F;**
+ * A global constants object to define any constants.
+ * Any constants should not be directly hardcoded as per requirements but defined
+ * here first so that we have maintainable code.
+ * @type {Object}
+ *
+ *&#x2F;
+Genwi.Constants = {
+    &quot;updateType&quot;: {
+        &quot;tab2&quot;: &quot;ads&quot;,
+        &quot;tab3&quot;: &quot;category&quot;,
+        &quot;tab5&quot;: &quot;content&quot;,
+        &quot;tab4&quot;: &quot;design&quot;
+    }
+};
+&#x2F;**
+This whole thing is essentially a very stripped down Backbone.js, since our Router and
+to a large extent Model are already taken care of by native. All it does is take Backbone&#x27;s 
+subclassing and adds in an abstract class that can be used to build better templates.
+
+@namespace Genwi
+@class Template
+*&#x2F;
+(function() {
+
+    var Template = this.Template || {};
+    this.Template = Template;
+
+    var extend = function(protoProps, staticProps) {
+        var parent = this;
+        var child;
+
+        &#x2F;&#x2F; The constructor function for the new subclass is either defined by you
+        &#x2F;&#x2F; (the &quot;constructor&quot; property in your &#x60;extend&#x60; definition), or defaulted
+        &#x2F;&#x2F; by us to simply call the parent&#x27;s constructor.
+        if (protoProps &amp;&amp; protoProps.hasOwnProperty(&#x27;constructor&#x27;)) {
+            child = protoProps.constructor;
+        } else {
+            child = function() {
+                return parent.apply(this, arguments);
+            };
+        }
+
+        &#x2F;&#x2F; Add static properties to the constructor function, if supplied.
+        $.extend(child, parent, staticProps);
+
+        &#x2F;&#x2F; Set the prototype chain to inherit from &#x60;parent&#x60;, without calling
+        &#x2F;&#x2F; &#x60;parent&#x60;&#x27;s constructor function.
+        var Surrogate = function() {
+            this.constructor = child;
+        };
+        Surrogate.prototype = parent.prototype;
+        child.prototype = new Surrogate();
+
+        &#x2F;&#x2F; Add prototype properties (instance properties) to the subclass,
+        &#x2F;&#x2F; if supplied.
+        if (protoProps) {
+            $.extend(child.prototype, protoProps);
+        }
+
+        &#x2F;&#x2F; Set a convenience property in case the parent&#x27;s prototype is needed
+        &#x2F;&#x2F; later.
+        child.prototype.__super__ = parent.prototype;
+
+        return child;
+    };
+
+    &#x2F;**
+	This is the base class for any page view. It should be treated as an abstract class and
+	never actually instantiated. To extend this class, do this:
+	&#x60;new Genwi.Template.AbstractView.extend();&#x60;
+
+	You can also pass attributes directly to the extend function that become part
+	of your new instance&#x27;s prototype.
+
+	&#x60;new Genwi.Template.AbstractView.extend({
+		onSomeCallback: function(){ },
+		my: &#x27;props&#x27;
+	});&#x60;
+
+    @class AbstractView
+	@constructor
+	@namespace Genwi.Template
+	*&#x2F;
+    var AbstractView = Template.AbstractView = function() {
+        if (arguments.length &gt; 1) {
+            this.templateName = arguments[0] || &quot;&quot;;
+            this.options = arguments[1] || {};
+        }
+    };
+
+    $.extend(AbstractView.prototype, {
+
+        constants: Genwi.Constants,
+
+        &#x2F;**
+         * This represent the data that would be binded to the corresponding html template.
+         * @type {Object}
+         * @property model
+         *&#x2F;
+        model: {},
+
+        &#x2F;**
+         * True if running in iOS.
+         * @property isIOS
+         * @type {boolean}
+         *&#x2F;
+        isIOS: null,
+
+        &#x2F;**
+         * True if runnning in android.
+         * @property isAndroid
+         * @type {boolean}
+         *&#x2F;
+        isAndroid: null,
+
+        &#x2F;**
+         * True if runnning in Ipad.
+         * @property isIpad
+         * @type {boolean}
+         *&#x2F;
+        isIpad: null,
+
+        &#x2F;**
+         * True if runnning in Iphone.
+         * @property isIphone
+         * @type {boolean}
+         *&#x2F;
+        isIphone: null,
+
+        &#x2F;**
+         * True if its a native app and not html5
+         * @type {boolean}
+         *&#x2F;
+        inApp: null,
+
+        &#x2F;**
+         * True if runnning in Android smart phone.
+         * @type {boolean}
+         * @property isAndroidSmartPhone
+         *&#x2F;
+        isAndroidSmartPhone: null,
+
+        &#x2F;**
+         * True if runnning in Android Tablet.
+         * @type {Boolean}
+         * @property isAndroidTablet
+         *&#x2F;
+        isAndroidTablet: null,
+
+        &#x2F;**
+		CSS selector for this view&#x27;s template
+		@property rootTemplateId
+		*&#x2F;
+        rootTemplateId: undefined,
+
+        &#x2F;**
+		CSS selector for this view&#x27;s root container
+		@property el
+		*&#x2F;
+        el: undefined,
+        &#x2F;**
+		Cached jQuery selector for this view&#x27;s root container
+		@property elOb
+		*&#x2F;
+        elOb: undefined,
+
+        &#x2F;**
+         * Sets the variable to identify the running environment.
+         *&#x2F;
+        getDeviceEnv: function() {
+            var ua = navigator.userAgent.toLowerCase();
+            this.isIOS = &#x2F;ipad&#x2F;i.test(ua) || &#x2F;iphone&#x2F;i.test(ua);
+            this.isAndroid = &#x2F;android&#x2F;i.test(ua);
+            this.inApp = (pageName !== &quot;html5&quot;);
+            this.isIpad = &#x2F;ipad&#x2F;i.test(ua);
+            this.isIphone = &#x2F;iphone&#x2F;i.test(ua);
+            try {
+                this.isAndroidSmartPhone = GenwiAndroid.isSmartPhone();
+            } catch (err) {
+                this.isAndroidSmartPhone = false;
+                console.log(&quot;getDeviceEnv: GenwiAndroid.isSmartPhone() failed: &quot; + err);
+            }
+            this.isAndroidTablet = (this.isAndroid &amp;&amp; !this.isAndroidSmartPhone);
+        },
+
+        &#x2F;**
+         * This is the starting point for client rendering.
+         * Wraps a sequence of calls which perform the exact logical functions.
+         * Override this only in the case of very specialised requirement which is
+         * not solved by overriding other functions.
+         * @method init
+         * @param  {[object]} context The DOM element under which the template layout will resides.
+         *&#x2F;
+        init: function(context) {
+            this.context = context;
+            this.getDeviceEnv();
+            this._setupLayout();
+            this.buildModel();
+            this.onDraw();
+            this.draw();
+            this._bindOrientationChange();
+            this._invokeAppsUrlFinish();
+        },
+
+        &#x2F;**
+         * Prepares the data which will be binded to the template as defined in the html file.
+         * Override this if the data available through this default implementation does not cater to your needs.
+         * @method buildModel
+         *&#x2F;
+        buildModel: function() {
+            this.model.item = {};
+            this.model.items = [];
+            if (this.oJson &amp;&amp; this.oJson.length === 1) {
+                this.model.item = this.oJson[0];
+            }
+            if (this.oJson &amp;&amp; this.oJson.length &gt; 0) {
+                this.model.items = this.oJson;
+            }
+            this.model.network_id = network_id;
+            this.model.baseUrl = baseUrl;
+            this.model.categories = categoryJson;
+        },
+
+        &#x2F;**
+         * Any miscellaneous task before actually drawing the page should be carried out here.
+         * A common use case is creating some DOM element dynamically.
+         * @method onDraw
+         *&#x2F;
+        onDraw: function() {},
+
+        &#x2F;**
+         * This checks and sets up the dom layout according to how the framework works.
+         * Missing root elements, configuring html5 context and setting up default native scroll falls under this function presently.
+         *&#x2F;
+        _setupLayout: function() {
+            if (pageName === &quot;html5&quot;) {
+                if (this.templateName) {
+                    &#x2F;&#x2F;Copying the handlebars template and root container
+                    &#x2F;&#x2F;inside the context.
+                    &#x2F;&#x2F;Do we need anything else.?
+                    this.context.append($(&quot;#&quot; + this.el, &quot;#&quot; + this.templateName).clone());
+                    this.context.append($(this.rootTemplateId, &quot;#&quot; + this.templateName).clone());
+                    this.elOb = $(&quot;#&quot; + this.el, this.context);
+                } else {
+                    console.log(&quot;The template name is not configured correctly.Errors could be there in html5 version.&quot;);
+                    &#x2F;&#x2F;Nothing works; then put context as root element.
+                    this.elOb = this.context;
+                }
+                $(&quot;body&quot;).addClass(&quot;html5&quot;).css(&quot;height&quot;, &quot;auto&quot;);
+            } else {
+                $(&quot;body&quot;).addClass(&quot;native&quot;).css(&quot;height&quot;, &quot;100%&quot;);
+                this.elOb = $(&quot;#&quot; + this.el, this.context);
+            }
+            &#x2F;&#x2F;If the root element is not present then add it.
+            if (this.elOb.length === 0) {
+                $(&quot;&lt;div id=&quot; + this.el + &quot;&gt;&lt;&#x2F;div&gt;&quot;).appendTo(this.context);
+                this.elOb = $(&quot;#&quot; + this.el, this.context);
+            }
+            if (pageName !== &quot;html5&quot; &amp;&amp; !(this instanceof Genwi.Template.Toolbar)) {
+                this.elOb.wrap(&quot;&lt;div class=&#x27;scrollWrapper&#x27;&gt;&lt;&#x2F;div&gt;&quot;);
+                this.elOb.parent().css({
+                    &quot;height&quot;: &quot;100%&quot;,
+                    &quot;overflow&quot;: &quot;scroll&quot;
+                });
+                $(&quot;body&quot;, &quot;html&quot;).css(&quot;overflow&quot;, &quot;hidden&quot;);
+            }
+        },
+
+        &#x2F;**
+         * Binds the data to the inline template in the html file.
+         * Override this if data has to be binded in a custom way.
+         * @method draw
+         * @param  {booleab} inc  True if the data has to be appended to the root DOM.
+         *                        Default is false.
+         *&#x2F;
+        draw: function(inc) {
+            Genwi.Utils.bindTmplData($(this.rootTemplateId, this.context), this.model, this.elOb, inc);
+        },
+
+        &#x2F;**
+         * This function is called by native at various stages of a running app.
+         * @param  {string&#x2F;json string}   response The data passed from native.
+         *&#x2F;
+        callback: function(response) {
+            switch (response) {
+                case -1:
+                    this.onPageLoaded();
+                    break;
+                case -2:
+                    this.onPageLoadedFromCache();
+                    break;
+                default:
+                    this.onResponseReceived(response);
+                    break;
+            }
+        },
+
+        &#x2F;**
+         * Called when a page is loaded on the client device fresh from the server.
+         * Any post-load event or miscellaneous task should be carried out here.
+         * @method onPageLoaded
+         *&#x2F;
+        onPageLoaded: function() {},
+
+        &#x2F;**
+         * Called when the page is loaded from cache on the client.
+         * A common use case is when you click back button.
+         * @method onPageLoadedFromCache
+         *&#x2F;
+        onPageLoadedFromCache: function() {},
+
+        &#x2F;**
+         * Called when native sends some response to the client in return of some request made.
+         * A common use case is return of posts when client raises appsurl&#x2F;fetch request.
+         * @method onResponseReceived
+         *&#x2F;
+        onResponseReceived: function(response) {},
+
+        &#x2F;**
+         * This is called to get the current page context as required by toolbar.
+         * @return json string denoting the data.
+         *&#x2F;
+        getContext: function() {
+            var obj = this.pageContext();
+            var retData = (obj ? JSON.stringify(obj) : &quot;&quot;);
+            if (this.isAndroid &amp;&amp; pageName !== &#x27;html5&#x27;) {
+                return GenwiAndroid.getContextCall(retData);
+            }
+            return retData;
+        },
+
+        &#x2F;**
+         * This method prepares the actual context which can be app specific.
+         * @method pageContext
+         * @return object with all the data to be passed to be set as context.
+         *&#x2F;
+        pageContext: function() {},
+
+        &#x2F;**
+         * Wrapper function for onAppUpdate.
+         * Binds the different system updates with intuitive values.
+         * @param  {object} resp The response from the native specifying different type of updates happened.
+         *&#x2F;
+        update: function(resp) {
+            var updateTypes = this.constants[&quot;updateType&quot;];
+            var updateValues = [];
+            $.each(resp, function(k, v) {
+                if (v) {
+                    updateValues.push(updateTypes[k]);
+                }
+            });
+            this.onAppUpdate(updateValues);
+        },
+
+        &#x2F;**
+         * This function is called when the app is updated from background to foreground.
+         * Override this function to implement in your app.
+         * There are four types of updates that can happen
+         * and will be passed as an array - [&#x27;ads&#x27;, &#x27;category&#x27;,&#x27;content&#x27;,&#x27;design&#x27;]
+         * @method onAppUpdate
+         * @param  {array}   updates - All updated passed as an array.
+         *&#x2F;
+        onAppUpdate: function(updates) {},
+
+        &#x2F;**
+         * This function tells the native that client has finished loading after which
+         * the native platform actually shows the page to the user.
+         *&#x2F;
+        _invokeAppsUrlFinish: function() {
+            if (this.isIOS &amp;&amp; this.inApp) {
+                window.location = &#x27;http:&#x2F;&#x2F;appsurl&#x2F;finished&#x27;;
+            } else if (this.isAndroid &amp;&amp; typeof(GenwiAndroid) !== &quot;undefined&quot;) {
+                GenwiAndroid.appsurlFinish();
+            } else if (pageName !== &quot;html5&quot;) {
+                &#x2F;&#x2F;If its a simple page being loaded in browser, call the callback explicitly.
+                this.callback(-1);
+            }
+        },
+        &#x2F;**
+         * Binds the orientation change event to the app.
+         *&#x2F;
+        _bindOrientationChange: function() {
+            var self = this;
+            var ev = this.isIOS ? &#x27;orientationchange&#x27; : &#x27;resize&#x27;;
+            var ow = window.innerWidth,
+                oh = window.innerHeight;
+            $(window).bind(ev, function() {
+                setTimeout(function() {
+                    var nw = window.innerWidth,
+                        nh = window.innerHeight;
+                    if ((ow - oh) * (nw - nh) &lt; 0 &amp;&amp; ow !== nw &amp;&amp; oh !== nh) {
+                        ow = nw;
+                        oh = nh;
+                        var contextId = self.context.attr(&quot;id&quot;),
+                            cont;
+                        if (!contextId) {
+                            cont = $(&quot;body&quot;);
+                        } else {
+                            cont = $(&quot;#&quot; + contextId);
+                        }
+                        if (cont.length) {
+                            self.onOrientationChange();
+                        }
+                    }
+                }, 500);
+            });
+        },
+
+        &#x2F;**
+         * This is called when orientation is changed for the device.
+         * Implement this to handle any orientation change usecases.
+         * @method onOrientationChange
+         *&#x2F;
+        onOrientationChange: function() {}
+
+
+    });
+
+    AbstractView.extend = extend;
+
+    &#x2F;**
+	This is the template for the Article page.
+	Any further specific implmentations should extend this template.
+
+	@class Article
+	@namespace Genwi.Template
+	@extends Genwi.Template.AbstractView
+	*&#x2F;
+    var Article = AbstractView.extend({
+
+        el: &quot;gw_article&quot;,
+        rootTemplateId: &quot;#gw_article_tmpl&quot;
+
+    });
+
+    &#x2F;**
+	This is the template for the Articles page.
+	Any further specific implmentations should extend this template.
+
+	@class Articles
+	@namespace Genwi.Template
+	@extends Genwi.Template.AbstractView
+	*&#x2F;
+    var Articles = AbstractView.extend({
+        el: &quot;gw_articles&quot;,
+        rootTemplateId: &quot;#gw_articles_tmpl&quot;
+    });
+
+    &#x2F;**
+     * This is the template for the sections page.
+     * Any further specific implmentations should extend this template.
+     * @class Sections
+     * @namespace Genwi.Template
+     * @extends Genwi.Template.AbstractView
+     *&#x2F;
+    var Sections = AbstractView.extend({
+        el: &quot;gw_sections&quot;,
+        rootTemplateId: &quot;#gw_sections_tmpl&quot;
+    });
+
+    &#x2F;**
+     * This is the template for the toolbar page.
+     * Any further specific implmentations should extend this template.
+     * @class Toolbar
+     * @namespace Genwi.Template
+     * @extends Genwi.Template.AbstractView
+     *&#x2F;
+    var Toolbar = AbstractView.extend({
+        el: &quot;gw_toolbar&quot;,
+        rootTemplateId: &quot;#gw_toolbar_tmpl&quot;,
+
+        &#x2F;**
+         * This method is called on every article,articles,categories,favorite and search page.
+         * The data passed from getcontext will be transferred here as json data which can be used to
+         * for further toolbar modification.
+         * @method setContext
+         * @param  {string&#x2F;json}   resp The data returned from getContext of the particular page.
+         *&#x2F;
+        setContext: function(resp) {
+            this.oJson = jQuery.parseJSON(resp);
+            this.draw(false);
+        }
+    });
+
+    &#x2F;**
+     * This is the template for the favorites page.
+     * Any further specific implmentations should extend this template.
+     * @class Favorites
+     * @namespace Genwi.Template
+     * @extends Genwi.Template.AbstractView
+     *&#x2F;
+    var Favorites = AbstractView.extend({
+        el: &quot;gw_favorites&quot;,
+        rootTemplateId: &quot;#gw_favorites_tmpl&quot;
+    });
+
+
+    &#x2F;**
+     * This is the template for the search page.
+     * Any further specific implmentations should extend this template.
+     * @class Search
+     * @namespace Genwi.Template
+     * @extends Genwi.Template.AbstractView
+     *&#x2F;
+    var Search = AbstractView.extend({
+        el: &quot;gw_search&quot;,
+        rootTemplateId: &quot;#gw_search_tmpl&quot;
+    });
+
+    &#x2F;**
+     * This is the template for the categories page.
+     * Any further specific implmentations should extend this template.
+     * @class Categories
+     * @namespace Genwi.Template
+     * @extends Genwi.Template.AbstractView
+     *&#x2F;
+    var Categories = AbstractView.extend({
+        el: &quot;gw_categories&quot;,
+        rootTemplateId: &quot;#gw_categories_tmpl&quot;
+    });
+
+    Template.AbstractView = AbstractView;
+    Template.Article = Article;
+    Template.Sections = Sections;
+    Template.Articles = Articles;
+    Template.Toolbar = Toolbar;
+    Template.Favorites = Favorites;
+    Template.Search = Search;
+    Template.Categories = Categories;
+
+}).call(Genwi);
+
+
+&#x2F;**
+ * The global options object.
+ * Please initialise it in your html template.
+ *&#x2F;
+Genwi.Template.options = Genwi.Template.options || {};
+
+&#x2F;**
+ * Use this function to register your html template with the javascript prototype.
+ * It can be one of the above prototype or a new one which extends one of the above.
+ * Make sure the new prototype
+ * 1.Has the same name as of the file.
+ * 2.Uses Namespace Genwi.Template
+ * e.g: file-articles_app.js; prototype-Genwi.Template.articles_app
+ * @param  {[string]} templateName [The name of the html template.]
+ * @param  {[string]} jsPrototype  [The name of the prototype.e.g articles_app]
+ *&#x2F;
+Genwi.Template.registerTemplate = function(templateName, jsPrototype, options) {
+    window.onload = function() {
+        var jsProt = Genwi.Template[jsPrototype];
+        if (jsProt) {
+            oIP.register(templateName, jsProt, options);
+        }
+    };
+};
+
+&#x2F;**
+ * Use this function to register settings of your template.
+ * Presently valid only for toolbar and sections template.
+ *&#x2F;
+Genwi.Template.registerSettings = function(settingsString) {
+    window.onload = function() {
+        oIP.registerSettings(settingsString);
+    };
+};
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

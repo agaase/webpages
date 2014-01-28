@@ -1,0 +1,1429 @@
+{
+    "project": {
+        "name": "genwi-template-framework",
+        "description": "GENWI Javascript template framework.",
+        "version": "0.1.0",
+        "url": "https://github.com/genwi/template-framework"
+    },
+    "files": {
+        "src/plugins/imgr/Imgr.js": {
+            "name": "src/plugins/imgr/Imgr.js",
+            "modules": {},
+            "classes": {
+                "Genwi.Plugins.Imgr": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi.Plugins": 1
+            }
+        },
+        "src/plugins/incscroll/Superscroll.js": {
+            "name": "src/plugins/incscroll/Superscroll.js",
+            "modules": {},
+            "classes": {
+                "Genwi.Plugins.Superscroll": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi.Plugins": 1
+            }
+        },
+        "src/plugins/scroller/Scroller.js": {
+            "name": "src/plugins/scroller/Scroller.js",
+            "modules": {},
+            "classes": {
+                "Genwi.Plugins.Scroller": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi.Plugins": 1
+            }
+        },
+        "src/plugins/socialshare/Socialshare.js": {
+            "name": "src/plugins/socialshare/Socialshare.js",
+            "modules": {},
+            "classes": {
+                "Genwi.Plugins.Socialshare": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi.Plugins": 1
+            }
+        },
+        "src/Helpers.js": {
+            "name": "src/Helpers.js",
+            "modules": {
+                "Genwi": 1
+            },
+            "classes": {
+                "Genwi.Helpers": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi": 1
+            }
+        },
+        "src/Templates.js": {
+            "name": "src/Templates.js",
+            "modules": {},
+            "classes": {
+                "Genwi.Template": 1,
+                "Genwi.Template.AbstractView": 1,
+                "Genwi.Template.Article": 1,
+                "Genwi.Template.Articles": 1,
+                "Genwi.Template.Sections": 1,
+                "Genwi.Template.Toolbar": 1,
+                "Genwi.Template.Favorites": 1,
+                "Genwi.Template.Search": 1,
+                "Genwi.Template.Categories": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi": 1,
+                "Genwi.Template": 1
+            }
+        },
+        "src/Utils.js": {
+            "name": "src/Utils.js",
+            "modules": {},
+            "classes": {
+                "Genwi.Utils": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi": 1
+            }
+        }
+    },
+    "modules": {
+        "Genwi": {
+            "name": "Genwi",
+            "submodules": {},
+            "classes": {
+                "Genwi.Plugins.Imgr": 1,
+                "Genwi.Plugins.Superscroll": 1,
+                "Genwi.Plugins.Scroller": 1,
+                "Genwi.Plugins.Socialshare": 1,
+                "Genwi.Helpers": 1,
+                "Genwi.Template": 1,
+                "Genwi.Template.AbstractView": 1,
+                "Genwi.Template.Article": 1,
+                "Genwi.Template.Articles": 1,
+                "Genwi.Template.Sections": 1,
+                "Genwi.Template.Toolbar": 1,
+                "Genwi.Template.Favorites": 1,
+                "Genwi.Template.Search": 1,
+                "Genwi.Template.Categories": 1,
+                "Genwi.Utils": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Genwi": 1,
+                "Genwi.Template": 1
+            },
+            "tag": "module",
+            "file": "src/Utils.js",
+            "line": 8,
+            "description": "Welcome to the root."
+        }
+    },
+    "classes": {
+        "Genwi.Plugins.Imgr": {
+            "name": "Genwi.Plugins.Imgr",
+            "shortname": "Genwi.Plugins.Imgr",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Plugins",
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 1,
+            "description": "This plugin is used to load images as the scrolls or the dom element moves.\nWhen the images are on screen then they will be triggered to load.\nThis also takes care of showing a loader till the images are not loaded.\n\nUsage is pretty simple -\n\n1.Every image tag in html has to follow this syntax\n\nimg src=\"\" data-src=\"imageurl\" class=\"imgr\"\n\n2.At an appropriate place in your code call $(\"outercontainer\").imgr();",
+            "version": "1.0",
+            "author": "agaase"
+        },
+        "Genwi.Plugins.Superscroll": {
+            "name": "Genwi.Plugins.Superscroll",
+            "shortname": "Genwi.Plugins.Superscroll",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Plugins",
+            "file": "src/plugins/incscroll/Superscroll.js",
+            "line": 4,
+            "description": "This is a simple incremental scroller which uses the normal window scroll\nto trigger an action when the user reaches bottom of the page.",
+            "version": "1.0",
+            "author": "agaase"
+        },
+        "Genwi.Plugins.Scroller": {
+            "name": "Genwi.Plugins.Scroller",
+            "shortname": "Genwi.Plugins.Scroller",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Plugins",
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 1,
+            "description": "Scrolling plugin providing the scrolling functionality through iScroll with following features\n1:Pull-down refresh.\n2:Pull up incremental load",
+            "version": "1.0",
+            "author": "agaase"
+        },
+        "Genwi.Plugins.Socialshare": {
+            "name": "Genwi.Plugins.Socialshare",
+            "shortname": "Genwi.Plugins.Socialshare",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Plugins",
+            "file": "src/plugins/socialshare/Socialshare.js",
+            "line": 3,
+            "description": "The social share plugin to implement social share functionality across all platforms i.e Android, iOS, HTML5.\nPresently it supports sharing through facebook, twitter, email and pinterest and works for ios(version >= 5), android and html5.",
+            "version": "1.0",
+            "author": "agaase"
+        },
+        "Genwi.Helpers": {
+            "name": "Genwi.Helpers",
+            "shortname": "Genwi.Helpers",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi",
+            "file": "src/Helpers.js",
+            "line": 8,
+            "description": "This is the helpers class object containing all the handlebars helper.\nTo register a specific set of helpers use the following statement.\nGenwi.Helpers.initialise([\"helper1_name\",\"helper2_name\",..,])",
+            "type": "{Object}"
+        },
+        "Genwi.Template": {
+            "name": "Genwi.Template",
+            "shortname": "Genwi.Template",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi",
+            "file": "src/Templates.js",
+            "line": 25,
+            "description": "This whole thing is essentially a very stripped down Backbone.js, since our Router and\nto a large extent Model are already taken care of by native. All it does is take Backbone's \nsubclassing and adds in an abstract class that can be used to build better templates."
+        },
+        "Genwi.Template.AbstractView": {
+            "name": "Genwi.Template.AbstractView",
+            "shortname": "Genwi.Template.AbstractView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 77,
+            "description": "This is the base class for any page view. It should be treated as an abstract class and\nnever actually instantiated. To extend this class, do this:\n`new Genwi.Template.AbstractView.extend();`\n\nYou can also pass attributes directly to the extend function that become part\nof your new instance's prototype.\n\n`new Genwi.Template.AbstractView.extend({\n\tonSomeCallback: function(){ },\n\tmy: 'props'\n});`",
+            "is_constructor": 1
+        },
+        "Genwi.Template.Article": {
+            "name": "Genwi.Template.Article",
+            "shortname": "Genwi.Template.Article",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 431,
+            "description": "This is the template for the Article page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Template.Articles": {
+            "name": "Genwi.Template.Articles",
+            "shortname": "Genwi.Template.Articles",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 446,
+            "description": "This is the template for the Articles page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Template.Sections": {
+            "name": "Genwi.Template.Sections",
+            "shortname": "Genwi.Template.Sections",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 459,
+            "description": "This is the template for the sections page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Template.Toolbar": {
+            "name": "Genwi.Template.Toolbar",
+            "shortname": "Genwi.Template.Toolbar",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 471,
+            "description": "This is the template for the toolbar page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Template.Favorites": {
+            "name": "Genwi.Template.Favorites",
+            "shortname": "Genwi.Template.Favorites",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 495,
+            "description": "This is the template for the favorites page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Template.Search": {
+            "name": "Genwi.Template.Search",
+            "shortname": "Genwi.Template.Search",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 508,
+            "description": "This is the template for the search page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Template.Categories": {
+            "name": "Genwi.Template.Categories",
+            "shortname": "Genwi.Template.Categories",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi.Template",
+            "file": "src/Templates.js",
+            "line": 520,
+            "description": "This is the template for the categories page.\nAny further specific implmentations should extend this template.",
+            "extends": "Genwi.Template.AbstractView"
+        },
+        "Genwi.Utils": {
+            "name": "Genwi.Utils",
+            "shortname": "Genwi.Utils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Genwi",
+            "namespace": "Genwi",
+            "file": "src/Utils.js",
+            "line": 8,
+            "type": "{Object}"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 20,
+            "description": "The event to be handled which will trigger the check if the element is on screen.",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 24,
+            "description": "The class to denote that an element has to be included in the imgr process.",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 29,
+            "description": "The class to denote that image is loaded for the element.",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 34,
+            "description": "The class which denotes that process of checking is currently running for that element.",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 39,
+            "description": "The html for the css loader. Any styling should be done on class- cssloader.",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 53,
+            "description": "Binds a touch/scroll event and keeps checking for all the images whether they are loaded or not.",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 100,
+            "description": "Checks for each element whether its loaded or not.",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 120,
+            "description": "Checks whether the element is on screen or not.",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 138,
+            "description": "When the image is loaded this sets the src attr and shows the image",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/imgr/Imgr.js",
+            "line": 158,
+            "description": "This triggers the image load when the image is on screen.",
+            "class": "Genwi.Plugins.Imgr",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/incscroll/Superscroll.js",
+            "line": 97,
+            "description": "Remove any further checking for the scroll reaching the bottom position.",
+            "itemtype": "method",
+            "name": "unbindScroll",
+            "return": {
+                "description": "",
+                "type": "[type]"
+            },
+            "class": "Genwi.Plugins.Superscroll",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/incscroll/Superscroll.js",
+            "line": 119,
+            "description": "Setting the parameters for this plugin.\nCalled when initialise is called.",
+            "itemtype": "method",
+            "name": "setParams",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Parameters to be set.See initialise for details.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Genwi.Plugins.Superscroll",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/incscroll/Superscroll.js",
+            "line": 141,
+            "description": "Call this function to initialise scrolling.\nFollowing options are to be set\n1.totalRecords:(optional,default-100) Total number of records present.\n2.maxRecords: (optional,default 100) Max number of records to be fetched.\n2.setcount: (optional,default 20) the number of items that will be fetched on next fetch.\n3.recordsLoaded: (required) Records already loaded.\n4.callbackFn: (optional, default implementation present) The function to be executed when the scroll reaches bottom of the container.\n5.loadingMessage: (optional-default is the css loader) loading message to display",
+            "itemtype": "method",
+            "name": "superScroll",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "- Object containing the configuration options",
+                    "type": "Object"
+                }
+            ],
+            "class": "Genwi.Plugins.Superscroll",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 12,
+            "description": "Total records that are present.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 18,
+            "description": "The records that are already loaded.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 23,
+            "description": "Maximum records to fetch.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 28,
+            "description": "The count of records to be fetched the next time.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 33,
+            "description": "The params passed at the time of initialising.",
+            "type": "{Object}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 38,
+            "description": "Object containing the info for the device the app is presently running in.",
+            "type": "{Object}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 43,
+            "description": "The jquery object for the scrollable container.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 48,
+            "description": "The jquery object for the outer container of the scrollable area.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 53,
+            "description": "The iscroll element created.",
+            "type": "{[type]}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 58,
+            "description": "The default message to be displayed to trigger pull down refresh.",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 63,
+            "description": "The pull up callback function executed when pull up action is triggered.",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 67,
+            "description": "The pull down callback function executed when pull down action is triggered.",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 71,
+            "description": "The message to be displayed when we pull up action is triggered",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 76,
+            "description": "The message to display when the app is getting refreshed.",
+            "type": "{String}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 82,
+            "description": "Posts to load on next incremental fetch.",
+            "type": "{number}",
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 282,
+            "description": "Call this function to initialise scrolling.\nThe following option can be set while initialising the scroll.\n\n  1.enablePullUp: True to implement pull up incremental scroll.(Default false) \n  \n  2.enablePullDown: True to implement pull down incremental scroll.(Default false) \n  \n  3.loadedRecords: Records already loaded.(Required if enablePullUp is true) \n  \n  4.totalRecords: Total records that are present.(Required if enablePullUp is true)\n  \n  5.setcount: Number of records to fetch on next incremental count.(Default 20)\n  \n  6.maxRecords: Maximum records to fetch from server.(Default 100)\n  \n  7.pullDownCallBack: Function to execute when pull down action is called.(Default implementaion exists)\n  \n  8.pullUpCallback: Function to execute when pull up action is called.(Default implementation exists.If passed then 3&4 are not necessary)\n  \n  9.contextId: The id of the context or the parent.(Optional)",
+            "itemtype": "method",
+            "name": "initialise",
+            "params": [
+                {
+                    "name": "rootContainerId",
+                    "description": "Id of the container where scroll is applied",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Object containing the configurational options.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/scroller/Scroller.js",
+            "line": 313,
+            "description": "Get the iscroll element which is initialised.",
+            "itemtype": "method",
+            "name": "getScrollElement",
+            "return": {
+                "description": "- The iscroll element.",
+                "type": "Object"
+            },
+            "class": "Genwi.Plugins.Scroller",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/socialshare/Socialshare.js",
+            "line": 188,
+            "description": "Toggles the social share menu.\nFollowing configurational parameters can be passed in options object.\n\n  1. animation - slide|fade (default is fade)\n  2. animationTime - the time in milliseconds for which animation is to run (default 500)\n  3. autoHide - true/false- Whether to autoHide the share window when user clicks outside. (default false)",
+            "itemtype": "method",
+            "name": "toggleShareMenu",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "The object containing the configuration properties.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Genwi.Plugins.Socialshare",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/socialshare/Socialshare.js",
+            "line": 202,
+            "description": "Sets the share data.\nFollowing properties can be set for the object passed.\n\n  1. msg - The default message/email body for sharing. Used when custom field is not passed. \n  2. link - The default page url for sharing. Used when custom field is not passed.\n  3. image - The default image url for sharing. Used when custom field is not passed.\n  4. twShareMsg - (Optional) The custom message to be shared on twitter. \n  5. twShareLink - (Optional) The custom page url to be shared on twitter. \n  6. twImage - (Optional) The custom image url to be shared in twitter. \n  7. emailSubject - (Optional-default is blank) The email subject.\n  8. emailBody - (Optional)The email body content.\n  9. emailLink - (Optional) The custom page url to be shared via email.\n  10. emailImg - (Optional) The image that is appended to email body. \n  11. pinterestImg - (Optional) The image to be shared on pinterest.\n  12. fbShareMsg - (Optional) The custom message to be shared on facebook\n  13. fbShareLink - (Optional) The custom page url to be shared on facebook. \n  14. fbImage - (Optional) The custom image url to be shared on facebook. \n  15. itemid - The id of the article or a unique identifier.",
+            "itemtype": "method",
+            "name": "setShareData",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "The data to be shared containing all the properties.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Genwi.Plugins.Socialshare",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/plugins/socialshare/Socialshare.js",
+            "line": 227,
+            "description": "Gets the data that is currently being used to set share content.",
+            "itemtype": "method",
+            "name": "getShareData",
+            "return": {
+                "description": "data The data object.",
+                "type": "Object"
+            },
+            "class": "Genwi.Plugins.Socialshare",
+            "namespace": "Genwi.Plugins"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 17,
+            "description": "Helper function to return the lowercase value for a string.",
+            "itemtype": "method",
+            "name": "lowercase",
+            "return": {
+                "description": "the lowercase value of the value.",
+                "type": "[string]"
+            },
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 29,
+            "description": "Helper function to return the lowercase value for a variable.",
+            "itemtype": "method",
+            "name": "uppercase",
+            "return": {
+                "description": "the uppercase string.",
+                "type": "[string]"
+            },
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 40,
+            "description": "This is a simple helper to get the substring for a string.\nWorks similar to javascript string function.",
+            "itemtype": "method",
+            "name": "substring",
+            "return": {
+                "description": "[The result of substring operation.]",
+                "type": "[string]"
+            },
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 52,
+            "description": "Return the different fields of time that can be arranged to get date in any format.\nUse following fields to map different parts of the date.\ndate - The present date in number. e.g 29\nday - Day in words e.g monday\nmonth_num - The month in number. e.g 11\nmonth -  Month in words e.g January\nyear - Year in number. e.g 2011\nhour - Hours in 12 hr format.\nmin - Minutes.\nsec - Seconds.\nclock - AM/PM.\nsup, - st/nd/th/rd to represent the date. e.g 1st.",
+            "itemtype": "method",
+            "name": "datefields",
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 128,
+            "description": "This is a simple helper to split a string using a seperator \nand then apply the array to the template.",
+            "itemtype": "method",
+            "name": "split",
+            "return": {
+                "description": "The compiled html.",
+                "type": "Htmlstring"
+            },
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 147,
+            "description": "Strips a text from its html formatting. Uses the jquery function to do so. \nWe also wrap the text here to allow some simple string be in the argument.",
+            "itemtype": "method",
+            "name": "rawtext",
+            "return": {
+                "description": "The raw string without any html tags.",
+                "type": "[htmltext]"
+            },
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 159,
+            "description": "This is a helper function to iterate over a an array for a particular subset.",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "array object",
+                    "type": "[object]"
+                },
+                {
+                    "name": "The",
+                    "description": "start position",
+                    "type": "[number]"
+                },
+                {
+                    "name": "the",
+                    "description": "number by which the length should be shortened to",
+                    "type": "[number]"
+                },
+                {
+                    "name": "The",
+                    "description": "context which has the template to apply",
+                    "type": "[object]"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "[htmltext]"
+            },
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 185,
+            "description": "This helper compares two value depending on the operator type passed. \nIf the result is true applies the template inside compare otherwise applies the else part.",
+            "itemtype": "method",
+            "name": "compare",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "left value to compare.",
+                    "type": "Object"
+                },
+                {
+                    "name": "The",
+                    "description": "right hand side value to compare.",
+                    "type": "Object"
+                },
+                {
+                    "name": "type",
+                    "description": "The operator type - eq or neq.",
+                    "type": "String"
+                }
+            ],
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Helpers.js",
+            "line": 209,
+            "description": "Initialises the helper using the list of helpers passed.\nPass an empty array or no argument if you want all the helpers to be registered.",
+            "itemtype": "method",
+            "name": "initialise",
+            "params": [
+                {
+                    "name": "helpers-",
+                    "description": "Comma seperated list of the name of the helpers.",
+                    "type": "[array]"
+                }
+            ],
+            "class": "Genwi.Helpers",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 10,
+            "description": "A global constants object to define any constants.\nAny constants should not be directly hardcoded as per requirements but defined\nhere first so that we have maintainable code.",
+            "type": "{Object}",
+            "class": "Genwi.Template",
+            "module": "Genwi"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 105,
+            "description": "This represent the data that would be binded to the corresponding html template.",
+            "type": "{Object}",
+            "itemtype": "property",
+            "name": "model",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 112,
+            "description": "True if running in iOS.",
+            "itemtype": "property",
+            "name": "isIOS",
+            "type": "{boolean}",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 119,
+            "description": "True if runnning in android.",
+            "itemtype": "property",
+            "name": "isAndroid",
+            "type": "{boolean}",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 126,
+            "description": "True if runnning in Ipad.",
+            "itemtype": "property",
+            "name": "isIpad",
+            "type": "{boolean}",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 133,
+            "description": "True if runnning in Iphone.",
+            "itemtype": "property",
+            "name": "isIphone",
+            "type": "{boolean}",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 140,
+            "description": "True if its a native app and not html5",
+            "type": "{boolean}",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 146,
+            "description": "True if runnning in Android smart phone.",
+            "type": "{boolean}",
+            "itemtype": "property",
+            "name": "isAndroidSmartPhone",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 153,
+            "description": "True if runnning in Android Tablet.",
+            "type": "{Boolean}",
+            "itemtype": "property",
+            "name": "isAndroidTablet",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 160,
+            "description": "CSS selector for this view's template",
+            "itemtype": "property",
+            "name": "rootTemplateId",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 166,
+            "description": "CSS selector for this view's root container",
+            "itemtype": "property",
+            "name": "el",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 171,
+            "description": "Cached jQuery selector for this view's root container",
+            "itemtype": "property",
+            "name": "elOb",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 177,
+            "description": "Sets the variable to identify the running environment.",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 196,
+            "description": "This is the starting point for client rendering.\nWraps a sequence of calls which perform the exact logical functions.\nOverride this only in the case of very specialised requirement which is\nnot solved by overriding other functions.",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "context",
+                    "description": "The DOM element under which the template layout will resides.",
+                    "type": "[object]"
+                }
+            ],
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 215,
+            "description": "Prepares the data which will be binded to the template as defined in the html file.\nOverride this if the data available through this default implementation does not cater to your needs.",
+            "itemtype": "method",
+            "name": "buildModel",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 234,
+            "description": "Any miscellaneous task before actually drawing the page should be carried out here.\nA common use case is creating some DOM element dynamically.",
+            "itemtype": "method",
+            "name": "onDraw",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 241,
+            "description": "This checks and sets up the dom layout according to how the framework works.\nMissing root elements, configuring html5 context and setting up default native scroll falls under this function presently.",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 279,
+            "description": "Binds the data to the inline template in the html file.\nOverride this if data has to be binded in a custom way.",
+            "itemtype": "method",
+            "name": "draw",
+            "params": [
+                {
+                    "name": "inc",
+                    "description": "True if the data has to be appended to the root DOM.\n                       Default is false.",
+                    "type": "Booleab"
+                }
+            ],
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 290,
+            "description": "This function is called by native at various stages of a running app.",
+            "params": [
+                {
+                    "name": "response",
+                    "description": "The data passed from native.",
+                    "type": "String/json string"
+                }
+            ],
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 308,
+            "description": "Called when a page is loaded on the client device fresh from the server.\nAny post-load event or miscellaneous task should be carried out here.",
+            "itemtype": "method",
+            "name": "onPageLoaded",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 315,
+            "description": "Called when the page is loaded from cache on the client.\nA common use case is when you click back button.",
+            "itemtype": "method",
+            "name": "onPageLoadedFromCache",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 322,
+            "description": "Called when native sends some response to the client in return of some request made.\nA common use case is return of posts when client raises appsurl/fetch request.",
+            "itemtype": "method",
+            "name": "onResponseReceived",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 329,
+            "description": "This is called to get the current page context as required by toolbar.",
+            "return": {
+                "description": "json string denoting the data."
+            },
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 342,
+            "description": "This method prepares the actual context which can be app specific.",
+            "itemtype": "method",
+            "name": "pageContext",
+            "return": {
+                "description": "object with all the data to be passed to be set as context."
+            },
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 349,
+            "description": "Wrapper function for onAppUpdate.\nBinds the different system updates with intuitive values.",
+            "params": [
+                {
+                    "name": "resp",
+                    "description": "The response from the native specifying different type of updates happened.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 365,
+            "description": "This function is called when the app is updated from background to foreground.\nOverride this function to implement in your app.\nThere are four types of updates that can happen\nand will be passed as an array - ['ads', 'category','content','design']",
+            "itemtype": "method",
+            "name": "onAppUpdate",
+            "params": [
+                {
+                    "name": "updates",
+                    "description": "- All updated passed as an array.",
+                    "type": "Array"
+                }
+            ],
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 375,
+            "description": "This function tells the native that client has finished loading after which\nthe native platform actually shows the page to the user.",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 389,
+            "description": "Binds the orientation change event to the app.",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 419,
+            "description": "This is called when orientation is changed for the device.\nImplement this to handle any orientation change usecases.",
+            "itemtype": "method",
+            "name": "onOrientationChange",
+            "class": "Genwi.Template.AbstractView",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 482,
+            "description": "This method is called on every article,articles,categories,favorite and search page.\nThe data passed from getcontext will be transferred here as json data which can be used to\nfor further toolbar modification.",
+            "itemtype": "method",
+            "name": "setContext",
+            "params": [
+                {
+                    "name": "resp",
+                    "description": "The data returned from getContext of the particular page.",
+                    "type": "String/json"
+                }
+            ],
+            "class": "Genwi.Template.Toolbar",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 544,
+            "description": "The global options object.\nPlease initialise it in your html template.",
+            "class": "Genwi.Template.Categories",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 550,
+            "description": "Use this function to register your html template with the javascript prototype.\nIt can be one of the above prototype or a new one which extends one of the above.\nMake sure the new prototype\n1.Has the same name as of the file.\n2.Uses Namespace Genwi.Template\ne.g: file-articles_app.js; prototype-Genwi.Template.articles_app",
+            "params": [
+                {
+                    "name": "templateName",
+                    "description": "[The name of the html template.]",
+                    "type": "[string]"
+                },
+                {
+                    "name": "jsPrototype",
+                    "description": "[The name of the prototype.e.g articles_app]",
+                    "type": "[string]"
+                }
+            ],
+            "class": "Genwi.Template.Categories",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Templates.js",
+            "line": 569,
+            "description": "Use this function to register settings of your template.\nPresently valid only for toolbar and sections template.",
+            "class": "Genwi.Template.Categories",
+            "module": "Genwi",
+            "namespace": "Genwi.Template"
+        },
+        {
+            "file": "src/Utils.js",
+            "line": 15,
+            "description": "This utility is to load the images after the layout is done.\nImage tags or div tag(background image) should fullfill following requirement\n\n  1. data-src attribute set to url of the image\n\n  e.g Genwi.Utils.lazyLoad($(\".lazyElements\"));",
+            "itemtype": "method",
+            "name": "lazyLoad",
+            "params": [
+                {
+                    "name": "lazyElements",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "Genwi.Utils",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        },
+        {
+            "file": "src/Utils.js",
+            "line": 65,
+            "description": "Fills up a basic handlebar template.",
+            "itemtype": "method",
+            "name": "bindTmplData",
+            "params": [
+                {
+                    "name": "templateId",
+                    "description": "-  The Id of the handlebar template",
+                    "type": "[string]"
+                },
+                {
+                    "name": "context",
+                    "description": "- The context to fill up the template.",
+                    "type": "[string(json)]"
+                },
+                {
+                    "name": "elementToAppend",
+                    "description": "- The element where the final layout should be appended to.",
+                    "type": "[string(jquery-selector)]"
+                },
+                {
+                    "name": "append",
+                    "description": "[Append original contents. True to append, false otherwise.]",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "Genwi.Utils",
+            "module": "Genwi",
+            "namespace": "Genwi"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: version",
+            "line": " src/plugins/imgr/Imgr.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/plugins/incscroll/Superscroll.js:4"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/plugins/scroller/Scroller.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/plugins/socialshare/Socialshare.js:3"
+        },
+        {
+            "message": "Missing item type\nThe event to be handled which will trigger the check if the element is on screen.",
+            "line": " src/plugins/imgr/Imgr.js:20"
+        },
+        {
+            "message": "Missing item type\nThe class to denote that an element has to be included in the imgr process.",
+            "line": " src/plugins/imgr/Imgr.js:24"
+        },
+        {
+            "message": "Missing item type\nThe class to denote that image is loaded for the element.",
+            "line": " src/plugins/imgr/Imgr.js:29"
+        },
+        {
+            "message": "Missing item type\nThe class which denotes that process of checking is currently running for that element.",
+            "line": " src/plugins/imgr/Imgr.js:34"
+        },
+        {
+            "message": "Missing item type\nThe html for the css loader. Any styling should be done on class- cssloader.",
+            "line": " src/plugins/imgr/Imgr.js:39"
+        },
+        {
+            "message": "Missing item type\nBinds a touch/scroll event and keeps checking for all the images whether they are loaded or not.",
+            "line": " src/plugins/imgr/Imgr.js:53"
+        },
+        {
+            "message": "Missing item type\nChecks for each element whether its loaded or not.",
+            "line": " src/plugins/imgr/Imgr.js:100"
+        },
+        {
+            "message": "Missing item type\nChecks whether the element is on screen or not.",
+            "line": " src/plugins/imgr/Imgr.js:120"
+        },
+        {
+            "message": "Missing item type\nWhen the image is loaded this sets the src attr and shows the image",
+            "line": " src/plugins/imgr/Imgr.js:138"
+        },
+        {
+            "message": "Missing item type\nThis triggers the image load when the image is on screen.",
+            "line": " src/plugins/imgr/Imgr.js:158"
+        },
+        {
+            "message": "Missing item type\nTotal records that are present.",
+            "line": " src/plugins/scroller/Scroller.js:12"
+        },
+        {
+            "message": "Missing item type\nThe records that are already loaded.",
+            "line": " src/plugins/scroller/Scroller.js:18"
+        },
+        {
+            "message": "Missing item type\nMaximum records to fetch.",
+            "line": " src/plugins/scroller/Scroller.js:23"
+        },
+        {
+            "message": "Missing item type\nThe count of records to be fetched the next time.",
+            "line": " src/plugins/scroller/Scroller.js:28"
+        },
+        {
+            "message": "Missing item type\nThe params passed at the time of initialising.",
+            "line": " src/plugins/scroller/Scroller.js:33"
+        },
+        {
+            "message": "Missing item type\nObject containing the info for the device the app is presently running in.",
+            "line": " src/plugins/scroller/Scroller.js:38"
+        },
+        {
+            "message": "Missing item type\nThe jquery object for the scrollable container.",
+            "line": " src/plugins/scroller/Scroller.js:43"
+        },
+        {
+            "message": "Missing item type\nThe jquery object for the outer container of the scrollable area.",
+            "line": " src/plugins/scroller/Scroller.js:48"
+        },
+        {
+            "message": "Missing item type\nThe iscroll element created.",
+            "line": " src/plugins/scroller/Scroller.js:53"
+        },
+        {
+            "message": "Missing item type\nThe default message to be displayed to trigger pull down refresh.",
+            "line": " src/plugins/scroller/Scroller.js:58"
+        },
+        {
+            "message": "Missing item type\nThe pull up callback function executed when pull up action is triggered.",
+            "line": " src/plugins/scroller/Scroller.js:63"
+        },
+        {
+            "message": "Missing item type\nThe pull down callback function executed when pull down action is triggered.",
+            "line": " src/plugins/scroller/Scroller.js:67"
+        },
+        {
+            "message": "Missing item type\nThe message to be displayed when we pull up action is triggered",
+            "line": " src/plugins/scroller/Scroller.js:71"
+        },
+        {
+            "message": "Missing item type\nThe message to display when the app is getting refreshed.",
+            "line": " src/plugins/scroller/Scroller.js:76"
+        },
+        {
+            "message": "Missing item type\nPosts to load on next incremental fetch.",
+            "line": " src/plugins/scroller/Scroller.js:82"
+        },
+        {
+            "message": "Missing item type\nThis is a helper function to iterate over a an array for a particular subset.",
+            "line": " src/Helpers.js:159"
+        },
+        {
+            "message": "Missing item type\nA global constants object to define any constants.\nAny constants should not be directly hardcoded as per requirements but defined\nhere first so that we have maintainable code.",
+            "line": " src/Templates.js:10"
+        },
+        {
+            "message": "Missing item type\nTrue if its a native app and not html5",
+            "line": " src/Templates.js:140"
+        },
+        {
+            "message": "Missing item type\nSets the variable to identify the running environment.",
+            "line": " src/Templates.js:177"
+        },
+        {
+            "message": "Missing item type\nThis checks and sets up the dom layout according to how the framework works.\nMissing root elements, configuring html5 context and setting up default native scroll falls under this function presently.",
+            "line": " src/Templates.js:241"
+        },
+        {
+            "message": "Missing item type\nThis function is called by native at various stages of a running app.",
+            "line": " src/Templates.js:290"
+        },
+        {
+            "message": "Missing item type\nThis is called to get the current page context as required by toolbar.",
+            "line": " src/Templates.js:329"
+        },
+        {
+            "message": "Missing item type\nWrapper function for onAppUpdate.\nBinds the different system updates with intuitive values.",
+            "line": " src/Templates.js:349"
+        },
+        {
+            "message": "Missing item type\nThis function tells the native that client has finished loading after which\nthe native platform actually shows the page to the user.",
+            "line": " src/Templates.js:375"
+        },
+        {
+            "message": "Missing item type\nBinds the orientation change event to the app.",
+            "line": " src/Templates.js:389"
+        },
+        {
+            "message": "Missing item type\nThe global options object.\nPlease initialise it in your html template.",
+            "line": " src/Templates.js:544"
+        },
+        {
+            "message": "Missing item type\nUse this function to register your html template with the javascript prototype.\nIt can be one of the above prototype or a new one which extends one of the above.\nMake sure the new prototype\n1.Has the same name as of the file.\n2.Uses Namespace Genwi.Template\ne.g: file-articles_app.js; prototype-Genwi.Template.articles_app",
+            "line": " src/Templates.js:550"
+        },
+        {
+            "message": "Missing item type\nUse this function to register settings of your template.\nPresently valid only for toolbar and sections template.",
+            "line": " src/Templates.js:569"
+        }
+    ]
+}

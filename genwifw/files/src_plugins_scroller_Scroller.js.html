@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src&#x2F;plugins&#x2F;scroller&#x2F;Scroller.js - genwi-template-framework</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.8.0pr2&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="..&#x2F;assets/favicon.png">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;combo?3.8.0pr2&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title="genwi-template-framework"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Genwi.Helpers.html">Genwi.Helpers</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Imgr.html">Genwi.Plugins.Imgr</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Scroller.html">Genwi.Plugins.Scroller</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Socialshare.html">Genwi.Plugins.Socialshare</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Plugins.Superscroll.html">Genwi.Plugins.Superscroll</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.html">Genwi.Template</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.AbstractView.html">Genwi.Template.AbstractView</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Article.html">Genwi.Template.Article</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Articles.html">Genwi.Template.Articles</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Categories.html">Genwi.Template.Categories</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Favorites.html">Genwi.Template.Favorites</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Search.html">Genwi.Template.Search</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Sections.html">Genwi.Template.Sections</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Template.Toolbar.html">Genwi.Template.Toolbar</a></li>
+            
+                <li><a href="..&#x2F;classes/Genwi.Utils.html">Genwi.Utils</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/Genwi.html">Genwi</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src&#x2F;plugins&#x2F;scroller&#x2F;Scroller.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;**
+ * Scrolling plugin providing the scrolling functionality through iScroll with following features
+ * 1:Pull-down refresh.
+ * 2:Pull up incremental load
+ * @class Scroller
+ * @namespace Genwi.Plugins
+ * @version 1.0
+ * @author agaase
+ *&#x2F;
+Genwi.Plugins.Scroller = (function()  {
+
+    &#x2F;**
+     * Total records that are present.
+     * @type {[type]}
+     *&#x2F;
+    var totalRecords = null;
+
+    &#x2F;**
+     * The records that are already loaded.
+     * @type {[type]}
+     *&#x2F;
+    var loadedRecords = null;
+    &#x2F;**
+     * Maximum records to fetch.
+     * @type {[type]}
+     *&#x2F;
+    var maxRecords = null;
+    &#x2F;**
+     * The count of records to be fetched the next time.
+     * @type {[type]}
+     *&#x2F;
+    var setcount = null;
+    &#x2F;**
+     * The params passed at the time of initialising.
+     * @type {Object}
+     *&#x2F;
+    var params ={};
+    &#x2F;**
+     * Object containing the info for the device the app is presently running in.
+     * @type {Object}
+     *&#x2F;
+    var device = {};
+    &#x2F;**
+     * The jquery object for the scrollable container.
+     * @type {[type]}
+     *&#x2F;
+    var contentEl = null;
+    &#x2F;**
+     * The jquery object for the outer container of the scrollable area.
+     * @type {[type]}
+     *&#x2F;
+    var wrapperEl = null;
+    &#x2F;**
+     * The iscroll element created.
+     * @type {[type]}
+     *&#x2F;
+    var scrollElement = null;
+    &#x2F;**
+     * The default message to be displayed to trigger pull down refresh.
+     * @type {String}
+     *&#x2F;
+    var defaultPullDownMsg = &quot;Pull down to refresh...&quot;;
+    &#x2F;**
+     * The pull up callback function executed when pull up action is triggered.
+     *&#x2F;
+    var pullUpCallback;
+    &#x2F;**
+     * The pull down callback function executed when pull down action is triggered.
+     *&#x2F;
+    var pullDownCallBack;
+    &#x2F;**
+     * The message to be displayed when we pull up action is triggered
+     * @type {String}
+     *&#x2F;
+    var defaultPullUpMsg = &quot;Loading...&quot;;
+    &#x2F;**
+     * The message to display when the app is getting refreshed.
+     * @type {String}
+     *&#x2F;
+    var refreshMessage = &quot;Updating design..&quot;;
+
+    &#x2F;**
+     * Posts to load on next incremental fetch.
+     * @type {number}
+     *&#x2F;
+    var postsToLoad;
+
+    var contextId;
+
+    var log = function(msg){
+        console.log(&quot;scroller_gw:&quot;+msg);
+    };
+
+    var getDeviceEnv = function(){
+        var ua = navigator.userAgent.toLowerCase();
+        device.isAndroid = &#x2F;android&#x2F;i.test(ua);
+        device.isHTML5 = pageName === &quot;html5&quot; ? true:false;
+    };
+
+    var loadNext = function() {
+        var toHide = false;
+        var max= totalRecords &gt;maxRecords ? maxRecords : totalRecords;
+        if(loadedRecords&lt;max){
+            postsToLoad = setcount;
+            if((loadedRecords+setcount)&gt;max){
+                postsToLoad = max - loadedRecords;
+            }
+            loadedRecords +=postsToLoad;
+            setTimeout(function(){
+                oIP.navigate(&quot;http:&#x2F;&#x2F;appsurl&#x2F;fetch?size=&quot;+postsToLoad);
+            },500);
+        }
+        else{
+            toHide=true;
+        }
+        return toHide;
+    };
+
+    var setUpDom = function(contentId){
+        var contentDiv = &quot;#&quot;+contentId;
+        var wrapperId = contentId + &quot;_wrapper&quot;;
+        var contSel, wrapSel;
+        if(contextId){
+            contSel = &quot;#&quot;+contextId +&quot; #&quot;+contentId;
+            contentEl= $(contSel);
+            wrapSel = &quot;#&quot;+contextId +&quot; #&quot;+wrapperId;
+            wrapperEl=$(wrapSel);
+        }
+        else{
+            contSel = &quot;#&quot;+contentId;
+            contentEl= $(contSel);
+            wrapSel = &quot;#&quot;+wrapperId;
+            wrapperEl=$(wrapSel);
+        }
+
+        if(wrapperEl.length===0){
+            contentEl.wrap(&quot;&lt;div id=&#x27;&quot;+wrapperId+&quot;&#x27;&gt;&lt;&#x2F;div&gt;&quot;);
+            wrapperEl=$(wrapSel);
+        }
+        wrapperEl.height(window.innerHeight);
+        contentEl.css(&quot;height&quot;, &quot;auto&quot;).css(&quot;padding-bottom&quot;,&quot;100px&quot;);
+        log(&quot;the context id is :  &quot;+contextId);
+        if(pageName===&quot;html5&quot;){
+            document.getElementById(contextId).addEventListener(&quot;touchmove&quot;,function(event){
+                event.preventDefault(); 
+            });
+        }
+    };
+    var checkAndSetArguments = function(rootContainerId,options){
+        params=options;
+        if(!rootContainerId || !params || (params.enablePullUp &amp;&amp; !params.pullUpCallback &amp;&amp; (!params.totalRecords || !params.loadedRecords) ) ) {
+            throw &quot;scroller_gw.js:72:Invalid or no arguments passed.&quot;;
+        }     
+        try{
+            loadedRecords = parseInt(params.loadedRecords || 20,10);
+            totalRecords = parseInt(params.totalRecords || 100,10);
+            setcount = parseInt(params.setcount || 20,10);
+            maxRecords = parseInt(params.maxRecords || 100,10);
+        }catch(err){
+            throw &quot;scroller_gw.js:160:Invalid arguments passed.&quot;;
+        }
+        pullDownCallBack = params.pullDownCallBack || pullDownAction;
+        pullUpCallback = params.pullUpCallback || pullUpAction;
+        contextId = params.contextId || undefined;
+    };
+
+    var init = function(rootContainerId,options){ 
+        getDeviceEnv();
+        checkAndSetArguments(rootContainerId,options);
+        setUpDom(rootContainerId);
+        initIScroll();
+        if(totalRecords === loadedRecords || maxRecords &lt;= loadedRecords){
+                hidePullUp();
+        }
+    };
+    var pullDownAction = function() {
+            oIP.navigate(&#x27;http:&#x2F;&#x2F;appsurl&#x2F;refresh?type=&#x27; + (params[&quot;refreshType&quot;] || 1)+&quot;&amp;msg=&quot; + encodeURIComponent(refreshMessage)+ &#x27;&amp;cb=&#x27; + (params[&quot;pullDowncallbackFn&quot;] || &quot;refresh&quot;));     
+        };
+    var pullUpAction = function(pullUpEl) {
+            if(loadNext()){
+                hidePullUp();
+            }
+            else{
+                &#x2F;&#x2F;Right now iam checking if the height is increased to find if 
+                &#x2F;&#x2F;the elements are loaded. Is there a better way?.
+                var timesChecked = 0;
+                var oldh = contentEl.height();
+                var id = setInterval(function(){
+                            timesChecked++;
+                            if(contentEl.height()&gt;oldh){
+                                contentEl.append(pullUpEl);
+                                pullUpEl.removeClass(&quot;loadingMore&quot;);
+                                clearInterval(id);
+                            }else if(timesChecked&gt;100){
+                                &#x2F;&#x2F;Checked enough times.Lets raise a request again.
+                                pullUpEl.removeClass(&quot;loadingMore&quot;);
+                                loadedRecords-=postsToLoad;
+                                clearInterval(id);
+                            }
+                         },200);
+            }         
+        };
+    var hidePullUp = function() {
+            $(scrollElement.scroller).find(&quot;#pullUp&quot;).hide();
+        };
+    var refresh = function() {
+            scrollElement.refresh();
+        };
+    var initIScroll = function(){
+            var pullDownhtml = &#x27;&lt;div class=&quot;pullDown _postDescCustomTheme&quot; id=&quot;pullDown&quot;&gt;&#x27;+
+            &#x27;&lt;span class=&quot;pullDownIcon&quot;&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;pullDownLabel&quot;&gt;&lt;span class=&quot;pullDownDefLabel&quot;&gt;&#x27;+(params.pullDownMsg||defaultPullDownMsg)+&#x27;&lt;&#x2F;span&gt;&#x27;+
+            &#x27;&lt;br&gt;&lt;span class=&quot;pullDownTimeLabel&quot; style=&quot; font-size: 11px; &quot;&gt;Last Updated: &lt;span class=&quot;dateTimeLabel&quot;&gt;&#x27;+
+            oIP.formatDate(new Date()) + &#x27;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&#x27; + &#x27;&lt;&#x2F;div&gt;&#x27;;
+
+            var pullUphtml = &#x27;&lt;div class=&quot;pullUp _postDescCustomTheme&quot; id=&quot;pullUp&quot;&gt;&#x27;+
+            &#x27;&lt;div class=&quot;cssloader&quot;&#x2F;&gt;&#x27;+
+            &#x27;&lt;span class=&quot;loadSpan&quot;&gt;&#x27;+(params.pullUpMsg || defaultPullUpMsg)+&#x27;&lt;&#x2F;span&gt;&#x27; + &#x27;&lt;&#x2F;div&gt;&#x27;;
+
+            if (params[&quot;enablePullDown&quot;]) {
+                contentEl.prepend(pullDownhtml);
+            }
+            if (params[&quot;enablePullUp&quot;]) {
+                contentEl.append(pullUphtml);
+                contentEl.css(&quot;position&quot;,&quot;relative&quot;);
+                $(&quot;#pullup&quot;).css(&quot;position&quot;,&quot;relative&quot;);
+            }
+        
+            var pullDownEl = $(&#x27;#pullDown&#x27;, wrapperEl).css({
+                &#x27;padding-top&#x27;: &#x27;0&#x27;
+            });
+            var pullUpEl = $(&#x27;#pullUp&#x27;, wrapperEl);
+            var pullDownOffset = pullDownEl[0] ? pullDownEl[0].offsetHeight : 0;
+            var pullUpOffset = pullUpEl[0] ? pullUpEl[0].offsetHeight : 0;
+        
+            scrollElement = new iScroll(wrapperEl[0], {
+                useTransition : false,
+                vScrollbar : false,
+                topOffset : pullDownOffset,
+                checkDOMChanges : true,    
+                handleClick : !device.isAndroid,            
+                onRefresh : function() {
+                    if (pullDownEl.hasClass(&#x27;loading&#x27;)) {
+                        pullDownEl.removeClass(&#x27;loading&#x27;);
+                        $(&#x27;.pullDownDefLabel&#x27;, pullDownEl).html(
+                            &#x27;Pull down to refresh...&#x27;);
+                    } else if (pullUpEl.hasClass(&#x27;loading&#x27;)) {
+                        pullUpEl.removeClass(&#x27;loading&#x27;);
+                    }
+                },
+                onScrollMove : function() {
+                    if (this.y &gt; 5 &amp;&amp; !pullDownEl.hasClass(&#x27;flip&#x27;)) {
+                        pullDownEl.addClass(&#x27;flip&#x27;);
+                        $(&#x27;.pullDownDefLabel&#x27;, pullDownEl)
+                        .html(&#x27;Release to refresh...&#x27;);
+                        this.minScrollY = 0;
+                    } else if (this.y &lt; 5 &amp;&amp; pullDownEl.hasClass(&#x27;flip&#x27;)) {
+                        pullDownEl.removeClass(&#x27;flip&#x27;);
+                        $(&#x27;.pullDownDefLabel&#x27;, pullDownEl).html(
+                            &#x27;Pull down to refresh...&#x27;);
+                        this.minScrollY = -pullDownOffset;
+                    }
+                },
+                onScrollEnd : function() {
+                     if (pullDownEl.hasClass(&#x27;flip&#x27;)) {
+                        pullDownEl.addClass(&#x27;loading&#x27;);
+                        $(&#x27;.pullDownDefLabel&#x27;).html(&#x27;Loading...&#x27;);
+                        if (pullDownEl.is(&#x27;:visible&#x27;)) {
+                            pullDownAction();
+                            pullDownEl.removeClass(&#x27;flip&#x27;);
+                        }
+                    } else if (this.maxScrollY === this.y) {
+                        if (pullUpEl.is(&#x27;:visible&#x27;) &amp;&amp; !pullUpEl.hasClass(&quot;loadingMore&quot;)) {
+                            pullUpEl.addClass(&quot;loadingMore&quot;);
+                            pullUpAction(pullUpEl);
+                        }
+                    }
+                }
+            });
+            scrollElement.scrollTo(0, 0);
+    };
+    return {
+        &#x2F;**
+         * Call this function to initialise scrolling.
+         * The following option can be set while initialising the scroll.
+         *
+         *   1.enablePullUp: True to implement pull up incremental scroll.(Default false) 
+         *   
+         *   2.enablePullDown: True to implement pull down incremental scroll.(Default false) 
+         *   
+         *   3.loadedRecords: Records already loaded.(Required if enablePullUp is true) 
+         *   
+         *   4.totalRecords: Total records that are present.(Required if enablePullUp is true)
+         *   
+         *   5.setcount: Number of records to fetch on next incremental count.(Default 20)
+         *   
+         *   6.maxRecords: Maximum records to fetch from server.(Default 100)
+         *   
+         *   7.pullDownCallBack: Function to execute when pull down action is called.(Default implementaion exists)
+         *   
+         *   8.pullUpCallback: Function to execute when pull up action is called.(Default implementation exists.If passed then 3&amp;4 are not necessary)
+         *   
+         *   9.contextId: The id of the context or the parent.(Optional)
+         *   
+         * @method initialise
+         * @param  {string}   rootContainerId Id of the container where scroll is applied
+         * @param  {object}   options   Object containing the configurational options.
+         *&#x2F;
+        initialise : function(rootContainerId,options){
+            log(&quot;initialising with arguments:rootContainerId-&quot;+rootContainerId+&quot;,options-&quot;+JSON.stringify(options));
+            init(rootContainerId,options);
+        },
+
+        &#x2F;**
+         * Get the iscroll element which is initialised.
+         * @method getScrollElement
+         * @return {object} - The iscroll element.
+         *&#x2F;
+        getScrollElement : function(){
+            return scrollElement;
+        }
+    };
+})();
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>
