@@ -192,6 +192,38 @@ subclassing and adds in an abstract class that can be used to build better templ
         return child;
     };
 
+
+    &#x2F;**
+     * Use this function to register your html template with the javascript prototype.
+     * @namespace Genwi.Template
+     * @method registerTemplate
+     * @static
+     * @param  {string} templateName [The name of the html template.]
+     * @param  {string} jsPrototype  [The name of the prototype]
+     * @param  {object} options Optional object passed from html which will be available to the prototype.
+     *&#x2F;
+    Genwi.Template.registerTemplate = function(templateName, jsPrototype, options) {
+        window.onload = function() {
+            var jsProt = Genwi.Template[jsPrototype] || window[jsPrototype];
+            if (jsProt) {
+                oIP.register(templateName, jsProt, options);
+            }
+        };
+    };
+
+    &#x2F;**
+     * Use this function to register settings of your template.
+     * Presently valid only for toolbar and sections template.
+     * @method registerSettings
+     * @static
+     * @namespace Genwi.Template
+     *&#x2F;
+    Genwi.Template.registerSettings = function(settingsString) {
+        window.onload = function() {
+            oIP.registerSettings(settingsString);
+        };
+    };
+
     &#x2F;**
 	This is the base class for any page view. It should be treated as an abstract class and
 	never actually instantiated. To extend this class, do this:
@@ -219,6 +251,22 @@ subclassing and adds in an abstract class that can be used to build better templ
     $.extend(AbstractView.prototype, {
 
         constants: Genwi.Constants,
+
+        &#x2F;**
+         * The name of the html template to which this prototype&#x27;s object will be binded to.
+         * See Genwi.Template.registerTemplate
+         * @property templateName
+         * @type {string}
+         *&#x2F;
+        templateName: null,
+
+        &#x2F;**
+         * Optional options object which will be initialised if passed from html template.
+         * See Genwi.Template.registerTemplate
+         * @property options
+         * @type {Object}
+         *&#x2F;
+        options: {},
 
         &#x2F;**
          * This represent the data that would be binded to the corresponding html template.
@@ -657,42 +705,6 @@ subclassing and adds in an abstract class that can be used to build better templ
     Template.Categories = Categories;
 
 }).call(Genwi);
-
-
-&#x2F;**
- * The global options object.
- * Please initialise it in your html template.
- *&#x2F;
-Genwi.Template.options = Genwi.Template.options || {};
-
-&#x2F;**
- * Use this function to register your html template with the javascript prototype.
- * It can be one of the above prototype or a new one which extends one of the above.
- * Make sure the new prototype
- * 1.Has the same name as of the file.
- * 2.Uses Namespace Genwi.Template
- * e.g: file-articles_app.js; prototype-Genwi.Template.articles_app
- * @param  {[string]} templateName [The name of the html template.]
- * @param  {[string]} jsPrototype  [The name of the prototype.e.g articles_app]
- *&#x2F;
-Genwi.Template.registerTemplate = function(templateName, jsPrototype, options) {
-    window.onload = function() {
-        var jsProt = Genwi.Template[jsPrototype];
-        if (jsProt) {
-            oIP.register(templateName, jsProt, options);
-        }
-    };
-};
-
-&#x2F;**
- * Use this function to register settings of your template.
- * Presently valid only for toolbar and sections template.
- *&#x2F;
-Genwi.Template.registerSettings = function(settingsString) {
-    window.onload = function() {
-        oIP.registerSettings(settingsString);
-    };
-};
     </pre>
 </div>
 
