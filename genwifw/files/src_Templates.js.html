@@ -107,8 +107,9 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 &#x2F;**
+ * The root class for the framework. Apart from serving as the root namespace;
+ * it has global methods which serve template specific configuration plus utility.
  * @class Genwi
- * @static
  *&#x2F;
 var Genwi = Genwi || {};
 
@@ -120,7 +121,6 @@ var Genwi = Genwi || {};
  * here first so that we have maintainable code.
  * @type {Object}
  * @namespace Genwi
- * @property Constants
  *&#x2F;
 Genwi.Constants = {
     &quot;updateType&quot;: {

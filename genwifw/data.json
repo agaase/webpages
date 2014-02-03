@@ -77,7 +77,7 @@
             "namespace": "Genwi",
             "file": "src/Templates.js",
             "line": 1,
-            "static": 1
+            "description": "The root class for the framework. Apart from serving as the root namespace;\nit has global methods which serve template specific configuration plus utility."
         },
         "Genwi.Template.AbstractView": {
             "name": "Genwi.Template.AbstractView",
@@ -358,17 +358,15 @@
         },
         {
             "file": "src/Templates.js",
-            "line": 8,
+            "line": 9,
             "class": "Genwi.Genwi",
             "namespace": "Genwi"
         },
         {
             "file": "src/Templates.js",
-            "line": 9,
+            "line": 10,
             "description": "A global constants object to define any constants.\nAny constants should not be directly hardcoded as per requirements but defined\nhere first so that we have maintainable code.",
             "type": "{Object}",
-            "itemtype": "property",
-            "name": "Constants",
             "class": "Genwi.Genwi",
             "namespace": "Genwi"
         },
@@ -775,7 +773,11 @@
         },
         {
             "message": "Missing item type",
-            "line": " src/Templates.js:8"
+            "line": " src/Templates.js:9"
+        },
+        {
+            "message": "Missing item type\nA global constants object to define any constants.\nAny constants should not be directly hardcoded as per requirements but defined\nhere first so that we have maintainable code.",
+            "line": " src/Templates.js:10"
         },
         {
             "message": "Missing item type",
