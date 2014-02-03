@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Genwi.Genwi.html">Genwi.Genwi</a></li>
+            
                 <li><a href="..&#x2F;classes/Genwi.Helpers.html">Genwi.Helpers</a></li>
             
                 <li><a href="..&#x2F;classes/Genwi.Template.html">Genwi.Template</a></li>
@@ -66,8 +68,6 @@
             </ul>
 
             <ul id="api-modules" class="apis modules">
-            
-                <li><a href="..&#x2F;modules/Genwi.html">Genwi</a></li>
             
             </ul>
         </div>
@@ -108,11 +108,6 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-&#x2F;**
-Welcome to the root.
-
-@module Genwi
- *&#x2F;
 var Genwi = Genwi || {};
 
 &#x2F;**
@@ -120,231 +115,220 @@ var Genwi = Genwi || {};
  * To register a specific set of helpers use the following statement.
  * Genwi.Helpers.initialise([&quot;helper1_name&quot;,&quot;helper2_name&quot;,..,])
  * @namespace Genwi
+ * @static
  * @class Helpers
  * @type {Object}
  *&#x2F;
 Genwi.Helpers = {
-	&#x2F;**
-	* Helper function to return the lowercase value for a string.
-	*
-	* @method lowercase
-	* @return {[string]} the lowercase value of the value.
-	*&#x2F;
-	lowercase : function(){
-		Handlebars.registerHelper(&#x27;lowercase&#x27;, function(value) {
-			return value.toLowerCase();
-		});
-	},
+    &#x2F;**
+     * Helper function to return the lowercase value for a string.
+     *
+     * @method lowercase
+     * @return {[string]} the lowercase value of the value.
+     *&#x2F;
+    lowercase: function() {
+        Handlebars.registerHelper(&#x27;lowercase&#x27;, function(value) {
+            return value.toLowerCase();
+        });
+    },
 
-	&#x2F;**
-	* Helper function to return the lowercase value for a variable.
-	* @method uppercase
-	* @return {[string]}  the uppercase string.
-	*&#x2F;
-	uppercase : function(){
-		Handlebars.registerHelper(&#x27;uppercase&#x27;, function(value) {
-			return value.toUpperCase();
-		});
-	},
- 
-	&#x2F;**
-	 * This is a simple helper to get the substring for a string.
-	 * Works similar to javascript string function.
-	 * @method substring
-	 * @return {[string]}  [The result of substring operation.]
-	 *&#x2F;
-	substring : function(){
-			Handlebars.registerHelper(&quot;substring&quot;, function(string, start, end) {
-				return(string.substring(start,end));
-			});
-	},
+    &#x2F;**
+     * Helper function to return the lowercase value for a variable.
+     * @method uppercase
+     * @return {[string]}  the uppercase string.
+     *&#x2F;
+    uppercase: function() {
+        Handlebars.registerHelper(&#x27;uppercase&#x27;, function(value) {
+            return value.toUpperCase();
+        });
+    },
 
-	&#x2F;**
-	 * Return the different fields of time that can be arranged to get date in any format.
-	 * Use following fields to map different parts of the date.
-	 * date - The present date in number. e.g 29
-	 * day - Day in words e.g monday
-	 * month_num - The month in number. e.g 11
-	 * month -  Month in words e.g January
-	 * year - Year in number. e.g 2011
-	 * hour - Hours in 12 hr format.
-	 * min - Minutes.
-	 * sec - Seconds.
-	 * clock - AM&#x2F;PM.
-	 * sup, - st&#x2F;nd&#x2F;th&#x2F;rd to represent the date. e.g 1st.
-	 * @method datefields
-	 *&#x2F;
-	datefields : function(){
-			Handlebars.registerHelper(&quot;datefields&quot;, function(datestring,context){
-				var m_names = new Array(&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;);
-				var d_names = new Array(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;,&quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;);	
-				var date;
-				try{
-					date=new Date(datestring);
-				}
-				catch(err){
-					console.log(&quot;Invalid format for string -&#x27;&quot;+datestring+&quot;&#x27;.Please check&quot;);
-					return &quot;&quot;;
-				}
+    &#x2F;**
+     * This is a simple helper to get the substring for a string.
+     * Works similar to javascript string function.
+     * @method substring
+     * @return {[string]}  [The result of substring operation.]
+     *&#x2F;
+    substring: function() {
+        Handlebars.registerHelper(&quot;substring&quot;, function(string, start, end) {
+            return (string.substring(start, end));
+        });
+    },
 
-				function pad(arg){
-					arg+=&quot;&quot;;
-					if(arg.length&lt;2){
-						arg = &quot;0&quot;+arg;
-					}
-					return arg;
-				}
+    &#x2F;**
+     * Return the different fields of time that can be arranged to get date in any format.
+     * Use following fields to map different parts of the date.
+     * date - The present date in number. e.g 29
+     * day - Day in words e.g monday
+     * month_num - The month in number. e.g 11
+     * month -  Month in words e.g January
+     * year - Year in number. e.g 2011
+     * hour - Hours in 12 hr format.
+     * min - Minutes.
+     * sec - Seconds.
+     * clock - AM&#x2F;PM.
+     * sup, - st&#x2F;nd&#x2F;th&#x2F;rd to represent the date. e.g 1st.
+     * @method datefields
+     *&#x2F;
+    datefields: function() {
+        Handlebars.registerHelper(&quot;datefields&quot;, function(datestring, context) {
+            var m_names = new Array(&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;);
+            var d_names = new Array(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;);
+            var date;
+            try {
+                date = new Date(datestring);
+            } catch (err) {
+                console.log(&quot;Invalid format for string -&#x27;&quot; + datestring + &quot;&#x27;.Please check&quot;);
+                return &quot;&quot;;
+            }
 
-				var fields={};
-				var date_num = date.getDate();
-				fields.date = pad(date_num);
-				fields.day = d_names[date.getDay()];
-				var month_num =  date.getMonth();
-				fields.month_num = pad(month_num);
-				fields.month = m_names[month_num];
-				fields.year = date.getFullYear();
-				fields.hour = pad(date.getHours());
-				fields.min = pad(date.getMinutes());
-				fields.sec = pad(date.getSeconds());
+            function pad(arg) {
+                arg += &quot;&quot;;
+                if (arg.length &lt; 2) {
+                    arg = &quot;0&quot; + arg;
+                }
+                return arg;
+            }
 
-				fields.clock = &quot;AM&quot;;
-				if(fields.hour &gt;11){
-					fields.clock = &quot;PM&quot;;
-					if(fields.hour&gt;12){
-						fields.hour = fields.hour-12;
-					}
-				}
-				if (date_num === 1 || date_num === 21 || date_num ===31)
-				{
-					fields.sup = &quot;st&quot;;
-				}
-				else if (date_num === 2 || date_num === 22)
-				{
-					fields.sup = &quot;nd&quot;;
-				}
-				else if (date_num === 3 || date_num === 23)
-				{
-					fields.sup = &quot;rd&quot;;
-				}
-				else
-				{
-					fields.sup = &quot;th&quot;;
-				}
-				var buffer=context.fn(fields) || &quot;&quot;;
-				return buffer;
-			});
-	},
+            var fields = {};
+            var date_num = date.getDate();
+            fields.date = pad(date_num);
+            fields.day = d_names[date.getDay()];
+            var month_num = date.getMonth();
+            fields.month_num = pad(month_num);
+            fields.month = m_names[month_num];
+            fields.year = date.getFullYear();
+            fields.hour = pad(date.getHours());
+            fields.min = pad(date.getMinutes());
+            fields.sec = pad(date.getSeconds());
 
-	&#x2F;**
-	 * This is a simple helper to split a string using a seperator 
-	 * and then apply the array to the template.
-	 * @method split
-	 * @return {htmlstring} The compiled html.
-	 *&#x2F;
-	split : function(){
-		Handlebars.registerHelper(&quot;split&quot;, function(string, seperator, context) {
-			var buffer = &quot;&quot;;
+            fields.clock = &quot;AM&quot;;
+            if (fields.hour &gt; 11) {
+                fields.clock = &quot;PM&quot;;
+                if (fields.hour &gt; 12) {
+                    fields.hour = fields.hour - 12;
+                }
+            }
+            if (date_num === 1 || date_num === 21 || date_num === 31) {
+                fields.sup = &quot;st&quot;;
+            } else if (date_num === 2 || date_num === 22) {
+                fields.sup = &quot;nd&quot;;
+            } else if (date_num === 3 || date_num === 23) {
+                fields.sup = &quot;rd&quot;;
+            } else {
+                fields.sup = &quot;th&quot;;
+            }
+            var buffer = context.fn(fields) || &quot;&quot;;
+            return buffer;
+        });
+    },
 
-			var items=string.split(seperator);
-			var data={};
-			data.words=items;
+    &#x2F;**
+     * This is a simple helper to split a string using a seperator
+     * and then apply the array to the template.
+     * @method split
+     * @return {htmlstring} The compiled html.
+     *&#x2F;
+    split: function() {
+        Handlebars.registerHelper(&quot;split&quot;, function(string, seperator, context) {
+            var buffer = &quot;&quot;;
 
-			buffer=context.fn(data);
-			return buffer;
-		});
-	},
+            var items = string.split(seperator);
+            var data = {};
+            data.words = items;
 
-	&#x2F;**
-	 * Strips a text from its html formatting. Uses the jquery function to do so. 
-	 * We also wrap the text here to allow some simple string be in the argument.
-	 * @method rawtext
-	 * @return {[htmltext]}  The raw string without any html tags.
-	 *&#x2F;
-	rawtext : function(){
-		Handlebars.registerHelper(&quot;rawtext&quot;, function(value) {
-			return($(&#x27;&lt;i&gt;&#x27;).html(value).text());
-		});
-	},
-	
-	&#x2F;**
-	 * This is a helper function to iterate over a an array for a particular subset.
-	 * @param  {[object]} The array object
-	 * @param  {[number]} The start position
-	 * @param  {[number]} the number by which the length should be shortened to
-	 * @param  {[object]} The context which has the template to apply   
-	 * @return {[htmltext]} 
-	 *&#x2F;
-	subset : function(){
-		Handlebars.registerHelper(&quot;subset&quot;, function(array, start, shortcount, context) {
-		var buffer = &quot;&quot;;
+            buffer = context.fn(data);
+            return buffer;
+        });
+    },
 
-		if (array &amp;&amp; array.length &gt; 0) {
-			var end=array.length-shortcount-1;
+    &#x2F;**
+     * Strips a text from its html formatting. Uses the jquery function to do so.
+     * We also wrap the text here to allow some simple string be in the argument.
+     * @method rawtext
+     * @return {[htmltext]}  The raw string without any html tags.
+     *&#x2F;
+    rawtext: function() {
+        Handlebars.registerHelper(&quot;rawtext&quot;, function(value) {
+            return ($(&#x27;&lt;i&gt;&#x27;).html(value).text());
+        });
+    },
 
-			for(var i = start; i &lt;= end; i++) {
-				var item = array[i];		 
-				buffer += context.fn(item);
-			}
-		}
- 
-		return buffer;
-		});
-	},
+    &#x2F;**
+     * This is a helper function to iterate over a an array for a particular subset.
+     * @param  {[object]} The array object
+     * @param  {[number]} The start position
+     * @param  {[number]} the number by which the length should be shortened to
+     * @param  {[object]} The context which has the template to apply
+     * @return {[htmltext]}
+     *&#x2F;
+    subset: function() {
+        Handlebars.registerHelper(&quot;subset&quot;, function(array, start, shortcount, context) {
+            var buffer = &quot;&quot;;
+
+            if (array &amp;&amp; array.length &gt; 0) {
+                var end = array.length - shortcount - 1;
+
+                for (var i = start; i &lt;= end; i++) {
+                    var item = array[i];
+                    buffer += context.fn(item);
+                }
+            }
+
+            return buffer;
+        });
+    },
 
 
-	&#x2F;**
-	 * This helper compares two value depending on the operator type passed. 
-	 * If the result is true applies the template inside compare otherwise applies the else part.
-	 * @method compare
-	 * @param {object} The left value to compare.
-	 * @param {object} The right hand side value to compare.
-	 * @param {string} type The operator type - eq or neq.
-	 *&#x2F;
-	compare : function(){
-		Handlebars.registerHelper(&quot;compare&quot;, function(argLeft, argRight,type,context) {
-		var buffer = &quot;&quot;;
-		if(type === &quot;eq&quot; &amp;&amp; argLeft === argRight){
-			buffer = context.fn(this);
-		}
-		else if(type === &quot;neq&quot; &amp;&amp; argLeft !== argRight){
-			buffer = context.fn(this);
-		}
-		else {
-			buffer = context.inverse(this);
-		}
-		return buffer;
-		});
-	}, 
+    &#x2F;**
+     * This helper compares two value depending on the operator type passed.
+     * If the result is true applies the template inside compare otherwise applies the else part.
+     * @method compare
+     * @param {object} The left value to compare.
+     * @param {object} The right hand side value to compare.
+     * @param {string} type The operator type - eq or neq.
+     *&#x2F;
+    compare: function() {
+        Handlebars.registerHelper(&quot;compare&quot;, function(argLeft, argRight, type, context) {
+            var buffer = &quot;&quot;;
+            if (type === &quot;eq&quot; &amp;&amp; argLeft === argRight) {
+                buffer = context.fn(this);
+            } else if (type === &quot;neq&quot; &amp;&amp; argLeft !== argRight) {
+                buffer = context.fn(this);
+            } else {
+                buffer = context.inverse(this);
+            }
+            return buffer;
+        });
+    },
 
-	&#x2F;**
-	 * Initialises the helper using the list of helpers passed.
-	 * Pass an empty array or no argument if you want all the helpers to be registered.
-	 * @method initialise
-	 * @param  {[array]}   helpers- Comma seperated list of the name of the helpers.
-	 *&#x2F;
-	initialise : function(helpers){
+    &#x2F;**
+     * Initialises the helper using the list of helpers passed.
+     * Pass an empty array or no argument if you want all the helpers to be registered.
+     * @method initialise
+     * @param  {[array]}   helpers- Comma seperated list of the name of the helpers.
+     *&#x2F;
+    initialise: function(helpers) {
 
-		var helpObj=this;
+        var helpObj = this;
 
-		if(helpers &amp;&amp; helpers.length&gt;0){
-			$.each((helpers),function(index,value){
-				if(!(value in Handlebars.helpers)){
-					helpObj[value]();
-				}
-			});
-		}
-		else{
-			$.each(helpObj,function(name,value){
-					if(name!==&quot;initialise&quot; &amp;&amp; !(name in Handlebars.helpers) ){
-						helpObj[name]();
-					}	
-			});
-		}
-	}
+        if (helpers &amp;&amp; helpers.length &gt; 0) {
+            $.each((helpers), function(index, value) {
+                if (!(value in Handlebars.helpers)) {
+                    helpObj[value]();
+                }
+            });
+        } else {
+            $.each(helpObj, function(name, value) {
+                if (name !== &quot;initialise&quot; &amp;&amp; !(name in Handlebars.helpers)) {
+                    helpObj[name]();
+                }
+            });
+        }
+    }
 
 
 };
-
     </pre>
 </div>
 

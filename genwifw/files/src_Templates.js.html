@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="..&#x2F;classes/Genwi.Genwi.html">Genwi.Genwi</a></li>
+            
                 <li><a href="..&#x2F;classes/Genwi.Helpers.html">Genwi.Helpers</a></li>
             
                 <li><a href="..&#x2F;classes/Genwi.Template.html">Genwi.Template</a></li>
@@ -66,8 +68,6 @@
             </ul>
 
             <ul id="api-modules" class="apis modules">
-            
-                <li><a href="..&#x2F;modules/Genwi.html">Genwi</a></li>
             
             </ul>
         </div>
@@ -109,20 +109,20 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 &#x2F;**
-Welcome to the root.
-
-@module Genwi
+ * @class Genwi
+ * @static
  *&#x2F;
-var oTmpl = oTmpl || {};
 var Genwi = Genwi || {};
 
-Genwi.Plugins = Genwi.Plugins || {};
+
+&#x2F;**===============GLOBAL TEMPLATE UTILITIES=======================*&#x2F;
 &#x2F;**
  * A global constants object to define any constants.
  * Any constants should not be directly hardcoded as per requirements but defined
  * here first so that we have maintainable code.
  * @type {Object}
- *
+ * @namespace Genwi
+ * @property Constants
  *&#x2F;
 Genwi.Constants = {
     &quot;updateType&quot;: {
@@ -132,6 +132,38 @@ Genwi.Constants = {
         &quot;tab4&quot;: &quot;design&quot;
     }
 };
+
+&#x2F;**
+ * Use this function to register your html template with the javascript prototype.
+ * @namespace Genwi
+ * @method registerTemplate
+ * @param  {string} templateName [The name of the html template.]
+ * @param  {string} jsPrototype  [The name of the prototype]
+ * @param  {object} options Optional object passed from html which will be available to the prototype.
+ *&#x2F;
+Genwi.registerTemplate = function(templateName, jsPrototype, options) {
+    var jsProt = Genwi.Template[jsPrototype] || window[jsPrototype];
+    if (jsProt) {
+        oIP.register(templateName, jsProt, options);
+    }
+};
+
+&#x2F;**
+ * Logger function; any log messages printed for framework should call this.
+ * Will log messages with a timestamp.
+ * @namespace Genwi
+ * @method log
+ * @param  {string} msg     The actual message to display.
+ * @param  {string} errtype warn,info,error,log(default)
+ * @return {[type]}
+ *&#x2F;
+Genwi.log = function(msg, errtype) {
+    errtype = (errtype || &quot;log&quot;);
+    console[errtype](&quot;genwi:&quot; + (new Date().getTime()) + &quot;:&quot; + msg);
+};
+
+&#x2F;**===END============GLOBAL TEMPLATE UTILITIES=======================*&#x2F;
+
 &#x2F;**
 This whole thing is essentially a very stripped down Backbone.js, since our Router and
 to a large extent Model are already taken care of by native. All it does is take Backbone&#x27;s 
@@ -184,38 +216,6 @@ subclassing and adds in an abstract class that can be used to build better templ
         return child;
     };
 
-
-    &#x2F;**
-     * Use this function to register your html template with the javascript prototype.
-     * @namespace Genwi.Template
-     * @method registerTemplate
-     * @static
-     * @param  {string} templateName [The name of the html template.]
-     * @param  {string} jsPrototype  [The name of the prototype]
-     * @param  {object} options Optional object passed from html which will be available to the prototype.
-     *&#x2F;
-    Genwi.Template.registerTemplate = function(templateName, jsPrototype, options) {
-        window.onload = function() {
-            var jsProt = Genwi.Template[jsPrototype] || window[jsPrototype];
-            if (jsProt) {
-                oIP.register(templateName, jsProt, options);
-            }
-        };
-    };
-
-    &#x2F;**
-     * Use this function to register settings of your template.
-     * Presently valid only for toolbar and sections template.
-     * @method registerSettings
-     * @static
-     * @namespace Genwi.Template
-     *&#x2F;
-    Genwi.Template.registerSettings = function(settingsString) {
-        window.onload = function() {
-            oIP.registerSettings(settingsString);
-        };
-    };
-
     &#x2F;**
 	This is the base class for any page view. It should be treated as an abstract class and
 	never actually instantiated. To extend this class, do this:
@@ -242,8 +242,6 @@ subclassing and adds in an abstract class that can be used to build better templ
 
     $.extend(AbstractView.prototype, {
 
-        constants: Genwi.Constants,
-
         &#x2F;**
          * The name of the html template to which this prototype&#x27;s object will be binded to.
          * See Genwi.Template.registerTemplate
@@ -268,52 +266,14 @@ subclassing and adds in an abstract class that can be used to build better templ
         model: {},
 
         &#x2F;**
-         * True if running in iOS.
-         * @property isIOS
-         * @type {boolean}
+         * Contains info about the device.
+         * Detailed list includes
+         * isIOS, isAndroid, isIpad, isIphone, isApp, isNativeApp,
+         * isAndroidSmartphone,isAndroidTablet.
+         * @type {Object}
+         * @property device
          *&#x2F;
-        isIOS: null,
-
-        &#x2F;**
-         * True if runnning in android.
-         * @property isAndroid
-         * @type {boolean}
-         *&#x2F;
-        isAndroid: null,
-
-        &#x2F;**
-         * True if runnning in Ipad.
-         * @property isIpad
-         * @type {boolean}
-         *&#x2F;
-        isIpad: null,
-
-        &#x2F;**
-         * True if runnning in Iphone.
-         * @property isIphone
-         * @type {boolean}
-         *&#x2F;
-        isIphone: null,
-
-        &#x2F;**
-         * True if its a native app and not html5
-         * @type {boolean}
-         *&#x2F;
-        inApp: null,
-
-        &#x2F;**
-         * True if runnning in Android smart phone.
-         * @type {boolean}
-         * @property isAndroidSmartPhone
-         *&#x2F;
-        isAndroidSmartPhone: null,
-
-        &#x2F;**
-         * True if runnning in Android Tablet.
-         * @type {Boolean}
-         * @property isAndroidTablet
-         *&#x2F;
-        isAndroidTablet: null,
+        device: {},
 
         &#x2F;**
 		CSS selector for this view&#x27;s template
@@ -332,23 +292,115 @@ subclassing and adds in an abstract class that can be used to build better templ
 		*&#x2F;
         elOb: undefined,
 
+
+        &#x2F;*=============== PRIVATE METHODS NOT TO BE OVERRIDEN===========================*&#x2F;
+        &#x2F;**
+         * This function is called by native at various stages of a running app.
+         * @param  {string&#x2F;json string}   response The data passed from native.
+         *&#x2F;
+        callback: function(response) {
+            switch (response) {
+                case -1:
+                    this.onPageLoaded();
+                    break;
+                case -2:
+                    this.onPageLoadedFromCache();
+                    break;
+                default:
+                    this.onResponseReceived(response);
+                    break;
+            }
+        },
+
+        &#x2F;**
+         * Wrapper function for onAppUpdate.
+         * Binds the different system updates with intuitive values.
+         * @param  {object} resp The response from the native specifying different type of updates happened.
+         *
+         *&#x2F;
+        update: function(resp) {
+            var updateTypes = Genwi.Constants[&quot;updateType&quot;];
+            var updateValues = [];
+            $.each(resp, function(k, v) {
+                if (v) {
+                    updateValues.push(updateTypes[k]);
+                }
+            });
+            this.onAppUpdate(updateValues);
+        },
+
         &#x2F;**
          * Sets the variable to identify the running environment.
          *&#x2F;
-        getDeviceEnv: function() {
+        _getDeviceEnv: function() {
             var ua = navigator.userAgent.toLowerCase();
-            this.isIOS = &#x2F;ipad&#x2F;i.test(ua) || &#x2F;iphone&#x2F;i.test(ua);
-            this.isAndroid = &#x2F;android&#x2F;i.test(ua);
-            this.inApp = (pageName !== &quot;html5&quot;);
-            this.isIpad = &#x2F;ipad&#x2F;i.test(ua);
-            this.isIphone = &#x2F;iphone&#x2F;i.test(ua);
+            this.device.isIOS = &#x2F;ipad&#x2F;i.test(ua) || &#x2F;iphone&#x2F;i.test(ua);
+            this.device.isAndroid = &#x2F;android&#x2F;i.test(ua);
+            this.device.isNativeApp = (pageName !== &quot;html5&quot;);
+            this.device.isIpad = &#x2F;ipad&#x2F;i.test(ua);
+            this.device.isIphone = &#x2F;iphone&#x2F;i.test(ua);
             try {
-                this.isAndroidSmartPhone = GenwiAndroid.isSmartPhone();
+                this.device.isAndroidSmartPhone = GenwiAndroid.isSmartPhone();
             } catch (err) {
-                this.isAndroidSmartPhone = false;
-                console.log(&quot;getDeviceEnv: GenwiAndroid.isSmartPhone() failed: &quot; + err);
+                this.device.isAndroidSmartPhone = false;
+                Genwi.log(&quot;getDeviceEnv: GenwiAndroid.isSmartPhone() failed: &quot; + err);
             }
-            this.isAndroidTablet = (this.isAndroid &amp;&amp; !this.isAndroidSmartPhone);
+            this.device.isAndroidTablet = (this.isAndroid &amp;&amp; !this.isAndroidSmartPhone);
+        },
+
+        &#x2F;**
+         * This checks and sets up the dom layout according to how the framework works.
+         * Missing root elements, configuring html5 context and setting up default native scroll falls under this function presently.
+         *&#x2F;
+        _setupLayout: function() {
+            if (pageName === &quot;html5&quot;) {
+                if (this.templateName) {
+                    &#x2F;&#x2F;Copying the handlebars template and root container
+                    &#x2F;&#x2F;inside the context.
+                    this.context.append($(&quot;#&quot; + this.el, &quot;#&quot; + this.templateName).clone());
+                    this.context.append($(this.rootTemplateId, &quot;#&quot; + this.templateName).clone());
+                    this.elOb = $(&quot;#&quot; + this.el, this.context);
+                } else {
+                    Genwi.log(&quot;template name not configured correctly.HTML5 app may see errors&quot;, &quot;warn&quot;);
+                    &#x2F;&#x2F;Nothing works; then put context as root element.
+                    this.elOb = this.context;
+                }
+                &#x2F;&#x2F;enabling page scroll by default.
+                $(&quot;body&quot;).addClass(&quot;html5&quot;).css(&quot;height&quot;, &quot;auto&quot;);
+            } else {
+                $(&quot;body&quot;).addClass(&quot;native&quot;).css(&quot;height&quot;, &quot;100%&quot;);
+                this.elOb = $(&quot;#&quot; + this.el, this.context);
+            }
+            &#x2F;&#x2F;If the root element is not present then add it.
+            if (this.elOb.length === 0) {
+                $(&quot;&lt;div id=&quot; + this.el + &quot;&gt;&lt;&#x2F;div&gt;&quot;).appendTo(this.context);
+                this.elOb = $(&quot;#&quot; + this.el, this.context);
+            }
+            if (pageName !== &quot;html5&quot; &amp;&amp; !(this instanceof Genwi.Template.Toolbar)) {
+                &#x2F;&#x2F;enabling default scroll for native by adding a wrapper.
+                &#x2F;&#x2F;page scroll is not supported in some devices.
+                this.elOb.wrap(&quot;&lt;div class=&#x27;scrollWrapper&#x27;&gt;&lt;&#x2F;div&gt;&quot;);
+                this.elOb.parent().css({
+                    &quot;height&quot;: &quot;100%&quot;,
+                    &quot;overflow&quot;: &quot;scroll&quot;
+                });
+                $(&quot;body,html&quot;).css(&quot;overflow&quot;, &quot;hidden&quot;);
+            }
+        },
+
+        &#x2F;**
+         * This function tells the native that client has finished loading after which
+         * the native platform actually shows the page to the user.
+         *&#x2F;
+        _invokeAppsUrlFinish: function() {
+            if (this.device.isIOS &amp;&amp; this.device.isNativeApp) {
+                window.location = &#x27;http:&#x2F;&#x2F;appsurl&#x2F;finished&#x27;;
+            } else if (this.device.isAndroid &amp;&amp; typeof(GenwiAndroid) !== &quot;undefined&quot;) {
+                GenwiAndroid.appsurlFinish();
+            } else if (pageName !== &quot;html5&quot;) {
+                &#x2F;&#x2F;If its a simple page being loaded in browser, call the callback explicitly.
+                this.callback(-1);
+            }
         },
 
         &#x2F;**
@@ -361,15 +413,60 @@ subclassing and adds in an abstract class that can be used to build better templ
          *&#x2F;
         init: function(context) {
             this.context = context;
-            this.getDeviceEnv();
+            this._getDeviceEnv();
             this._setupLayout();
+            this._bindOrientationChange();
             this.buildModel();
             this.onDraw();
             this.draw();
-            this._bindOrientationChange();
             this._invokeAppsUrlFinish();
         },
+        &#x2F;**
+         * This is called to get the current page context as required by toolbar.
+         * @return json string denoting the data.
+         *&#x2F;
+        getContext: function() {
+            var obj = this.pageContext();
+            var retData = (obj ? JSON.stringify(obj) : &quot;&quot;);
+            if (this.device.isAndroid &amp;&amp; this.device.isNativeApp) {
+                return GenwiAndroid.getContextCall(retData);
+            }
+            return retData;
+        },
 
+        &#x2F;**
+         * Binds the orientation change event to the app.
+         *&#x2F;
+        _bindOrientationChange: function() {
+            var self = this;
+            var ev = this.device.isIOS ? &#x27;orientationchange&#x27; : &#x27;resize&#x27;;
+            var ow = window.innerWidth,
+                oh = window.innerHeight;
+            $(window).bind(ev, function() {
+                setTimeout(function() {
+                    var nw = window.innerWidth,
+                        nh = window.innerHeight;
+                    if ((ow - oh) * (nw - nh) &lt; 0 &amp;&amp; ow !== nw &amp;&amp; oh !== nh) {
+                        ow = nw;
+                        oh = nh;
+                        var contextId = self.context.attr(&quot;id&quot;),
+                            cont;
+                        if (!contextId) {
+                            cont = $(&quot;body&quot;);
+                        } else {
+                            cont = $(&quot;#&quot; + contextId);
+                        }
+                        if (cont.length) {
+                            self.onOrientationChange();
+                        }
+                    }
+                }, 500);
+            });
+        },
+
+        &#x2F;*====END===========PRIVATE METHODS NOT TO BE OVERRIDEN=============*&#x2F;
+
+        &#x2F;*==================EXPOSED FUNCTIONS==============================*&#x2F;
         &#x2F;**
          * Prepares the data which will be binded to the template as defined in the html file.
          * Override this if the data available through this default implementation does not cater to your needs.
@@ -397,44 +494,6 @@ subclassing and adds in an abstract class that can be used to build better templ
         onDraw: function() {},
 
         &#x2F;**
-         * This checks and sets up the dom layout according to how the framework works.
-         * Missing root elements, configuring html5 context and setting up default native scroll falls under this function presently.
-         *&#x2F;
-        _setupLayout: function() {
-            if (pageName === &quot;html5&quot;) {
-                if (this.templateName) {
-                    &#x2F;&#x2F;Copying the handlebars template and root container
-                    &#x2F;&#x2F;inside the context.
-                    &#x2F;&#x2F;Do we need anything else.?
-                    this.context.append($(&quot;#&quot; + this.el, &quot;#&quot; + this.templateName).clone());
-                    this.context.append($(this.rootTemplateId, &quot;#&quot; + this.templateName).clone());
-                    this.elOb = $(&quot;#&quot; + this.el, this.context);
-                } else {
-                    console.log(&quot;The template name is not configured correctly.Errors could be there in html5 version.&quot;);
-                    &#x2F;&#x2F;Nothing works; then put context as root element.
-                    this.elOb = this.context;
-                }
-                $(&quot;body&quot;).addClass(&quot;html5&quot;).css(&quot;height&quot;, &quot;auto&quot;);
-            } else {
-                $(&quot;body&quot;).addClass(&quot;native&quot;).css(&quot;height&quot;, &quot;100%&quot;);
-                this.elOb = $(&quot;#&quot; + this.el, this.context);
-            }
-            &#x2F;&#x2F;If the root element is not present then add it.
-            if (this.elOb.length === 0) {
-                $(&quot;&lt;div id=&quot; + this.el + &quot;&gt;&lt;&#x2F;div&gt;&quot;).appendTo(this.context);
-                this.elOb = $(&quot;#&quot; + this.el, this.context);
-            }
-            if (pageName !== &quot;html5&quot; &amp;&amp; !(this instanceof Genwi.Template.Toolbar)) {
-                this.elOb.wrap(&quot;&lt;div class=&#x27;scrollWrapper&#x27;&gt;&lt;&#x2F;div&gt;&quot;);
-                this.elOb.parent().css({
-                    &quot;height&quot;: &quot;100%&quot;,
-                    &quot;overflow&quot;: &quot;scroll&quot;
-                });
-                $(&quot;body&quot;, &quot;html&quot;).css(&quot;overflow&quot;, &quot;hidden&quot;);
-            }
-        },
-
-        &#x2F;**
          * Binds the data to the inline template in the html file.
          * Override this if data has to be binded in a custom way.
          * @method draw
@@ -443,24 +502,6 @@ subclassing and adds in an abstract class that can be used to build better templ
          *&#x2F;
         draw: function(inc) {
             Genwi.Utils.bindTmplData($(this.rootTemplateId, this.context), this.model, this.elOb, inc);
-        },
-
-        &#x2F;**
-         * This function is called by native at various stages of a running app.
-         * @param  {string&#x2F;json string}   response The data passed from native.
-         *&#x2F;
-        callback: function(response) {
-            switch (response) {
-                case -1:
-                    this.onPageLoaded();
-                    break;
-                case -2:
-                    this.onPageLoadedFromCache();
-                    break;
-                default:
-                    this.onResponseReceived(response);
-                    break;
-            }
         },
 
         &#x2F;**
@@ -484,45 +525,17 @@ subclassing and adds in an abstract class that can be used to build better templ
          *&#x2F;
         onResponseReceived: function(response) {},
 
-        &#x2F;**
-         * This is called to get the current page context as required by toolbar.
-         * @return json string denoting the data.
-         *&#x2F;
-        getContext: function() {
-            var obj = this.pageContext();
-            var retData = (obj ? JSON.stringify(obj) : &quot;&quot;);
-            if (this.isAndroid &amp;&amp; pageName !== &#x27;html5&#x27;) {
-                return GenwiAndroid.getContextCall(retData);
-            }
-            return retData;
-        },
 
         &#x2F;**
-         * This method prepares the actual context which can be app specific.
+         * Implement this to pass any data to toolbar to change the context of toolbar accordingly.
          * @method pageContext
          * @return object with all the data to be passed to be set as context.
          *&#x2F;
         pageContext: function() {},
 
         &#x2F;**
-         * Wrapper function for onAppUpdate.
-         * Binds the different system updates with intuitive values.
-         * @param  {object} resp The response from the native specifying different type of updates happened.
-         *&#x2F;
-        update: function(resp) {
-            var updateTypes = this.constants[&quot;updateType&quot;];
-            var updateValues = [];
-            $.each(resp, function(k, v) {
-                if (v) {
-                    updateValues.push(updateTypes[k]);
-                }
-            });
-            this.onAppUpdate(updateValues);
-        },
-
-        &#x2F;**
          * This function is called when the app is updated from background to foreground.
-         * Override this function to implement in your app.
+         * Implement this function to decide when you want to update your app.
          * There are four types of updates that can happen
          * and will be passed as an array - [&#x27;ads&#x27;, &#x27;category&#x27;,&#x27;content&#x27;,&#x27;design&#x27;]
          * @method onAppUpdate
@@ -531,58 +544,16 @@ subclassing and adds in an abstract class that can be used to build better templ
         onAppUpdate: function(updates) {},
 
         &#x2F;**
-         * This function tells the native that client has finished loading after which
-         * the native platform actually shows the page to the user.
-         *&#x2F;
-        _invokeAppsUrlFinish: function() {
-            if (this.isIOS &amp;&amp; this.inApp) {
-                window.location = &#x27;http:&#x2F;&#x2F;appsurl&#x2F;finished&#x27;;
-            } else if (this.isAndroid &amp;&amp; typeof(GenwiAndroid) !== &quot;undefined&quot;) {
-                GenwiAndroid.appsurlFinish();
-            } else if (pageName !== &quot;html5&quot;) {
-                &#x2F;&#x2F;If its a simple page being loaded in browser, call the callback explicitly.
-                this.callback(-1);
-            }
-        },
-        &#x2F;**
-         * Binds the orientation change event to the app.
-         *&#x2F;
-        _bindOrientationChange: function() {
-            var self = this;
-            var ev = this.isIOS ? &#x27;orientationchange&#x27; : &#x27;resize&#x27;;
-            var ow = window.innerWidth,
-                oh = window.innerHeight;
-            $(window).bind(ev, function() {
-                setTimeout(function() {
-                    var nw = window.innerWidth,
-                        nh = window.innerHeight;
-                    if ((ow - oh) * (nw - nh) &lt; 0 &amp;&amp; ow !== nw &amp;&amp; oh !== nh) {
-                        ow = nw;
-                        oh = nh;
-                        var contextId = self.context.attr(&quot;id&quot;),
-                            cont;
-                        if (!contextId) {
-                            cont = $(&quot;body&quot;);
-                        } else {
-                            cont = $(&quot;#&quot; + contextId);
-                        }
-                        if (cont.length) {
-                            self.onOrientationChange();
-                        }
-                    }
-                }, 500);
-            });
-        },
-
-        &#x2F;**
          * This is called when orientation is changed for the device.
          * Implement this to handle any orientation change usecases.
          * @method onOrientationChange
          *&#x2F;
         onOrientationChange: function() {}
 
+        &#x2F;*=======END=============EXPOSED FUNCTIONS=========================*&#x2F;
 
     });
+
 
     AbstractView.extend = extend;
 
@@ -658,6 +629,7 @@ subclassing and adds in an abstract class that can be used to build better templ
      * @extends Genwi.Template.AbstractView
      *&#x2F;
     var Favorites = AbstractView.extend({
+
         el: &quot;gw_favorites&quot;,
         rootTemplateId: &quot;#gw_favorites_tmpl&quot;
     });

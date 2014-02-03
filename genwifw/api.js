@@ -1,6 +1,7 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "Genwi.Genwi",
         "Genwi.Helpers",
         "Genwi.Template",
         "Genwi.Template.AbstractView",
@@ -13,15 +14,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Genwi.Template.Toolbar",
         "Genwi.Utils"
     ],
-    "modules": [
-        "Genwi"
-    ],
-    "allModules": [
-        {
-            "displayName": "Genwi",
-            "name": "Genwi",
-            "description": "Welcome to the root."
-        }
-    ]
+    "modules": [],
+    "allModules": []
 } };
 });
