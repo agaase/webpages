@@ -3,7 +3,6 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "Genwi.Genwi",
         "Genwi.Helpers",
-        "Genwi.Template",
         "Genwi.Template.AbstractView",
         "Genwi.Template.Article",
         "Genwi.Template.Articles",

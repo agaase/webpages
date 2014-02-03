@@ -45,8 +45,6 @@
             
                 <li><a href="..&#x2F;classes/Genwi.Helpers.html">Genwi.Helpers</a></li>
             
-                <li><a href="..&#x2F;classes/Genwi.Template.html">Genwi.Template</a></li>
-            
                 <li><a href="..&#x2F;classes/Genwi.Template.AbstractView.html">Genwi.Template.AbstractView</a></li>
             
                 <li><a href="..&#x2F;classes/Genwi.Template.Article.html">Genwi.Template.Article</a></li>
@@ -168,9 +166,6 @@ Genwi.log = function(msg, errtype) {
 This whole thing is essentially a very stripped down Backbone.js, since our Router and
 to a large extent Model are already taken care of by native. All it does is take Backbone&#x27;s 
 subclassing and adds in an abstract class that can be used to build better templates.
-
-@namespace Genwi
-@class Template
 *&#x2F;
 (function() {
 
@@ -558,8 +553,8 @@ subclassing and adds in an abstract class that can be used to build better templ
     AbstractView.extend = extend;
 
     &#x2F;**
-	This is the template for the Article page.
-	Any further specific implmentations should extend this template.
+	This is the template for the Article page and extends from AbstractView.
+	Any further specific implmentations should ideally extend this template.
 
 	@class Article
 	@namespace Genwi.Template
@@ -573,8 +568,8 @@ subclassing and adds in an abstract class that can be used to build better templ
     });
 
     &#x2F;**
-	This is the template for the Articles page.
-	Any further specific implmentations should extend this template.
+	This is the template for the Articles page and extends from AbstractView.
+	Any further specific implmentations should ideally extend this template.
 
 	@class Articles
 	@namespace Genwi.Template
@@ -586,8 +581,8 @@ subclassing and adds in an abstract class that can be used to build better templ
     });
 
     &#x2F;**
-     * This is the template for the sections page.
-     * Any further specific implmentations should extend this template.
+     * This is the template for the sections page and extends from AbstractView.
+     * Any further specific implmentations should ideally extend this template.
      * @class Sections
      * @namespace Genwi.Template
      * @extends Genwi.Template.AbstractView
@@ -598,8 +593,8 @@ subclassing and adds in an abstract class that can be used to build better templ
     });
 
     &#x2F;**
-     * This is the template for the toolbar page.
-     * Any further specific implmentations should extend this template.
+     * This is the template for the toolbar page and extends from AbstractView.
+     * Any further specific implmentations should ideally extend this template.
      * @class Toolbar
      * @namespace Genwi.Template
      * @extends Genwi.Template.AbstractView
@@ -622,8 +617,8 @@ subclassing and adds in an abstract class that can be used to build better templ
     });
 
     &#x2F;**
-     * This is the template for the favorites page.
-     * Any further specific implmentations should extend this template.
+     * This is the template for the favorites page and extends from AbstractView.
+     * Any further specific implmentations should ideally extend this template.
      * @class Favorites
      * @namespace Genwi.Template
      * @extends Genwi.Template.AbstractView
@@ -636,8 +631,8 @@ subclassing and adds in an abstract class that can be used to build better templ
 
 
     &#x2F;**
-     * This is the template for the search page.
-     * Any further specific implmentations should extend this template.
+     * This is the template for the search page and extends from AbstractView..
+     * Any further specific implmentations should ideally extend this template.
      * @class Search
      * @namespace Genwi.Template
      * @extends Genwi.Template.AbstractView
@@ -648,8 +643,8 @@ subclassing and adds in an abstract class that can be used to build better templ
     });
 
     &#x2F;**
-     * This is the template for the categories page.
-     * Any further specific implmentations should extend this template.
+     * This is the template for the categories page and extends from AbstractView..
+     * Any further specific implmentations should ideally extend this template.
      * @class Categories
      * @namespace Genwi.Template
      * @extends Genwi.Template.AbstractView
