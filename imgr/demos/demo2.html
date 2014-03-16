@@ -1,0 +1,42 @@
+<!doctype html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>imgr | horizontal scroll demo</title>
+		<style>
+			div.imgr{
+				background-repeat: no-repeat;
+				background-size: cover;
+				width:300px;
+				height:150px;
+			}
+			img.imgr{
+				width: 300px;
+				height: 300px;
+			}
+			.container{
+				width:3600px;
+			}
+			.imgr{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<script>
+			for(var i=1;i<13;i++){
+				if(i<10){
+					document.write("<img class='imgr' data-src='images/"+i+".jpg'/>");
+				}else{
+					document.write("<div class='imgr' data-src='images/"+i+".jpg'>Background image</div>");
+				}
+			}
+		</script>
+		</div>
+		<script src="../src/libs/jquery-1.11.0.min.js"></script>
+		<script src="../dist/imgr-0.1.0.min.js"></script>
+		<script>
+			$(".container").imgr();
+		</script>
+	</body>
+</html>
