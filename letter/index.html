@@ -1,0 +1,304 @@
+<!doctype html>
+<head>
+	<title></title>
+	<link href='http://fonts.googleapis.com/css?family=Corben:400,700' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<script>
+	 window.onload = function(){
+	 	var btn = document.getElementById("signup");
+	 	btn.onclick = function(){
+	 		var email = document.getElementById('email');
+
+	 		debugger;
+	 	};
+	 	var qa = function(){
+
+	 	};
+	 };
+	</script>
+	<style>
+		body{
+			margin:0;
+			background-color: #7ec3e0;
+		}
+		.pageSection{
+			margin:0;
+		}
+		.border{
+			height: 2.5vh;
+			background-image: url(images/bg.png);
+			width: 100%;
+			opacity: 0.7;
+			z-index: 9;
+		}
+
+		.card{
+			width: :100%;
+			background-color:#f3f3dc;
+			box-shadow:0 0 10px 5px #717166;
+			font-family: 'Corben';
+			position: relative;
+			min-height: 95vh;
+		}
+		.card .title{
+			text-align: center;
+			margin-left: 2%;
+			padding-top: 40px;
+		}
+		.card .title >div{
+			display: inline-block;
+		}
+		.card .title .name{
+			font-size:35px;
+			font-weight: bold;
+		}
+		.card .title .tagline{
+			font-size: 18px;
+			font-style: italic;
+		}
+
+		.card .mockup{
+			width: 70%;
+			margin: auto;
+			font-size: 13px;
+			line-height: 18px;
+			margin-top: 10px;
+			padding: 20px 0;
+		}
+
+		.card .mockup .demo{
+			display: inline-block;
+			width: 40%;
+			margin-left: 5%;
+			min-height: 200px;
+			vertical-align: top;
+		}
+		.card .mockup .mocki{
+			width: 300px;
+			position: relative;
+			height: 100%;
+			vertical-align: top;
+			min-height: 200px;
+		}
+		
+		.card .mockup .item .arrow{
+			background-image: url(images/arrow.png);
+			background-size: contain;
+			height: 100%;
+			width: 30px;
+			float: right;
+			background-repeat: no-repeat;
+			background-position: center;
+			border-left: 1px dashed;
+			background-size: 60%;
+		}
+		.card .mockup .mocki .item.mail{
+			background-image: url(images/mail.png);
+		}
+		.card .mockup .mocki .item.fb{
+			background-image: url(images/fb.png);
+			width: 60%;
+		}
+		.card .mockup .mocki .item.twitter{
+			background-image: url(images/twitter.png);
+			width: 60%;
+		}
+		.card .mockup .mocki .item{
+			padding: 5px 10px;
+			border:1px dashed;
+			width: 90%;
+			background-size:70%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.card .mockup .mocki .acc{
+			position: absolute;
+		}
+		.card .mockup .mocki .acc >div{
+			height: 20px;
+		}
+		.card .mockup .mocki .from{
+			height: 30px;
+		}
+		.card .mockup .mocki .summary{
+			height: 40px;
+
+		}
+
+		.card .mockup .mocki .actionsI > div{
+			display: inline-block;
+			height: 30px;
+			width: 30px;
+			margin: 0 5px;
+			background-size: 20px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.card .mockup .mocki .actionsI .reply{
+			background-image: url("images/reply.png");
+		}
+		.card .mockup .mocki .actionsI .fav{
+			background-image: url("images/favorite.png");
+		}
+		.card .mockup .mocki .actionsI .delete{
+			background-image: url("images/delete.png");
+		}
+		.card .mockup .mocki .actionsI .details{
+			background-image: url("images/details.png");
+		}
+		.card .mockup .item{
+			width: 80%;
+			margin-bottom: 5px;
+		}
+		.card .mockup .datesep{
+			height: 40px;
+			width: 45px;
+			position: absolute;
+			bottom: -20px;
+			left: 50%;
+			margin-left: -30px;
+			border-radius: 50%;
+			border: 1px dashed;
+			line-height: 40px;
+			text-align: center;
+			font-weight: bold;
+			background-color: #f3f3dc;
+		}
+		.card .mockup .image{
+			float: left;
+			width: 44%;
+			height: 100%;
+			background-image: url("images/mockup.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 80%;
+		}
+		
+		.card .mockup .explain{
+			width: 50%;
+			display: inline-block;
+			font-size: 120%;
+			line-height: 20px;
+		}
+		.card .mockup .explain p{
+			margin: 0 0 20px 0; 
+			background-color: #519dbe;
+			line-height: 140%;
+			width: 80%;
+			height: 120px;
+			margin: 0;
+			color: #FFFFFF;
+			margin-bottom: 15px;
+			padding: 10px;
+		} 
+		.card .mockup .explain p:nth-child(2){
+			background-color: #C21330;
+		}
+		.card .mockup .explain p:nth-child(3){
+			background-color: #519dbe;
+		}
+		.card .beta{
+			font-size: 20px;
+			text-align: center;
+			width: 100%;
+			padding-bottom: 20px;
+		}
+		.card .beta .msg{
+			width: 200px;
+			margin: auto;
+			height: 50px;
+			display: inline-block;
+			font-size: 26px;
+			background-color: #000;
+			vertical-align: top;
+			border-radius: 10px;
+			padding: 5px;
+			color: white;	
+			cursor: pointer;
+		}
+		.card .beta .btn{
+			height: 64px;
+			font-size: 18px;
+			line-height: 50px;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 30px;
+			width: 30%;
+
+		}
+		.card .beta .btn input{
+			height: 50px;
+			width: 100%;
+			border-radius: 5px;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+<div class='pageSection'>
+	<div class='border'></div>
+			<div class='card'>
+				
+				<div class='title'>
+					<div class='name'>Letter.&nbsp;</div>
+					<div class='tagline'>simplifying messages.</div>
+				</div>
+				<div class='mockup'>
+							<div class='explain'>
+								<p>Every platform seems to be helping in communicating messages. So why can't they stay at same place?</p>
+								<p>There is too much of noise when you are reading mail. Lets cut it out.</p>
+								<p>Do you really want to do anything until you read the mail.Lets present what you need only when you need it.</p>
+								
+							</div>
+							<div class='demo'>
+							<div class='mocki'>
+								<div class='item' style="width:105%;margin-left:-15%;height:20px;text-align:center;font-size:140%;">LETTER</div>
+								<div class="acc" style='left:-45px;top:0;'>
+								<div class='item mail'>
+								</div>
+								<div class='item twitter'></div>
+								<div class='item fb'></div>
+								</div>
+								<div class='item'>
+								<div class='from'>john@yahoo.com</div>
+								<div class='summary'>Can you please take a look at the following account spreadsheet...</div>
+								</div>
+								<div class='item'>
+								<div class='from'>rahul@gmail.com</div>
+								<div class='summary'>Can you please take a look at the following account spreadsheet...</div>
+								</div>
+								<div class='item' style='position:relative;'>
+								<div class='from'>john@yahoo.com</div>
+								
+							<div class='actionsI'>
+								<div class='reply'></div>
+								<div class='fav'></div>
+								<div class='delete'></div>
+								<div class='details'></div>
+							
+							</div>
+							<div class='message'><p>Can you please take a look at the following account spreadsheet.This has all the details of the account at our company.</p></div>
+							<div class='datesep'>9 sep</div>
+							</div>
+								
+								<div class='item'>
+								<div class='from'>rita@outlook.com</div>
+								<div class='summary'>Can you please take a look at the following account spreadsheet...</div>
+								</div>
+							</div>
+							</div>
+							
+				</div>
+				<div class='beta'>
+					<div>
+						<div class='btn'><input id='email' type='email'/></div>
+						<div id='signup' class='msg'>Sign up for beta</div>
+						<div class='thanks'>Thanks we'll keep you posted</div>
+					</div>
+				</div>
+		
+		</div>
+		<div class='border bottom'></div>	
+</div>
+</body>
+</html>

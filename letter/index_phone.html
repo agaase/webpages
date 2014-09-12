@@ -1,0 +1,290 @@
+<!doctype html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='http://fonts.googleapis.com/css?family=Corben:400,700' rel='stylesheet' type='text/css'>
+	<script>
+	 window.onload = function(){
+	 	var btn = document.getElementById("signup");
+	 	btn.onclick = function(){
+	 		var email = document.getElementById('email');
+	 		debugger;
+	 	};
+	 	var qa = function(){
+
+	 	};
+	 };
+	</script>
+	<style>
+		body{
+			margin:0;
+			background-color: #7ec3e0;
+		}
+		.pageSection{
+			margin:0;
+		}
+		.border{
+			height: 2.5vh;
+			background-image: url(images/bg.png);
+			width: 100%;
+			opacity: 0.7;
+			z-index: 9;
+		}
+
+		.card{
+			background-color:#f3f3dc;
+			box-shadow:0 0 10px 1px #717166;
+			font-family: 'Corben';
+			position: relative;
+			min-height: 95vh;
+		}
+		.card .title{
+			text-align: center;
+			padding-top: 40px;
+		}
+		.card .title .name{
+			font-size:35px;
+			font-weight: bold;
+		}
+		.card .title .tagline{
+			font-size: 18px;
+			font-style: italic;
+		}
+
+		.card .mockup{
+			margin: auto;
+			font-size: 13px;
+			line-height: 18px;
+			position: relative;
+			margin-bottom: 20px;
+		}
+
+		.card .mockup .item .arrow{
+			background-image: url(images/arrow.png);
+			background-size: contain;
+			height: 100%;
+			width: 30px;
+			float: right;
+			background-repeat: no-repeat;
+			background-position: center;
+			border-left: 1px dashed;
+			background-size: 60%;
+		}
+		.card .mail{
+			background-image: url(images/mail.png);
+		}
+		.card .fb{
+			background-image: url(images/fb.png);
+			width: 60%;
+		}
+		.card .twitter{
+			background-image: url(images/twitter.png);
+			width: 60%;
+		}
+
+		.card .acc{
+			margin-right:3px;
+		}
+		.card .acc >div{
+			height: 30px;
+			background-size: 30px;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 100%;
+			border: 1px dashed;
+		}
+		.card .from{
+			height: 30px;
+		}
+		.card .summary{
+			height: 40px;
+
+		}
+
+		.card .actionsI > div{
+			display: inline-block;
+			height: 30px;
+			width: 30px;
+			margin: 0 5px;
+			background-size: 20px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.card .actionsI .reply{
+			background-image: url("images/reply.png");
+		}
+		.card .actionsI .fav{
+			background-image: url("images/favorite.png");
+		}
+		.card .actionsI .delete{
+			background-image: url("images/delete.png");
+		}
+		.card .actionsI .details{
+			background-image: url("images/details.png");
+		}
+		.card .mockup .item{
+			padding: 5px 10px;
+			border:1px dashed;
+			width: 80%;
+			background-size:70%;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin: auto;
+			margin-bottom: 5px;
+		}
+		.card .mockup .datesep{
+			height: 40px;
+			width: 45px;
+			position: absolute;
+			bottom: -20px;
+			left: 50%;
+			margin-left: -30px;
+			border-radius: 50%;
+			border: 1px dashed;
+			line-height: 40px;
+			text-align: center;
+			font-weight: bold;
+			background-color: #f3f3dc;
+		}
+		.card .mockup .image{
+			float: left;
+			width: 44%;
+			height: 100%;
+			background-image: url("images/mockup.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 80%;
+		}
+		
+		.card .mockup .explain{
+			width: 90%;
+			font-size: 120%;
+			line-height: 20px;
+			margin:auto;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		.card .mockup .explain p{
+			margin: 0 0 20px 0; 
+			background-color: #519dbe;
+			line-height: 140%;
+			margin: 0;
+			color: #FFFFFF;
+			margin-bottom: 15px;
+			padding: 10px;
+		} 
+		.card .mockup .explain p:nth-child(2){
+			background-color: #C21330;
+		}
+		.card .mockup .explain p:nth-child(3){
+			background-color: #519dbe;
+		}
+		.card .beta{
+			font-size: 20px;
+			text-align: center;
+			width: 100%;
+			padding-bottom: 20px;
+		}
+		.card .beta .msg{
+			width: 200px;
+			margin: auto;
+			height: 40px;
+			display: inline-block;
+			font-size: 20px;
+			background-color: #000;
+			vertical-align: top;
+			border-radius: 10px;
+			padding: 0 5px;
+			color: white;	
+			cursor: pointer;
+			line-height: 35px;
+		}
+		.card .beta .btn{
+			height: 44px;
+			font-size: 18px;
+			line-height: 50px;
+			display: inline-block;
+			vertical-align: top;
+			width: 70%;
+			margin: auto;
+			margin-bottom: 10px;
+		}
+		.card .beta .btn input{
+			width: 100%;
+			border-radius: 5px;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+<div class='pageSection'>
+	<div class='border'></div>
+			<div class='card'>
+				
+				<div class='title'>
+					<div class='name'>Letter.&nbsp;</div>
+					<div class='tagline'>simplifying messages.</div>
+				</div>
+				<div class='mockup'>
+							<div class='explain' style="margin">
+								<p>Every platform seems to be helping in communicating messages. So why can't they stay at same place?</p>
+							</div>
+
+							<div style="position:relative;text-align:center;width:90%;margin:auto;">
+								<div class="acc" style='display:inline-block;vertical-align:top;width:10%;'>
+									<div class='mail'></div>
+									<div class='twitter'></div>
+									<div class='fb'></div>
+								</div>
+								<div style="display: inline-block;width:85%;">
+								<div class='item' style="width:90%;margin:0;height:25px;text-align:center;font-size:140%;">LETTER</div>
+								
+								<div class='item' style="margin:3px 0;width:90%;">
+								<div class='from'>john@yahoo.com</div>
+								<div class='summary'>Can you please take a look at the following account spreadsheet...</div>
+								</div>
+								</div>
+							</div>
+						<div class='explain' >
+								<p style='background-color: #C21330;'>There is too much of noise when you are reading mail. Lets cut it out.</p>								
+							</div>
+								<div class='item'>
+								<div class='from'>rahul@gmail.com</div>
+								<div class='summary'>This is urgent. Can we take a look at it ASAP and...</div>
+								</div>
+								<div class='explain'>
+								<p>Do you really want to do anything until you read the mail.Lets present what you need only when you need it.</p>
+								
+							</div>
+								<div class='item' style='position:relative;'>
+								<div class='from'>john@yahoo.com</div>
+								
+							<div class='actionsI'>
+								<div class='reply'></div>
+								<div class='fav'></div>
+								<div class='delete'></div>
+								<div class='details'></div>
+							
+							</div>
+							<div class='message'><p>Can you please take a look at the following account spreadsheet.This has all the details of the account at our company.</p></div>
+							<div class='datesep'>9 sep</div>
+							</div>
+								
+								<div class='item'>
+								<div class='from'>rita@outlook.com</div>
+								<div class='summary'>Just found your profile on linked in. We have an interesting...</div>
+								</div>
+							</div>
+					<div class='beta'>
+					<div>
+						<div class='btn'><input id='email' type='email'/></div>
+						<div id='signup' class='msg'>Sign up for beta</div>
+						
+					</div>
+				</div>
+		
+		</div>
+		<div class='border bottom'></div>	
+</div>
+</body>
+</html>

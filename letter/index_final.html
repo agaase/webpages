@@ -1,0 +1,208 @@
+<!doctype html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='http://fonts.googleapis.com/css?family=Corben:400,700' rel='stylesheet' type='text/css'>
+	<link href='main.css' rel='stylesheet' type='text/css'>
+	<script>
+		function storeEmail(email,cb) {
+		    var xmlhttp;
+
+		    if (window.XMLHttpRequest) {
+		        // code for IE7+, Firefox, Chrome, Opera, Safari
+		        xmlhttp = new XMLHttpRequest();
+		    } else {
+		        // code for IE6, IE5
+		        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+
+		    xmlhttp.onreadystatechange = function() {
+		        if (xmlhttp.readyState == 4 ) {
+		           if(xmlhttp.status == 201){
+		              cb("success");
+		           }
+		           else if(xmlhttp.status == 400) {
+		           		cb("error");
+		           }
+		           else {
+			           	cb("error");
+		           }
+		        }
+		    }
+		    xmlhttp.open("POST", "http://birch-3041487.us-east-1.bonsai.io/zeromail/user", true);
+		    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=UTF-8");
+		    xmlhttp.send('{"email":"'+email+'","ua":"'+navigator.userAgent+'"}');
+		}
+		window.onload = function(){
+			if(window.matchMedia("(min-width: 750px)").matches){
+				document.body.removeChild(document.getElementsByClassName("smartphone")[0])
+			}else{
+				document.body.removeChild(document.getElementsByClassName("tablet")[0])
+			}
+			var btn = document.getElementById("signup");
+		 	btn.onclick = function(){
+		 		btn.className = "msg clicked";
+		 		btn.innerHTML = "Signing up.."
+		 		var email = document.getElementById('email');
+		 		var em = email.value;
+		 		debugger;
+		 		if(em.indexOf("@")>-1 && em.indexOf(".")>-1){
+		 			storeEmail(em,function(status){
+		 				var thx = document.getElementById("thanks");
+		 				if(status=="success"){
+		 					thx.innerHTML = "Thanks! We'll update you soon."
+		 					var register = document.getElementById("register");
+		 					register.className = "hidden";
+		 				}else{
+		 					thx.innerHTML = "Can you please try again";
+		 					btn.className = "msg";
+		 					btn.innerHTML = "Sign up for free beta"
+		 				}
+		 			});
+		 		}else{
+		 			email.value = "Need a valid email."
+		 			btn.className = "msg";
+		 			btn.innerHTML = "Sign up for free beta"
+		 		}
+		 	};
+		}
+		
+	</script>
+</head>
+<body>
+<div class='pageSection tablet'>
+	<div class='border'></div>
+			<div class='card'>
+				
+				<div class='title'>
+					<div class='name'>Letter.&nbsp;</div>
+					<div class='tagline'>simplifying messages.</div>
+				</div>
+				<div class='mockup'>
+							<div class='explain'>
+								<p>Every platform seems to be helping in communicating messages. So why can't they stay at same place?</p>
+								<p>There is too much of noise when you are reading mail. Lets cut it out.</p>
+								<p>Do you really want to do anything until you read the mail.Lets present what you need only when you need it.</p>
+								
+							</div>
+							<div class='demo'>
+							<div class='mocki'>
+								<div class='item' style="width:105%;margin-left:-15%;height:20px;text-align:center;font-size:140%;">LETTER</div>
+								<div class="acc" style='left:-45px;top:0;'>
+								<div class='item mail'>
+								</div>
+								<div class='item twitter'></div>
+								<div class='item fb'></div>
+								</div>
+								<div class='item'>
+								<div class='from'>john@yahoo.com</div>
+								<div class='summary'>Can you please take a look at the following account spreadsheet...</div>
+								</div>
+								<div class='item'>
+								<div class='from'>rahul@gmail.com</div>
+								<div class='summary'>This is urgent. Can we take a look at it ASAP and...</div>
+								</div>
+								<div class='item' style='position:relative;'>
+								<div class='from'>john@yahoo.com</div>
+								
+							<div class='actionsI'>
+								<div class='reply'></div>
+								<div class='fav'></div>
+								<div class='delete'></div>
+								<div class='details'></div>
+							
+							</div>
+							<div class='message'><p>Can you please take a look at the following account spreadsheet.This has all the details of the account at our company.</p></div>
+							<div class='datesep'>9 sep</div>
+							</div>
+								
+								<div class='item'>
+								<div class='from'>rita@outlook.com</div>
+								<div class='summary'>Just found your profile on linked in. We have an interesting...</div>
+								</div>
+							</div>
+							</div>
+							
+				</div>
+				<div class='beta'>
+					<div id="register">
+						<div class='btn'><input id='email' type='email'/></div>
+						<div id='signup' class='msg'>Sign up for free beta</div>
+					</div>
+					<div id='thanks'></div>
+				</div>
+		
+		</div>
+		<div class='border bottom'></div>	
+</div>
+<div class='pageSection smartphone'>
+	<div class='border'></div>
+			<div class='card'>
+				
+				<div class='title'>
+					<div class='name'>Letter.&nbsp;</div>
+					<div class='tagline'>simplifying messages.</div>
+				</div>
+				<div class='mockup'>
+							<div class='explain' style="margin">
+								<p>Every platform seems to be helping in communicating messages. So why can't they stay at same place?</p>
+							</div>
+
+							<div style="position:relative;text-align:center;width:90%;margin:auto;">
+								<div class="acc" style='display:inline-block;vertical-align:top;width:10%;'>
+									<div class='mail'></div>
+									<div class='twitter'></div>
+									<div class='fb'></div>
+								</div>
+								<div style="display: inline-block;width:85%;">
+								<div class='item' style="width:90%;margin:0;height:25px;text-align:center;font-size:140%;">LETTER</div>
+								
+								<div class='item' style="margin:3px 0;width:90%;">
+								<div class='from'>john@yahoo.com</div>
+								<div class='summary'>Can you please take a look at the following account spreadsheet...</div>
+								</div>
+								</div>
+							</div>
+						<div class='explain' >
+								<p style='background-color: #C21330;'>There is too much of noise when you are reading mail. Lets cut it out.</p>								
+							</div>
+								<div class='item'>
+								<div class='from'>rahul@gmail.com</div>
+								<div class='summary'>This is urgent. Can we take a look at it ASAP and...</div>
+								</div>
+								<div class='explain'>
+								<p>Do you really want to do anything until you read the mail.Lets present what you need only when you need it.</p>
+								
+							</div>
+								<div class='item' style='position:relative;'>
+								<div class='from'>john@yahoo.com</div>
+								
+							<div class='actionsI'>
+								<div class='reply'></div>
+								<div class='fav'></div>
+								<div class='delete'></div>
+								<div class='details'></div>
+							
+							</div>
+							<div class='message'><p>Can you please take a look at the following account spreadsheet.This has all the details of the account at our company.</p></div>
+							<div class='datesep'>9 sep</div>
+							</div>
+								
+								<div class='item'>
+								<div class='from'>rita@outlook.com</div>
+								<div class='summary'>Just found your profile on linked in. We have an interesting...</div>
+								</div>
+							</div>
+					<div class='beta'>
+					<div id='register'>
+						<div class='btn'><input id='email' type='email'/></div>
+						<div id='signup' class='msg'>Sign up for free beta</div>
+					</div>
+					<div id='thanks'></div>
+				</div>
+		
+		</div>
+		<div class='border bottom'></div>	
+</div>
+</body>
+</html>
