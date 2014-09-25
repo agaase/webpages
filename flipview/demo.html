@@ -31,17 +31,17 @@
 		var flipEl = $(".flipView");
 		var flip = new flipview(flipEl,10);
 
-		$('.front',flipEl).append("<img src='imgs/1.jpg'>");
-		$('.next',flipEl).append("<img src='imgs/2.jpg'>");
+		$('.front',flipEl).append("<img src='images/1.jpg'>");
+		$('.next',flipEl).append("<img src='images/2.jpg'>");
 		
 		var count = 2;
 		flip.onFlipNext = function(){
 			count++;
-			$(".next",flipEl).html("<img src='imgs/"+count+".jpg'>");
+			$(".next",flipEl).html("<img src='images/"+count+".jpg'>");
 		};
 		flip.onFlipPrev = function(){
 			count--;
-			$(".prev",flipEl).html("<img src='imgs/"+(count-2)+".jpg'>");
+			$(".prev",flipEl).html("<img src='images/"+(count-2)+".jpg'>");
 		};
 	};
 </script>
