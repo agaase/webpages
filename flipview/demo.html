@@ -1,8 +1,9 @@
 <!doctype html>
 <head>
 	<title></title>
-	<script src="jquery-1.11.0.min.js"></script>
-	 <script src="flipview-0.1.0.min.js"></script> 
+	 <script src="jquery-1.11.0.min.js"></script> 
+	<script src="http://rawgit.com/agaase/flipview/master/dist/flipview-0.1.0.min.js"></script>  
+	<!-- <script src="flipview.js"></script> -->
 	<style>
 	.flipView .flipSlide{
 		background-color: #c6c6c6;
@@ -10,39 +11,44 @@
 		text-align: center;
 	}
 	.flipView{
-		height: 500px;
-		width: 750px;`
+		height: 70%;
+		width: 70%;
 		margin: auto;
+		position: relative;
+		top: 15%;
 	}
-	.flipArea{
-		width:100%;
-		height: 600px;
-		margin-top: 120px;
+	body,html{
+		height: 100%;
 	}
+	img{
+		width: 100%;
+		height: 100%;
+	}
+	
 	</style>
 <script>
 	window.onload = function(){
-		var container = $(".flipArea");
-		var flip = new flipview(container);
-		$('.next',flip.flipEle).append('<p>1</p>');
-		$('.front',flip.flipEle).append('<p>0</p>');
-		var count = 1;
+		var flipEl = $(".flipView");
+		var flip = new flipview(flipEl,10);
+
+		$('.front',flipEl).append("<img src='imgs/1.jpg'>");
+		$('.next',flipEl).append("<img src='imgs/2.jpg'>");
+		
+		var count = 2;
 		flip.onFlipNext = function(){
 			count++;
-			$(".next",container).html("<p>"+count+"</p>");
+			$(".next",flipEl).html("<img src='imgs/"+count+".jpg'>");
 		};
 		flip.onFlipPrev = function(){
 			count--;
-			$(".prev",container).html("<p>"+(count-2)+"</p>");
+			$(".prev",flipEl).html("<img src='imgs/"+(count-2)+".jpg'>");
 		};
 	};
 </script>
 </head>
 
 <body>
-<div class="flipArea">
 <div class="flipView">
-</div>
 </div>
 </body>
 </html>
