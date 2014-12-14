@@ -123,7 +123,7 @@ var flipview = (function(){
                         }
                         pan.call(this,(touchobj.pageX-startPosX)/3,startPosX < this.leftCutoff ? 1 : -1);
                 }
-            }.bind(this),firstTouchMove ? 30 : 5);
+            }.bind(this),firstTouchMove ? 10 : 5);
         }.bind(this);
         var handleTouchend = function(ev){
                 if(!touchStarted){
@@ -257,7 +257,7 @@ var flipview = (function(){
             if(this.flipLock){
                 return;
             }
-            angleToRotate = angleToRotate * 2000/window.innerWidth;
+            angleToRotate = angleToRotate * 1000/window.innerWidth;
             var angle = this.rotAngle+angleToRotate;
 
             if(direction>0){
