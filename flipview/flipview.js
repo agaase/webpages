@@ -123,7 +123,7 @@ var flipview = (function(){
                         }
                         pan.call(this,(touchobj.pageX-startPosX)/3,startPosX < this.leftCutoff ? 1 : -1);
                 }
-            }.bind(this),firstTouchMove ? 5 : 5);
+            }.bind(this),firstTouchMove ? 10 : 5);
         }.bind(this);
         var handleTouchend = function(ev){
                 if(!touchStarted){
