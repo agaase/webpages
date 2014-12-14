@@ -29,7 +29,7 @@ var flipview = (function(){
         fromAngle = fromAngle || (dir === -1 ? toAngle + 180 : toAngle - 180);
         console.log("Rotating from angle - "+ fromAngle + " to angle - "+ toAngle);
         var diff = Math.abs(Math.abs(fromAngle)-Math.abs(toAngle));
-        level = parseInt(((diff-90)/180)*100);
+        level = parseInt(((diff-90)/180)*100,10);
         var time = this.params.speed*level/100;
         if(diff>90){
             var halfAngle = dir === -1 ? toAngle + 90 : toAngle - 90;
@@ -50,7 +50,7 @@ var flipview = (function(){
      * @method setupConfigurations
      */
     var setupConfigurations = function(){
-        var speed = parseInt(this.params.speed);
+        var speed = parseInt(this.params.speed,10);
         var defaultSpeed = window.innerWidth > 700 ? speedMapping[this.params.speed] : 500; 
         if(!speed){
             speed = ((typeof(this.params.speed) === "string" ? speedMapping[this.params.speed] : defaultSpeed ) || defaultSpeed);
@@ -64,13 +64,6 @@ var flipview = (function(){
         }
         this.params.speed = (speed/1000);
         this.params.maxScale = typeof(this.params.maxScale) === "number" ? this.params.maxScale : defaultMaxScale;
-        /*
-         this.flipEle.css({
-               "-webkit-animation-duration": this.params.speed+"s",
-               "-webkit-animation-iteration-count": "1",
-               "-webkit-animation-fill-mode":"forwards",
-        });
-        */
     };
 
     /**
