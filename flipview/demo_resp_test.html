@@ -1,0 +1,64 @@
+<!doctype html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<!-- <script src="http://rawgit.com/agaase/flipview/master/dist/flipview-0.1.0.min.js"></script>  -->
+	<script src='flipview.js'></script>
+	<style>
+	body{
+		margin:0;
+	}
+	.flipView .flipSlide{
+		font-size: 150px;
+		text-align: center;
+		background-color: grey;
+	}
+	
+	.flipView{
+		height: 100%;
+		width: 100%;
+		top:0;
+
+	}
+	
+	body,html{
+		height: 100%;
+	}
+	
+	@media only screen and (max-width: 600px) {
+		.flipView{
+			height: 100%;
+			width: 100%;
+			top:0;
+		}
+	}
+	
+	</style>
+<script>
+	window.onload = function(){
+		var flipEl = $(".flipView");
+		var flip = new flipview(flipEl,10);
+
+		$('.front',flipEl).append("1");
+		$('.next',flipEl).append("2");
+		
+		var present = 1;
+		flip.onFlipNext = function(){
+			present++;
+			$(".next",flipEl).html((present+1));
+
+		};
+		flip.onFlipPrev = function(){
+			present--;
+			$(".prev",flipEl).html((present-1));
+		};
+	};
+</script>
+</head>
+
+<body>
+		<div class="flipView">
+		</div>
+</body>
+</html>

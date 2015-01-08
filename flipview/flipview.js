@@ -1,9 +1,3 @@
-/*
- * Default categories template JS.
- * html : categories.html
- * devices : tablet/smartphone.
- * *******/
-
 var flipview = (function(){
     var slideIds = [-1,0,1];
     var flipRuleId = 10;
@@ -29,7 +23,7 @@ var flipview = (function(){
         fromAngle = fromAngle || (dir === -1 ? toAngle + 180 : toAngle - 180);
         console.log("Rotating from angle - "+ fromAngle + " to angle - "+ toAngle);
         var diff = Math.abs(Math.abs(fromAngle)-Math.abs(toAngle));
-        level = parseInt(((diff-90)/180)*100,10);
+        var level = parseInt(((diff-90)/180)*100,10);
         var time = this.params.speed*level/100;
         if(diff>90){
             var halfAngle = dir === -1 ? toAngle + 90 : toAngle - 90;
@@ -91,7 +85,7 @@ var flipview = (function(){
                     touchStarted = true;
                 }
                 //var touchobj = ev.originalEvent.changedTouches[0];
-                var touchobj = ev.originalEvent.type== "mousedown" ? ev.originalEvent : ev.originalEvent.changedTouches[0];
+                var touchobj = ev.originalEvent.type === "mousedown" ? ev.originalEvent : ev.originalEvent.changedTouches[0];
                 startPosX = touchobj.pageX;
                 lastPosX = touchobj.pageX;
             }.bind(this);
@@ -101,7 +95,7 @@ var flipview = (function(){
                 clearTimeout(touchMoveTimer);
             }
             touchMoveTimer = setTimeout(function(){
-                var touchobj = ev.originalEvent.type== "mousemove" ? ev.originalEvent : ev.originalEvent.changedTouches[0];
+                var touchobj = ev.originalEvent.type === "mousemove" ? ev.originalEvent : ev.originalEvent.changedTouches[0];
                 if(!touchStarted){
                     return;
                 }
@@ -138,7 +132,7 @@ var flipview = (function(){
                 }
                 touchEndTimer = setTimeout(function(){
                     touchStarted = false;
-                    var touchobj = ev.originalEvent.type== "mouseup" ? ev.originalEvent : ev.originalEvent.changedTouches[0];
+                    var touchobj = ev.originalEvent.type === "mouseup" ? ev.originalEvent : ev.originalEvent.changedTouches[0];
                     if((touchobj.pageX-startPosX)<-100 && startPosX > this.rightCutoff && this.slideIds[2] !==-1) {
                         if(firstTouchMove){
                             $(".next",this.flipEle).show();
