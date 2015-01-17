@@ -1,0 +1,128 @@
+@font-face {
+	font-family: 'NeoBulletin';
+	font-style: normal;
+  	src: url("font/NeoBulletin.ttf") format('truetype');
+}
+
+/** 
+ * The default styling for text. 
+ */
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: #3e4141;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+}
+
+/**
+ * The default styling for anchor tags.
+ */
+a{
+	text-decoration: underline;
+	color:#3e4141;
+}
+
+
+/**
+ * The menu/section on the left.
+ */
+#section{
+	background-color: #fffffe;
+	color: #767676;
+}
+
+#section .name{
+	font-size: 160%;
+	color: #1C8191;
+}
+#section .link.active{
+	color:#1C8191;
+	border-bottom: 1px solid  #1C8191;
+}
+#section .link{
+	color: #b3b3b3;
+	border-bottom: 1px solid #b3b3b3;
+	text-align: center;
+}
+
+/**
+ * Card layout.
+ */
+
+/** One item in the list. */
+#contentArea.list-card .item{
+	background-color: #f6f6f6;
+	box-shadow: 0 0 3px;
+}
+
+#contentArea.list-card .item .title{
+	color: #1C8191;
+	font-size: 125%;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/** Summray of the item */
+#contentArea.list-card .item .summary{
+	font-size: 90%;
+	letter-spacing: 0.5px;
+	text-align: center;
+}
+
+/**
+ * The layout where all the different items of a showcased item is being shown.
+ */
+#contentArea.fullItem .showcaseItem{
+	text-align: center;
+}
+#contentArea.fullItem .showcaseItem img{
+	box-shadow: 0 0 10px;
+}
+
+/** This is how we control a particular type of showcase item. */
+#contentArea.fullItem .showcaseItem.tweetSlide img{
+	box-shadow: 0 0 0;
+}
+
+
+
+/**
+ * Stack layout.
+ */
+
+#contentArea.list-stack .item{
+	border-bottom: 1px solid #cfcfcf;
+}
+#contentArea.list-stack .thumbnail{
+	box-shadow: 0 0 3px;
+}
+#contentArea.list-stack .item .title{
+	font-size: 200%;
+	text-transform:uppercase;
+}
+
+
+/** Taking into account the smartphones.*/
+@media only screen and (max-width: 600px) {
+	#section{
+		text-align: center;
+	}
+	#section .link{
+		font-size: 80%;
+		text-align: center;
+	}
+	#contentArea.list-card .item{
+		box-shadow: 0 0 5px;
+	}
+
+	#contentArea.list-card .tweetSlide{
+		text-align: left;
+	}
+	#contentArea.list-stack .item .title {
+		font-size: 120%;
+		text-transform: uppercase;
+	}
+}
+
+
