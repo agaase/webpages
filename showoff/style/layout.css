@@ -33,7 +33,7 @@ body{
 	margin-right: 0.3%;
 	height: 100vh;
 }
-#section .name{
+#section .masthead{
 	width: 70%;
 	margin: auto;
 	margin-top: 10%;
@@ -172,13 +172,13 @@ body{
 	#section .linebreak{
 		display: none;
 	}
-	#section .name{
+	#section .masthead{
 		margin-top:2%;
 		margin-bottom:2%;
 	}
 	#section .link{
 		display: inline-block;
-		margin: 1% 2%;
+		margin: 4% 2%;
 	}
 	#contentArea{
 		width: 90%;
@@ -226,9 +226,3 @@ body{
 		display:block;
 	}
 }
-
-
-
-
-
-
