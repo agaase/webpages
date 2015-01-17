@@ -1,0 +1,34 @@
+{
+	"config" : {
+		"disqus" : {
+			"disqus_shortname" : "agaase",
+			"disqus_url" : "http://aseemagarwal.in/"
+		}
+	},
+	"masthead" : "Aseem Agarwal",
+	"section" : [
+		{
+			"title" : "About me",
+			"itemBody" : "",
+			"isHome" : true
+
+		},
+		{
+			"title" : "WORK",
+			"listItemClass" : "list-stack",
+			"itemList" : [
+				{
+					"title" :  "Magazine & You",
+					"thumbnail" : "https://d262ilb51hltx0.cloudfront.net/max/1200/1*B0EyGhUaxffUnjWaTDQzLQ.png",
+					"summary" : "A community of magazine lovers.",
+					"_showcaseList" : [
+						{
+							"writeup" : "",
+							"img" : "https://d262ilb51hltx0.cloudfront.net/max/1200/1*B0EyGhUaxffUnjWaTDQzLQ.png"
+						}
+					]
+				}
+			]
+		}
+	]
+}
