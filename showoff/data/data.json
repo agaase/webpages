@@ -9,11 +9,12 @@
 	"section" : [
 		{
 			"title" : "About me",
-			"itemBody" : "<h3>ABOUT ME</h3><p class='p1'>Iam a front end developer,designer at Genwi. For the past 3 years I have been working on projects related to web &amp; mobile development. I love creating &amp; implementing designs which are at an intersection of meeting client requirements and being performance-wise efficient to provide that WOW experience. &nbsp;</p><p class='p1'>In recent times, the need of responsive design has picked pace. I have been fortunate enough to work on a lot of projects at Genwi where responsive design is one of the key reasons customers come to our company.&nbsp; We strive to provide pixel perfect layouts with the same performance benchmark across devices and OS platforms.</p><h3 class='p1'>BELIEF</h3><p class='p1'>I also consider myself to be an advocate of good design. For me, good design thinking comes from understanding 3 different disciples; aesthetics, psychology and philosophy. I try to find my inspiration on these three in books and innovative products which challenge the way design has been perceived. To further open up my mind and challenge my thoughts I blog about design ideas and philosophy.</p><h3 class='p1'>CONTACT</h3><p><a href='https://www.linkedin.com/profile/view?id=41815452&trk=nav_responsive_tab_profile' target='_blank'><img style='width:30px;height:30px;' src='https://dl.dropbox.com/s/cwwu1u9ja008sxn/linkedin.png?dl=0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://twitter.com/agaase19' target='_blank'><img style='width:30px;height:30px;' src='https://dl.dropbox.com/s/ts1bpkx0ev1uq3b/TWITTER.png?dl=0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='mailto:aseemagarwal19@gmail.com' target='_blank'><img style='width:30px;height:30px;' src='https://dl.dropbox.com/s/h0k4aw0bs6iyvyj/MSG.png?dl=0'/></a></p>"
+			"itemBody" : "<h3>ABOUT ME</h3><p class='p1'>Iam a front end developer,designer at Genwi. For the past 3 years I have been working on projects related to web &amp; mobile development. I love creating &amp; implementing designs which are at an intersection of meeting client requirements and being performance-wise efficient to provide that WOW experience. &nbsp;</p><p class='p1'>In recent times, the need of responsive design has picked pace. I have been fortunate enough to work on a lot of projects at Genwi where responsive design is one of the key reasons customers come to our company.&nbsp; We strive to provide pixel perfect layouts with the same performance benchmark across devices and OS platforms.</p><h3 class='p1'>BELIEF</h3><p class='p1'>I also consider myself to be an advocate of good design. For me, good design thinking comes from understanding 3 different disciples; aesthetics, psychology and philosophy. I try to find my inspiration on these three in books and innovative products which challenge the way design has been perceived. To further open up my mind and challenge my thoughts I blog about design ideas and philosophy.</p><h3 class='p1'>CONTACT</h3><p><a href='https://www.linkedin.com/profile/view?id=41815452&trk=nav_responsive_tab_profile' target='_blank'><img style='width:30px;height:30px;' src='https://dl.dropbox.com/s/cwwu1u9ja008sxn/linkedin.png?dl=0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://twitter.com/agaase19' target='_blank'><img style='width:30px;height:30px;' src='https://dl.dropbox.com/s/ts1bpkx0ev1uq3b/TWITTER.png?dl=0'/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='mailto:aseemagarwal19@gmail.com' target='_blank'><img style='width:30px;height:30px;' src='https://dl.dropbox.com/s/h0k4aw0bs6iyvyj/MSG.png?dl=0'/></a></p>",
+			"isHome" : true
+
 		},
 		{
 			"title" : "WORK",
-			"isHome" : true,
 			"listItemClass" : "list-stack",
 			"itemList" : [
 				{
@@ -63,6 +64,76 @@
 						{
 							"writeup" : "<h2>Founder: <a href='https://medium.com/@designalysed' target='_blank'>DESIGNALYSED</a></h2><h3> <br> At <a href='https://medium.com/@designalysed' target='_blank'>designalysed</a>, we discuss the design of products we use, either praising the excellent user experience it could provide or what could be done to earn that praise.</h3>",
 							"img" : "https://dl.dropbox.com/s/ltcj5pz70tp26qb/logo_designalysed.png?dl=0"
+						}
+					]
+				},
+				{
+					"title" : "Twitter Conceptual Design",
+					"thumbnail" : "https://dl.dropbox.com/s/s94rk91xvjn3rbv/THUMB.png?dl=0",
+					"itemClasses" : "tweetSlide",
+					"summary" : "This is an attempt to redesign twitter taking a mobile first and user first approach.",
+					"_showcaseList" : [
+						{
+							"writeup" : "<h1>TWITTER CONCEPTUAL DESIGN FOR MOBILE.</h1><img src='https://dl.dropbox.com/s/hp7jbkolv6okwsp/SINGLE%20MEDIUM.png?dl=0'/><h3>This is an attempt to redesign twitter taking a mobile first and user first approach.<br><br> Often for reasons aplenty we intend to forgive what is most important to users. A simple reason like making the presence of button mandatory just to get more number of users on the platform destroys the experience. <br><br> The design here considers none of that and lives just for the user <br> It doesn't cover all the use cases, will keep adding them over time.</h3><br>",
+							"img" : ""
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/xjw8hmmrihgto0q/TWEET%20LIST.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/xjw8hmmrihgto0q/TWEET%20LIST.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/l7jv56p2gi8w93o/TWEET%20SHORT.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/omqermw3o6pvo9q/TWEET%20LONG.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/iuvg0z46yh3cant/SECTION_LIST.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/3hflsu9tkhp16of/SECTION_EMPTY_LIST.png?dl=0"
+						},
+
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/8idupsncfu4hnmo/USER_PR_SHORT.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/v88a5ka3jk38p09/USER_PR_LONG.png?dl=0"
+						},
+
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/8juudtz78y8xvh2/SEARCH_1.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/tmbddjaawwj6gzy/SEARCH_2.png?dl=0"
+						},
+						{
+							"writeup" : "",
+							"img" : "https://dl.dropbox.com/s/e6ewxhtrpd4rkt1/SEARCH_3.png?dl=0"
+						}
+					]
+				},
+				{
+					"title" : "FLIPVIEW",
+					"thumbnail" : "https://dl.dropbox.com/s/urhptgecdiwaxx0/Screen%20Shot%202015-01-09%20at%201.41.15%20am.png?dl=0",
+					"itemClasses" : "flipview",
+					"summary" : "A flip view in Javascript to display current, prev and next slide. The html for the slides can be set in the callback functions executed once flip right or flip left happens. ",
+					"_showcaseList" : [
+						{
+							"writeup" : "<h1><a href='http://agaase.github.io/webpages/flipview/' target='_blank'>FLIPVIEW</a></h1><h3>A flip view in Javascript to display current, prev and next slide. The html for the slides can be set in the callback functions executed once flip right or flip left happens. It also has the panning feature which means user can drag left or right instead of doing a simple flip.<br><br><br><a href='https://github.com/agaase/flipview'>GITHUB</a></h3>",
+							"img" : "https://camo.githubusercontent.com/f2f4fe1e3616c6fdeb5d4a830adf3e982a0a3ec7/68747470733a2f2f6c68342e676f6f676c6575736572636f6e74656e742e636f6d2f2d57564f304d61784633534d2f5535316d7a6c764d4652492f41414141414141414a66772f435a634e745450537742672f733237392f666c6970766965775f73616d706c652e676966"
 						}
 					]
 				}
