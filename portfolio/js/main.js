@@ -10,6 +10,7 @@ window.onload = function(){
 };
 
 var loadPortfolio = function(){
+	return;
         var def = $.Deferred(), isResolved = false;
         var images = [];
         $.each(json,function(k,v){
