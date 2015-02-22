@@ -3,11 +3,13 @@ var project = (function(){
 
 	var loadImage = function(el,img){
 		el.fadeOut(10);
+		this.loader.show();
 		var imge = new Image();
 		imge.onload = function(){
 			el.attr("src",img);
+			this.loader.hide();
 			el.fadeIn();
-		};
+		}.bind(this);
 		imge.src = img;
 	};
 	var preloadImages = function(imgs){
@@ -19,6 +21,7 @@ var project = (function(){
 
 	var obj = function(){
 		this.mainImage = $(".mainImage");
+		this.loader = $(".loader");
 		this.mainImage.css({"max-height":window.innerHeight*.95+"px", "margin-top":(window.innerHeight*0.02)+"px"});
 		this.rightArrow = $(".right.arrow");
 		this.leftArrow = $(".left.arrow");
@@ -27,7 +30,7 @@ var project = (function(){
 		var project = params.length >1 ? params[1] : "";
 		this.images = project ? json[project]["images"]  : ["https://dl.dropbox.com/s/66heb8ed25ptsu7/MAGAZINE%20PAGE.png?dl=0","https://dl.dropbox.com/s/ee577mkztl3azqr/PROFILE%202.png?dl=0","https://dl.dropbox.com/s/sh6qliedd8917yq/PROFILE.png?dl=0","https://dl.dropbox.com/s/o1hetmfn22tovcr/HOME%20PAGE%202.png?dl=0"];
 		this.totalImages = this.images.length;
-		preloadImages(this.images);
+		//preloadImages(this.images);
 	};
 
 	obj.prototype.swipe = function(dir){
@@ -59,7 +62,7 @@ var project = (function(){
 			$(".right.arrow").show();	
 		} 
 
-		loadImage(this.mainImage,this.images[this.counter]);
+		loadImage.call(this,this.mainImage,this.images[this.counter]);
 	};
 
 	obj.prototype.assignEvent = function(){
@@ -77,7 +80,7 @@ var project = (function(){
 	};
 
 	obj.prototype.init = function(){
-		loadImage(this.mainImage,this.images[0]);
+		loadImage.call(this,this.mainImage,this.images[0]);
 		if(this.images.length>1){
 			this.rightArrow.show();
 		}

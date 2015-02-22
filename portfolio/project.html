@@ -30,6 +30,18 @@ img{
 	background-size: cover;
 	opacity: 0.2;
 }
+.loader{
+	position: absolute;
+	top:50%;
+	margin-top: -25px;
+	height: 50px;
+	width: 50px;
+	background-image: url("images/loader.gif");
+	background-size: cover;
+	display: none;
+	left:50%;
+	margin-left: -25px;
+}
 .left.arrow{
 	left: 50px;
 	background-image: url("images/left_arrow.png");
@@ -43,7 +55,7 @@ img{
 
 <img class='mainImage'/>
 
-
+<div class='loader'></div>
 <div class='left arrow'></div>
 <div class='right arrow'></div>
 </body>
