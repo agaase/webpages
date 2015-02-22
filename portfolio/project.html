@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src='data/data.js'></script>
+	<script src='js/project.js'></script>
+</head>
+
+<style>
+
+body{
+	text-align: center;
+	margin: 0;
+}
+img{
+	max-height: 700px;
+	margin:auto;
+}
+.arrow{
+	font-size: 75px;
+	position: fixed;
+	top: 50%;
+	margin-top: -40px;
+	color: grey;
+	display: none;
+	cursor: pointer;
+	/* opacity: 0.5; */
+	width: 75px;
+	height: 75px;
+	background-size: cover;
+	opacity: 0.2;
+}
+.left.arrow{
+	left: 50px;
+	background-image: url("images/left_arrow.png");
+}
+.right.arrow{
+	right: 50px;
+	background-image: url("images/right_arrow.png");
+}
+</style>
+<body>
+
+<img class='mainImage'/>
+
+
+<div class='left arrow'></div>
+<div class='right arrow'></div>
+</body>
+</html>

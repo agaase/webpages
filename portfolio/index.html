@@ -1,0 +1,71 @@
+<!doctype html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src='data/data.js'></script>
+	<script src='js/main.js'></script>
+</head>
+
+<style>
+.item{
+	width: 380px;
+	height: 450px;
+	background-color: #f1f1f1;
+	display: inline-block;
+	margin-top: 100px;
+	margin-right: 50px;
+	vertical-align: top;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+.item .title{
+	height: 14%;
+	font-size: 250%;
+	padding: 8% 5%;
+}
+.item .desc{
+	height: 60%;
+	font-size: 100%;
+	padding: 5%;
+	line-height: 130%;
+}
+.item .desc p{
+	margin: 20px 0;
+}
+.item .desc b{
+	font-size: 115%
+}
+body{
+	overflow: scroll;
+	font-family: 'Ropa Sans', sans-serif;
+}
+.container{
+	width: 2100px;
+} 
+.message{
+	position: fixed;
+	font-size: 120%;
+	color: #acacac;
+	width: 100%;
+	text-align: center;
+}
+.message.bottom{
+	bottom: 20px;
+}
+.message.top{
+	top:20px;
+}
+</style>
+<body>
+
+<div class='container'>
+
+</div>
+<div class="message top"> Click on any item to see the detailed preview</div>
+<div class="message bottom"> <---- Scroll to Right/Left to see other items ----></div>
+</body>
+</html>
