@@ -2,7 +2,7 @@ window.onload = function(){
     $.when(loadPortfolio()).done(function(){
         $(".container,.message.top,.message.bottom").show();
         $(".message.middle").hide();
-        $(".container").width(Object.keys(json).length*430);
+        $(".container").width(Object.keys(json).length*440 + 80);
         $.each(json,function(k,v){
             $(".container").append("<a href='"+window.location.href.replace("index.html","")+"project.html?k="+k+"' class='item'><div class='title'>"+v["title"]+"</div><div class='desc'>"+v["writeup"]+"</div></a>");
         });
