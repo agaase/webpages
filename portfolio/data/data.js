@@ -1,7 +1,7 @@
 var json = {
 	"genwi_analytics" : {
 		"title" : "Genwi Analytics",
-		"writeup" : "<b>SUMMARY </b><br>Analytics dashboard for genwi apps. The dashboard gives the customer a view of usage of their apps in terms of users, content consumption and growth in terms of sharing. The preview here depicts the thought process that went into working out the basic structure of dashboard and the individual modules. Also included are rough mockups that were done as part of it.<p><b> ROLE</b><br> Research about customer behavior, mockups for initial strucuture of dashboard, designing modules to represent various statistics. Lead developer for the various modules.</p> ",
+		"writeup" : "<b>SUMMARY </b><br>Analytics dashboard for genwi apps. The dashboard gives the customer a view of usage of their apps in terms of users, content consumption and growth in terms of sharing. The preview here depicts the thought process that went into working out the basic structure of dashboard and the individual modules. <p><b> ROLE</b><br> Research about customer behavior, mockups for initial strucuture of dashboard, designing modules to represent various statistics. Lead developer for the various modules.</p> ",
 		"images" : [
 				"https://dl.dropbox.com/s/uh3m6rzvwihdllr/intro.png?dl=0",
 				"https://dl.dropbox.com/s/v1v6i7lzax0e7d0/legacy%20old%20sketch.png?dl=0",
@@ -14,7 +14,10 @@ var json = {
 				"https://dl.dropbox.com/s/pyhkmzo0sp3d82r/filters.png?dl=0",
 				"https://dl.dropbox.com/s/vxh1p9vgk7dob78/top%20items.png?dl=0",
 				"https://dl.dropbox.com/s/ihz5kzvvjzi9mtw/pie%20chart.png?dl=0",
+				"https://dl.dropbox.com/s/qp7qswau1bzwajz/pie%20chart%202.png?dl=0",
 				"https://dl.dropbox.com/s/2m7v5k5z21qw53u/line%20chart.png?dl=0",
+				"https://dl.dropbox.com/s/92pqtvb4vg03har/line%20chart%202.png?dl=0",
+				"https://dl.dropbox.com/s/2gkv13wmaxuamis/ADDITONAL%20POINTS.png?dl=0",
 				"https://dl.dropbox.com/s/3z1xsp4nt9fbl92/USERS.png?dl=0",
 				"https://dl.dropbox.com/s/zmqv32scjet6jet/CONTENT.png?dl=0",
 				"https://dl.dropbox.com/s/0uh9w2dis8vmu7e/SHARE.png?dl=0"
@@ -32,56 +35,43 @@ var json = {
 		]
 	},
 	"genwi_apps" : {
-		"title" : "Genwi Customer Apps",
-		"writeup" : "<b>SUMMARY</b><br>Every new customer brings a new set of requirements in  terms of design and functionalities. This preview shows the screenshots of some of the most challenging designs we implemented for customers.<p><b>ROLE</b><br> Lead developer for the many design and functional requirements of the client.</p>",
-		"images" : [
-			"https://dl.dropbox.com/s/m05f7s3wmrqdoek/STANFORD%20TABLET.png?dl=0",
-			"https://dl.dropbox.com/s/c1k2vvf0n1q3mbi/STANFORD%20TABLET%202.png?dl=0",
-			"https://dl.dropbox.com/s/64cvxv0zh3o8qtx/NVISION.png?dl=0",
-			"https://dl.dropbox.com/s/br9aur8ccaxudlg/NVISION%202.png?dl=0",
-			"https://dl.dropbox.com/s/3et97aufyc6jo69/GCM.png?dl=0",
-			"https://dl.dropbox.com/s/j4ys2o7ftxv5ir6/GCM%202.png?dl=0",
-			"https://dl.dropbox.com/s/8s5ek4ob0dbdk37/ECM.png?dl=0"
+		"title" : "Genwi Customer Projects",
+		"writeup" : "<b>SUMMARY</b><br>The preview here shows a couple of projects where the customer requirements involved designs which were innovative and never done before.  We had to take care of many usecases in terms of how the end user can use the interface.Genwi Apps are hybrid; so the design were implemented using front end web tools and as such the limitation posed by tools also had to be taken care of.</p> <p><b>ROLE</b><br> Lead Developer, Designer.</p>",
+		"htmls" : [
+			"<div style='text-align: center;padding-top: 20px;width:80%;margin: auto;'><h2> MAGAZINE LAYOUT ( CUSTOMER - CA TECHNOLOGIES)</h2><br><br><br><div style='display: inline-block;width:55%;vertical-align: top; margin-right:30px;text-align: left;'>For this requirement from customer we needed to design a magzine kind of experience for tablets. If we see the way we hold our tablet, its almost like a book or magazine. Hence, having a multi-columnn magazine layout does make sense because the user is already has experience to that kind of UI and it makes good case of displaying content in a larger area.<p>There were some key points with which we designed and implemented this layout considering the way user reads a magazine and also the customer needs.</p><p>1. The ability to swipe and move to next page just like we do flip to move to next page in magazine.</p><p>2. Glass effect or the feature of dragging a page. (Check video at 1-3 sec). This adds to this whole experience of interacting with a magazine like layout.</p><p>3. Apart from this we also added indicators (middle left) to make sure the user has a sense of how much pages are there and what page he is on.</p><p>4. Also to provide customer the ability to customize the layout in terms of adding inline images and other styling the code was written and structured in a way to allow such designs.<p></div><div style='display: inline-block;width:40%'><iframe width='100%' height='315' src='https://www.youtube.com/embed/jYYxyEJT4f4' frameborder='0' allowfullscreen ></iframe></div></div>",
+			"<div style='text-align: center;padding-top: 20px;width:80%;margin: auto;'><h2> FLIPVIEW LAYOUT (CUSTOMER - NVISION)</h2><br><br><br><div style='display: inline-block;width:55%;vertical-align: top; margin-right:30px;text-align: left;'>This customer project involved showing the data between different categories using a 3d flip. A 3d flip is different from normal swipe in a way that the slide is rotated instead of animating left or right. The video shows a demo of the implementation we open sourced after doing the customer project. (check open source project <a href='https://github.com/agaase/flipview'>here.</a>)<p>There were many points that we took care of in terms of how the user will interact with a layout like this.</p><p>1. The ability to quickly flip to the next slide by doing a swipe using touch. (Check 6-9 sec in video)</p><p>2. Panning effect in which case the user can drag the slide instead of quickly flipping it such that he can see the back and front slide simulataneously.(Check 19-27 sec in video). </p><p>3. An appearance that slide moves inside and as such looks smaller when the flip or dragging is done. This also makes sure that slide when its rotated it doesnt get cut at the device boundaries.</p></div><div style='display: inline-block;width:40%'><iframe width='100%' height='315' src='https://www.youtube.com/embed/CTRnyGKhBuo' frameborder='0' allowfullscreen ></iframe></div></div>",
 		]
 	}, 
+	"spotify" : {
+		"title" : "Help me Spotify!",
+		"writeup" : "<b>SUMMARY</b><br>A design analysis as part of the blog -  Designalysed. It discusses the many usecases the Spotify offers, the paint points and bad design user faces and what could be done to improve them.<p> <b>ROLE</b><br> Analyse the usecases of products in terms of user experience, design mockups for alternate designs to various layouts.</p>",
+		"images" : [
+			"https://dl.dropbox.com/s/5bgv0xw3d02jzwb/spotify.png?dl=0",
+			"https://dl.dropbox.com/s/fytqge62q0u9pnu/spotify%202.png?dl=0",
+			"https://dl.dropbox.com/s/i0p3d2qbtdusgzb/spotify%203.png?dl=0",
+			"https://dl.dropbox.com/s/bysupswjvj76o0f/spotify%203.2.png?dl=0",
+			"https://dl.dropbox.com/s/sjphnmhp4yhki4j/spotify%204.png?dl=0",
+			"https://dl.dropbox.com/s/jml9lkp29psd7eb/spotify%205.png?dl=0",
+			"https://dl.dropbox.com/s/bn5amfd4ppbswx8/spotify%206.png?dl=0",
+			"https://dl.dropbox.com/s/0v9u8oa04x0x5qe/spotify%207.png?dl=0",
+			"https://dl.dropbox.com/s/7xat6575tsqf5g7/spotify%208.png?dl=0",
+			"https://dl.dropbox.com/s/tmr95nkjs8wjmu7/spotify%209.png?dl=0",
+			"https://dl.dropbox.com/s/lq9df0jjcm2zodg/spotify%2010.png?dl=0"
+		]
+	},
 	"mnu" : {
 		"title"  : "Magazine & You",
 		"writeup" : "<b>SUMMARY</b><br>An online community of magazine lovers where people can share and discuss different things related to magazines. This preview shows the screenshots of different parts of the desktop portal. <p><b>ROLE</b><br> Founded the online community and also did the design, development of the portal.</p> ",
 		"images" : [
 				"https://dl.dropbox.com/s/vkp7avc9wjf2w5k/HOME%20PAGE.png?dl=0",
-				"https://dl.dropbox.com/s/d62uutdif8lemmg/HOME%20PAGE%201.png?dl=0",
 				"https://dl.dropbox.com/s/o1hetmfn22tovcr/HOME%20PAGE%202.png?dl=0",
+				"https://dl.dropbox.com/s/d62uutdif8lemmg/HOME%20PAGE%201.png?dl=0",
 				"https://dl.dropbox.com/s/wmlhg9b3evvliha/LIST%20OF%20BOOKS.png?dl=0",
 				"https://dl.dropbox.com/s/66heb8ed25ptsu7/MAGAZINE%20PAGE.png?dl=0",
 				"https://dl.dropbox.com/s/ztifafz7r3vlxzq/STORY.png?dl=0",
 				"https://dl.dropbox.com/s/k4vaeshiewea5da/TOOLBAR.png?dl=0",
-				"https://dl.dropbox.com/s/rdzp4rpgv77pesi/PROFILE%201.png?dl=0",
-				"https://dl.dropbox.com/s/ee577mkztl3azqr/PROFILE%202.png?dl=0",
-				"https://dl.dropbox.com/s/wo16hi6r1gncrup/A-Z%20LISTING.png?dl=0"
-
+				"https://dl.dropbox.com/s/rdzp4rpgv77pesi/PROFILE%201.png?dl=0"
 		]
 	},
-	"designalysed" : {
-		"title" : "Designalysed",
-		"writeup" : "<b>SUMMARY</b><br>At designalysed we discuss the design of products we use; either praising the excellent user experience it could provide or what could be done to earn that praise. This preview discusses in brief the analysis that each blog tries to do.<p> <b>ROLE</b><br> Analyse the usecases of products in terms of user experience, design mockups for alternate designs to various layouts.</p>",
-		"images" : [
-			"https://dl.dropbox.com/s/s2zkddzk7t0a3x4/designalysed%20intro.png?dl=0",
-			"https://dl.dropbox.com/s/5bgv0xw3d02jzwb/spotify.png?dl=0",
-			"https://dl.dropbox.com/s/2x8r8qgnzk90lkv/contacts.png?dl=0",
-			"https://dl.dropbox.com/s/hwoed6295wc6c99/boombox.png?dl=0",
-			"https://dl.dropbox.com/s/c4scfat3fqasev7/gmail.png?dl=0"
-		]
-	},
-	"twitter" : {
-		"title" : "Twitter Conceptual Design",
-		"writeup" : "<b>SUMMARY</b><br>This is an attempt to redesign twitter for smartphone taking a mobile first and user first approach. Shown here are the new ideas implemented in the conceptual design and what purpose they solve <p><b>ROLE</b><br> Research about the usecases that twitter offers, the user experience it offers and designing mockups for the new design. </p>",
-		"images" : [
-			"https://dl.dropbox.com/s/g8bbod22mgm6ks0/HOME.png?dl=0",
-			"https://dl.dropbox.com/s/sz5n5mtrdyyemui/LIST.png?dl=0",
-			"https://dl.dropbox.com/s/ptswbhgg3blnbs6/SECTIONS.png?dl=0",
-			"https://dl.dropbox.com/s/k0715pjz9zecq6u/TWEET.png?dl=0",
-			"https://dl.dropbox.com/s/u0bs9jdi7wu8jpv/PROFILE.png?dl=0",
-			"https://dl.dropbox.com/s/5nra95dwor9cgjh/SEARCH.png?dl=0",
-		]
-	}
+	
 };
