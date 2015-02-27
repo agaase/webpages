@@ -55,6 +55,7 @@ var json = {
 			"https://dl.dropbox.com/s/bn5amfd4ppbswx8/spotify%206.png?dl=0",
 			"https://dl.dropbox.com/s/0v9u8oa04x0x5qe/spotify%207.png?dl=0",
 			"https://dl.dropbox.com/s/7xat6575tsqf5g7/spotify%208.png?dl=0",
+			"https://dl.dropbox.com/s/mds5pmhhlhzvnm0/spotify%208.2.png?dl=0",
 			"https://dl.dropbox.com/s/tmr95nkjs8wjmu7/spotify%209.png?dl=0",
 			"https://dl.dropbox.com/s/lq9df0jjcm2zodg/spotify%2010.png?dl=0"
 		]
