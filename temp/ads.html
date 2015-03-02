@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TEST</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://coop182.github.io/jquery.dfp.js/jquery.dfp.js"></script>
+    <base href="http://coop182.github.io/jquery.dfp.js">
+</head>
+<body>
+
+
+
+<script>
+
+window.googletag = window.googletag || {};
+window.googletag.cmd = window.googletag.cmd || [];
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var networkID = getParameterByName('networkID');
+//$('#networkID').val(networkID);
+
+var adunitID = getParameterByName('adunitID');
+//$('#adunitID').val(adunitID);
+
+var dimensions = getParameterByName('dimensions');
+//$('#dimensions').val(dimensions);
+
+if (networkID != '' && adunitID != '' && dimensions != '') {
+
+    $('body').append('<div class="adunit" data-adunit="'+adunitID+'" data-dimensions="'+dimensions+'">Ad could not be loaded.</div>');
+
+    $.dfp(networkID);
+}
+
+</script>
+
+</body>
+</html>
