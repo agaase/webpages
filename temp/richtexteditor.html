@@ -1,0 +1,32 @@
+<div id="sample">
+  <h4>
+    Div Example
+  </h4>
+  <div id="myArea1" style="width: 300px; height: 100px; border: 1px solid #000;">
+    This is some TEST CONTENT<br />
+    In a DIV Tag<br />
+    Click the Buttons to activate
+  </div><button onclick="toggleArea1();">Toggle DIV Editor</button><br />
+  <br />
+
+  <div style="clear: both;"></div><script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+  var area1, area2;
+ 
+  function toggleArea1() {
+        if(!area1) {
+                var options = {
+                  buttonList : ['fontSize','bold','italic','underline','strikeThrough']
+                };
+                area1 = new nicEditor(options).panelInstance('myArea1',{hasPanel : true});
+        } else {
+                area1.removeInstance('myArea1');
+                area1 = null;
+        }
+  }
+
+  bkLib.onDomLoaded(function() { toggleArea1(); });
+  //]]>
+  </script>
+</div>
+
