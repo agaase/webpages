@@ -39,8 +39,12 @@ body{
   }
   catch(err){
   }
+  var unitid = params.id || "/85897531/gw_test_sims_2";
+  var size = params.size ? params.size.split(",") : [320,50];
+  size[0] = parseInt(size[0]);
+  size[1] = parseInt(size[1]);
   googletag.cmd.push(function() {
-    googletag.defineSlot( "/85897531/gw_test_sims_2",[320,50], 'div-gpt-ad-1432105884299-0').addService(googletag.pubads());
+    googletag.defineSlot(unitid,size, 'div-gpt-ad-1432105884299-0').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
